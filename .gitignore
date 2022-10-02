@@ -312,6 +312,8 @@ log/*.log
 tmp/**
 node_modules/
 .sass-cache
+lezioni/**/*.html
+index.html
 
 # Vscode
 .vscode/
