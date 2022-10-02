@@ -26,17 +26,16 @@ Per eventuali cambi, verificare il [METODO DI CONTATTO].
 
 ## Lezioni
 
-| Lezione | Descrizione                           | Data       |
-| ------- | ------------------------------------- | ---------- |
-| [0](https://tendto.github.io/Tutorato-Reti-di-Calcolatori/0-Introduzione)   | Presentazione e introduzione al corso | 00-00-2023 |
+| Lezione                                                                           | Descrizione                           | Data       |
+| --------------------------------------------------------------------------------- | ------------------------------------- | ---------- |
+| [0](https://tendto.github.io/Tutorato-Reti-di-Calcolatori/lezioni/0-Introduzione) | Presentazione e introduzione al corso | 00-00-2023 |
 
 <!-- New section -->
 
 ## Esercizi
 
-| Esercizio | Descrizione                           | Data       |
-| --------- | ------------------------------------- | ---------- |
-| [0]()     | Presentazione e introduzione al corso | 00-00-2023 |
+| Esercizio | Descrizione | Data |
+| --------- | ----------- | ---- |
 
 <!-- New section -->
 

@@ -55,7 +55,7 @@
         });
       }
 
-      if (mermaid) initMermaid();
+      if (typeof mermaid !== "undefined") initMermaid();
       Reveal.initialize({
         slideNumber: true,
         hash: true,
