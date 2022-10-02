@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>Introduzione</title>
+
+    <link rel="stylesheet" href="./css/reveal.css" />
+    <link rel="stylesheet" href="./css/black.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="./css/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section
+          data-markdown="README.md"
+          data-separator="^ *<!-- New section --> *\r?\n"
+          data-separator-vertical="^ *<!-- New subsection --> *\r?\n"
+          data-separator-notes="^> Note:"
+        ></section>
+      </div>
+    </div>
+
+    <script src="./js/reveal.js"></script>
+    <script src="./js/notes.js"></script>
+    <script src="./js/markdown.js"></script>
+    <script src="./js/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>
