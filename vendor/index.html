@@ -10,10 +10,11 @@
     <title>Introduzione</title>
 
     <link rel="stylesheet" href="./css/reveal.css" />
-    <link rel="stylesheet" href="./css/black.css" />
+    <link id="theme" rel="stylesheet" href="./css/black.css" />
+    <link rel="stylesheet" href="./css/columns.css" />
 
     <!-- Theme used for syntax highlighted code -->
-    <link rel="stylesheet" href="./css/monokai.css" />
+    <link rel="stylesheet" href="./css/github-dark.css" />
   </head>
   <body>
     <div class="reveal">
@@ -31,10 +32,43 @@
     <script src="./js/notes.js"></script>
     <script src="./js/markdown.js"></script>
     <script src="./js/highlight.js"></script>
+    <script src="./js/math.js"></script>
+    <script src="./js/menu.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+
     <script>
+      function initMermaid() {
+        mermaid.initialize({
+          startOnLoad: false,
+          theme: "dark",
+          logLevel: 3,
+        });
+        Reveal.addEventListener("ready", (event) => {
+          const graphs = document.getElementsByClassName("mermaid");
+          graphs.forEach((item, index) => {
+            const mermaidDiv = document.createElement("div");
+            mermaidDiv.innerHTML = item.innerText;
+            mermaidDiv.classList.add("mermaid");
+            item.replaceWith(mermaidDiv);
+          });
+          mermaid.init(document, ".mermaid");
+        });
+      }
+
+      if (mermaid) initMermaid();
       Reveal.initialize({
+        slideNumber: true,
         hash: true,
-        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+        menu: {
+          path: "./css",
+        },
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealNotes,
+          RevealMath.MathJax3,
+          RevealMenu,
+        ],
       });
     </script>
   </body>

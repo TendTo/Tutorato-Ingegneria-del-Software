@@ -1,0 +1,5 @@
+.cols {
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 1rem;
+}
