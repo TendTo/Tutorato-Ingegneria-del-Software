@@ -1,2 +1,2 @@
-rm *.html
-rm lezioni/*.html
+rm -f *.html
+rm -f lezioni/**/*.html
