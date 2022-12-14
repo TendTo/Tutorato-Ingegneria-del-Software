@@ -115,12 +115,6 @@ function parse_args
     # Restore positional args
     set -- "${args[@]}"
 
-    # set positionals to vars
-    positional_1="${args[0]}"
-    positional_2="${args[1]}"
-
-    # Validate required args
-
     # Set defaults
     if [[ -z "$dir" ]]; then
         dir="lezioni"
@@ -140,6 +134,7 @@ function create_slides
             cp "$root_dir/vendor/index.html" "$html_file"
             sed -i "s|\"\./|\"../../vendor/|g" "$html_file"
             sed -i "s|data-markdown=\"README.md\"|data-markdown=\"./$markdown\"|g" "$html_file"
+            sed -i "s|{{TITLE}}|$folder|g" "$html_file"
             if ! grep -q "\`\`\`mermaid" "$root_dir/$dir/$folder/$markdown"; then
                 sed -i "s|mermaid\.min\.js|d" "$html_file"
             fi
@@ -152,6 +147,7 @@ function create_index
     html_file="$root_dir/index.html"
     cp $root_dir/vendor/index.html "$html_file"
     sed -i "s|\"\./|\"./vendor/|g" "$html_file"
+    sed -i "s|{{TITLE}}|Tutorato di Reti 2022-20223|g" "$html_file"
     sed -i "s|data-markdown=\"README.md\"|data-markdown=\"./$markdown\"|g" "$html_file"
     if ! grep -q "\`\`\`mermaid" "$root_dir/$markdown"; then
         sed -i "/mermaid\.min\.js/d" "$html_file"
