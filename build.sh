@@ -14,7 +14,8 @@
 #%                            If set to an empty string, the current directory will be used.
 #%                            Defaults to 'lezioni',
 #%    -m, --markdown          Path to the markdown file to look for in each folder.
-#%                            Defaults to 'README.md',
+#%                            Defaults to 'README.md'.
+#%    -c, --clean             Remove all the generated html files.
 #%    -h, --help              Print this help
 #%    -v, --version           Print script information
 #%
@@ -66,7 +67,7 @@ function script_init() {
     script_dir="$(dirname "$script_path")"
     script_name="$(basename "$script_path")"
     readonly script_dir script_name
-    readonly root_dir="$script_dir/.."
+    readonly root_dir="$script_dir"
     readonly ta_none="$(tput sgr0 2> /dev/null || true)"
     readonly script_headsize=$(head -200 ${0} |grep -n "^# END_OF_HEADER" | cut -f1 -d:)
 }
@@ -98,6 +99,9 @@ function parse_args
                 scriptinfo
                 exit 0
             ;;
+            -c | --clean )
+                clean_flag=true
+            ;;
             -d | --directory )
                 dir="$1"
                 shift
@@ -123,6 +127,17 @@ function parse_args
         markdown="README.md"
     fi
 
+}
+
+function clean
+{
+    for folder in "$dir"/*; do
+        if [[ -d "$folder" ]]; then
+            folder="$(basename $folder)"
+            rm -f "$root_dir/$dir/$folder/index.html"
+        fi
+    done
+    rm -f "$root_dir/index.html"
 }
 
 function create_slides
@@ -160,6 +175,12 @@ function create_index
 function main() {
     script_init "$@"
     parse_args "$@"
+
+    if [[ "$clean_flag" == true ]]; then
+        clean
+        exit 0
+    fi
+
     create_slides
     create_index
 }
