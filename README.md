@@ -54,4 +54,3 @@ Per eventuali cambi, verificare il [METODO DI CONTATTO].
 - [Email](mailto:casablancaernesto@gmail.com)
 - [Telegram](https://t.me/TendTo)
 - [Github](https://github.com/TendTo)
-- [Teams]()
