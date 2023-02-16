@@ -1,101 +1,82 @@
-# Title
+# Introduzione
 
-A paragraph with some text and a [link](http://hakim.se).
+Tutorato del corso di [Reti di Calcolatori](http://web.dmi.unict.it/corsi/l-31/insegnamenti?seuid=EF0D54F4-9429-4853-A10C-355A2FD9C3A1) 2022/2023.
 
 <!-- New section -->
 
-## Subsection
+## Chi sono
+
+<div class="cols">
+
+- Ernesto Casablanca
+- TendTo
+- Studente di informatica
+- Secondo anno di magistrale
+
+![Tend](./img/P2P.jpg)
+
+</div>
 
 <!-- New subsection -->
 
-### Sub section
+### Contatti
 
-Sub section
+<div class="cols">
+
+- [Email](mailto:casablancaernesto@gmail.com)
+- [Telegram](https://t.me/TendTo)
+- [Github](https://github.com/TendTo)
+
+![Tend](./img/Tend.svg)
+
+</div>
+
+<!-- New section -->
+
+## Materiale
+
+Tutto il materiale, lezione per lezione, sarà disponibile su [Github](https://github.com/TendTo/Tutorato-Reti-di-Calcolatori).
+
+Le slide, in particolare, saranno consultabili [online](https://tendto.github.io/Tutorato-Reti-di-Calcolatori), sotto forma di slideshow.
+
+<!-- .element: class="fragment" data-fragment-index="1" -->
+
+Se avete suggerimenti o correzioni da fare, aprite una [issue](https://github.com/TendTo/Tutorato-Reti-di-Calcolatori/issues).
+
+<!-- .element: class="fragment" data-fragment-index="2" -->
+
+<!-- New section -->
+
+## Organizzazione del corso
+
+Sarà data priorità alle vostre richieste.
+
+Ci si concentrerà particolarmente sulla parte di laboratorio.
+
+<!-- .element: class="fragment" data-fragment-index="1" -->
 
 <!-- New subsection -->
 
-### Sub sub section
+### Argomenti trattati
 
-Sub sub section
+<div class="cols">
 
-<!-- New section -->
+1. Modello OSI
+2. Livello applicativo
+   - HTTP
+3. Livello trasporto
+   - UDP
+   - TCP
+   - Confronto TCP Tahoe vs TCP Reno
 
-## Lists
+</p>
 
-- Item 1
-- Item 2
-- Item 3
-- Item 4
-
-And another one
-
-1. Item 1
-1. Item 2
-1. Item 3
-1. Item 4
-
-<!-- New section -->
-
-## Tables
-
-| Tables        |      Are      |  Cool |
-| ------------- | :-----------: | ----: |
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      |   centered    |   $12 |
-| zebra stripes |   are neat    |    $1 |
-
-<!-- New section -->
-
-## Math
-
-Testo con math $1 + 1 = 2 \quad \forall x \in \mathbb{R}$
-
-$$
-\begin{align}
-    \text{A lot of math} \\
-    1 + 2 = \sum_{i = 1}^2 i \\
-    1 + 3 = 4
-\end{align}
-$$
-
-<!-- New section -->
-
-## Code
-
-```c [1|3|6,7]
-#include <stdio.h>
-
-void main(int argc, char *argv[]) {
-    printf("Hello world!");
-
-    // Open a socket
-    int sock = socket(AF_INET, SOCK_STREAM, 0);
-}
-```
-
-<!-- New section -->
-
-## Columns
-
-<div class=cols>
-
-- ELement 1
-- element 2
-- element 3
-
-![fset](./img/CDS%20logo.png)
-
-```mermaid
-sequenceDiagram
-autonumber
-Alice->>John: Hello John, how are you?
-loop Healthcheck
-    John->>John: Fight against hypochondria
-end
-Note right of John: Rational thoughts!
-John-->>Alice: Great!
-John->>Bob: How about you?
-Bob-->>John: Jolly good!
-```
+4. Livello rete
+   - IPv4
+   - Reti e sottoreti
+5. Laboratorio
+   - Virtualizzazione
+   - Configurazione di reti
+   - Programmazione di reti
 
 </div>
