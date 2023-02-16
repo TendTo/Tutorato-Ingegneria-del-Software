@@ -1,12 +1,12 @@
-# Tutorato di Reti di Calcolatori
+# Tutorato di Ingegneria del Software
 
 <!-- New section -->
 
 ## Descrizione del corso
 
-Tutorato del corso di [Reti di Calcolatori](http://web.dmi.unict.it/corsi/l-31/insegnamenti?seuid=EF0D54F4-9429-4853-A10C-355A2FD9C3A1) 2022/2023.
+Tutorato del corso di [Ingegneria del Software](https://web.dmi.unict.it/corsi/l-31/insegnamenti?seuid=609219B7-63E2-417A-BDFD-A86B9856BAF1) 2022/2023.
 
-- Professori [Salvatore Riccobene](http://web.dmi.unict.it/corsi/l-31/docenti/salvatore.antonio.riccobene) e [Luca Guarnera](http://web.dmi.unict.it/docenti/luca.guarnera)
+- Professori [Emiliano Tramontana](https://web.dmi.unict.it/docenti/emiliano.alessio.tramontana) e [Andrea Mario Calvagna](https://web.dmi.unict.it/docenti/andrea.calvagna)
 - Tutor [Ernesto Casablanca](https://github.com/TendTo)
 
 <!-- New subsection -->
@@ -20,15 +20,15 @@ Per eventuali cambi, verificare il [METODO DI CONTATTO].
 
 ### Requisiti
 
-- [Virtual box](https://www.virtualbox.org/)
+- [Java](https://www.java.com/it/)
 
 <!-- New section -->
 
 ## Lezioni
 
-| Lezione                                                                           | Descrizione                           | Data       |
-| --------------------------------------------------------------------------------- | ------------------------------------- | ---------- |
-| [0](https://tendto.github.io/Tutorato-Reti-di-Calcolatori/lezioni/0-Introduzione) | Presentazione e introduzione al corso | 00-00-2023 |
+| Lezione                                                                               | Descrizione                           | Data       |
+| ------------------------------------------------------------------------------------- | ------------------------------------- | ---------- |
+| [0](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/0-Introduzione) | Presentazione e introduzione al corso | 00-00-2023 |
 
 <!-- New section -->
 
@@ -41,11 +41,15 @@ Per eventuali cambi, verificare il [METODO DI CONTATTO].
 
 ## Stars
 
-## [![Star History Chart](https://api.star-history.com/svg?repos=TendTo/Tutorato-Reti-di-Calcolatori&type=Date)](https://star-history.com/#TendTo/Tutorato-Reti-di-Calcolatori&Date)
+## [![Star History Chart](https://api.star-history.com/svg?repos=TendTo/Tutorato-Ingegneria-del-Software&type=Date)](https://star-history.com/#TendTo/Tutorato-Ingegneria-del-Software&Date)
 
 <!-- New section -->
 
-## Strumenti utilizzati
+## Risorse
+
+- [Syllabus](https://web.dmi.unict.it/corsi/l-31/insegnamenti?seuid=609219B7-63E2-417A-BDFD-A86B9856BAF1)
+- [Sito del docente](https://www.dmi.unict.it/tramonta/se/ingegneria-software.html)
+- [Refactoring Guru](https://refactoring.guru/design-patterns/catalog)
 
 <!-- New section -->
 
