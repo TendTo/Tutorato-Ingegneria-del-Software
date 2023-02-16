@@ -151,7 +151,7 @@ function create_slides
             sed -i "s|data-markdown=\"README.md\"|data-markdown=\"./$markdown\"|g" "$html_file"
             sed -i "s|{{TITLE}}|$folder|g" "$html_file"
             if ! grep -q "\`\`\`mermaid" "$root_dir/$dir/$folder/$markdown"; then
-                sed -i "s|mermaid\.min\.js|d" "$html_file"
+                sed -i "/mermaid\.min\.js/d" "$html_file"
             fi
         fi
     done
