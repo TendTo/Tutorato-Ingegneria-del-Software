@@ -13,13 +13,13 @@ Tutorato del corso di [Ingegneria del Software](https://web.dmi.unict.it/corsi/l
 - Studente di informatica
 - Secondo anno di magistrale
 
-![Tend](./img/Blorin.jpg)
+<img src="./img/Blorin.png" width="300px"/></img>
 
 </div>
 
 <!-- New subsection -->
 
-### Contatti
+### Contatti personali
 
 <div class="cols">
 
@@ -33,7 +33,23 @@ Tutorato del corso di [Ingegneria del Software](https://web.dmi.unict.it/corsi/l
 
 <!-- New section -->
 
+## Contatti tutorato
+
+<div class="cols">
+
+- [Tutorato Ingegneria del Software (DMI)](https://t.me/+VgP5Dogke9phOTY0)
+
+<img src="./img/telegram_group.jpg" width="300px"/></img>
+
+</div>
+
+<!-- New section -->
+
 ## Materiale
+
+<div class="cols">
+
+<div>
 
 Tutto il materiale, lezione per lezione, sarà disponibile su [Github](https://github.com/TendTo/Tutorato-Ingegneria-del-Software).
 
@@ -44,6 +60,12 @@ Le slide, in particolare, saranno consultabili [online](https://tendto.github.io
 Se avete suggerimenti o correzioni da fare, aprite una [issue](https://github.com/TendTo/Tutorato-Ingegneria-del-Software/issues).
 
 <!-- .element: class="fragment" data-fragment-index="2" -->
+
+</div>
+
+![Github](./img/github.png)
+
+</div>
 
 <!-- New section -->
 
@@ -59,4 +81,20 @@ Ci si concentrerà particolarmente sulla parte di laboratorio.
 
 ### Argomenti trattati
 
-<div class="cols"></div>
+<div class="cols">
+
+- Design patterns
+  - Creazionali
+  - Strutturali
+  - Comportamentali
+  - Esempi di implementazione
+
+<br>
+
+- UML
+  - MermaidJs
+- Git
+  - Github
+  - CI/CD
+
+</div>
