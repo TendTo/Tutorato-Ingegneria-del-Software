@@ -73,28 +73,35 @@ Se avete suggerimenti o correzioni da fare, aprite una [issue](https://github.co
 
 Sarà data priorità alle vostre richieste.
 
-Ci si concentrerà particolarmente sulla parte di laboratorio.
+Ci si concentrerà particolarmente sulla parte pratica e di laboratorio.
 
 <!-- .element: class="fragment" data-fragment-index="1" -->
 
 <!-- New subsection -->
 
-### Argomenti trattati
+### Possibili argomenti da trattare
 
 <div class="cols">
 
+- Introduzione a Java
+  - Concetti di base
+  - Utility
 - Design patterns
   - Creazionali
   - Strutturali
   - Comportamentali
   - Esempi di implementazione
 
-<br>
+<br/>
 
+- Maven
+- Testing
+  - JUnit
 - UML
   - MermaidJs
 - Git
   - Github
   - CI/CD
+- Progetto di corso
 
 </div>

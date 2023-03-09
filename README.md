@@ -13,22 +13,17 @@ Tutorato del corso di [Ingegneria del Software](https://web.dmi.unict.it/corsi/l
 
 ### Orario
 
-Il tutorato verrà erogato ogni [DAY] alle [HOUR].  
-Per eventuali cambi, verificare il [METODO DI CONTATTO].
-
-<!-- New subsection -->
-
-### Requisiti
-
-- [Java](https://www.java.com/it/)
+Il tutorato verrà erogato [To be determined].
+Per eventuali cambi, verificare il [gruppo telegram](https://t.me/+VgP5Dogke9phOTY0).
 
 <!-- New section -->
 
 ## Lezioni
 
-| Lezione                                                                               | Descrizione                           | Data       |
-| ------------------------------------------------------------------------------------- | ------------------------------------- | ---------- |
-| [0](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/0-Introduzione) | Presentazione e introduzione al corso | 00-00-2023 |
+| Lezione                                                                               | Descrizione                                | Data |
+| ------------------------------------------------------------------------------------- | ------------------------------------------ | ---- |
+| [0](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/0-Introduzione) | Presentazione e introduzione al corso      | /    |
+| [1](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/1-Java)         | Setup di Java e introduzione alla sintassi | /    |
 
 <!-- New section -->
 
@@ -56,5 +51,7 @@ Per eventuali cambi, verificare il [METODO DI CONTATTO].
 ## Contatti
 
 - [Email](mailto:casablancaernesto@gmail.com)
-- [Telegram](https://t.me/TendTo)
+- [Gruppo telegram della materia](https://t.me/+CBrlIVk9UxA4dL45yDiKOg)
+- [Gruppo telegram del tutorato](https://t.me/+VgP5Dogke9phOTY0)
+- [Telegram personale](https://t.me/TendTo)
 - [Github](https://github.com/TendTo)
