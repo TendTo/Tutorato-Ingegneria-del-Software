@@ -3,7 +3,7 @@
 # HEADER
 #================================================================
 #% SYNOPSIS
-#+    ${SCRIPT_NAME} [input folders] [OPTIONS]
+#+    ${SCRIPT_NAME} [OPTIONS]
 #%
 #% DESCRIPTION
 #%    Copy the vendor/index.html file for each folder inside 'lezioni'.
@@ -21,9 +21,9 @@
 #%
 #% EXAMPLES
 #%    ${SCRIPT_NAME}
-#%    ${SCRIPT_NAME} "0 - Introduzione"
+#%    ${SCRIPT_NAME} -c
 #%    ${SCRIPT_NAME} -m "README.md"
-#%    ${SCRIPT_NAME} "0 - Introduzione" "1 - Presentazione del corso" -d ./lezioni -m "FIle.md"
+#%    ${SCRIPT_NAME} -d ./lezioni -m "FIle.md"
 #%
 #================================================================
 #- IMPLEMENTATION
