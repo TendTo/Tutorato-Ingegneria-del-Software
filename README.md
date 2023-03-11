@@ -13,17 +13,21 @@ Tutorato del corso di [Ingegneria del Software](https://web.dmi.unict.it/corsi/l
 
 ### Orario
 
-Il tutorato verrà erogato [To be determined].
+Il tutorato verrà erogato
+
+- **Canale A-L**: Venerdì, dalle 08:00 alle 10:30
+- **Canale M-Z**: Venerdì, dalle 10:30 alle 13:00
+
 Per eventuali cambi, verificare il [gruppo telegram](https://t.me/+VgP5Dogke9phOTY0).
 
 <!-- New section -->
 
 ## Lezioni
 
-| Lezione                                                                                      | Descrizione                                 | Data |
-| -------------------------------------------------------------------------------------------- | ------------------------------------------- | ---- |
-| [0](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/0-Introduzione)        | Presentazione e introduzione al corso       | /    |
-| [1](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/1-Java)                | Setup di Java e introduzione alla sintassi  | /    |
+| Lezione                                                                                          | Descrizione                                 | Data |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------- | ---- |
+| [0](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/0-Introduzione)            | Presentazione e introduzione al corso       | /    |
+| [1](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/1-Java)                    | Setup di Java e introduzione alla sintassi  | /    |
 | [2](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/2-Programmare%20in%20Java) | Conoscere e gestire le peculiarità di Java. | /    |
 
 <!-- New section -->
