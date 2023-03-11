@@ -49,8 +49,13 @@
             const parent = item.parentElement;
             parent.classList.add("mermaid");
             parent.innerHTML = item.innerText;
-            if (!parent.classList.contains("fragment"))
-              mermaid.init(undefined, parent);
+          });
+        });
+        Reveal.addEventListener("slidetransitionend", (event) => {
+          const graphs = event.currentSlide.getElementsByClassName("mermaid");
+          graphs.forEach((item, index) => {
+            if (!item.classList.contains("fragment"))
+              mermaid.init(undefined, item);
           });
         });
         Reveal.addEventListener("fragmentshown", (event) => {
