@@ -20,10 +20,11 @@ Per eventuali cambi, verificare il [gruppo telegram](https://t.me/+VgP5Dogke9phO
 
 ## Lezioni
 
-| Lezione                                                                               | Descrizione                                | Data |
-| ------------------------------------------------------------------------------------- | ------------------------------------------ | ---- |
-| [0](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/0-Introduzione) | Presentazione e introduzione al corso      | /    |
-| [1](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/1-Java)         | Setup di Java e introduzione alla sintassi | /    |
+| Lezione                                                                                      | Descrizione                                 | Data |
+| -------------------------------------------------------------------------------------------- | ------------------------------------------- | ---- |
+| [0](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/0-Introduzione)        | Presentazione e introduzione al corso       | /    |
+| [1](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/1-Java)                | Setup di Java e introduzione alla sintassi  | /    |
+| [2](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/2-Programmare%20in%20Java) | Conoscere e gestire le peculiarità di Java. | /    |
 
 <!-- New section -->
 
