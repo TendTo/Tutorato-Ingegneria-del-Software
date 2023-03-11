@@ -55,11 +55,11 @@ Tutto il materiale, lezione per lezione, sarà disponibile su [Github](https://g
 
 Le slide, in particolare, saranno consultabili [online](https://tendto.github.io/Tutorato-Ingegneria-del-Software), sotto forma di slideshow.
 
-<!-- .element: class="fragment" data-fragment-index="1" -->
+<!-- .element: class="fragment" -->
 
 Se avete suggerimenti o correzioni da fare, aprite una [issue](https://github.com/TendTo/Tutorato-Ingegneria-del-Software/issues).
 
-<!-- .element: class="fragment" data-fragment-index="2" -->
+<!-- .element: class="fragment" -->
 
 </div>
 
