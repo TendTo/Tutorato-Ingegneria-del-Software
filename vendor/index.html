@@ -41,17 +41,25 @@
         mermaid.initialize({
           startOnLoad: false,
           theme: "dark",
-          logLevel: 3,
+          flowchart: { htmlLabels: false },
         });
         Reveal.addEventListener("ready", (event) => {
           const graphs = document.getElementsByClassName("mermaid");
           graphs.forEach((item, index) => {
-            const mermaidDiv = document.createElement("div");
-            mermaidDiv.innerHTML = item.innerText;
-            mermaidDiv.classList.add("mermaid");
-            item.replaceWith(mermaidDiv);
+            const parent = item.parentElement;
+            parent.classList.add("mermaid");
+            parent.innerHTML = item.innerText;
+            if (!parent.classList.contains("fragment"))
+              mermaid.init(undefined, parent);
           });
-          mermaid.init(document, ".mermaid");
+        });
+        Reveal.addEventListener("fragmentshown", (event) => {
+          if (
+            event.fragment.classList.contains("mermaid") &&
+            event.fragment.classList.contains("visible")
+          ) {
+            mermaid.init(undefined, event.fragment);
+          }
         });
       }
 
