@@ -144,13 +144,13 @@ function create_slides
 {
     for folder in "$dir"/*; do
         if [[ -d "$folder" ]]; then
-            folder="$(basename $folder)"
-            html_file="$root_dir/$dir/$folder/index.html"
+            folder=$(basename "$folder")
+            html_file="$root_dir/$dir/${folder}/index.html"
             cp "$root_dir/vendor/index.html" "$html_file"
             sed -i "s|\"\./|\"../../vendor/|g" "$html_file"
             sed -i "s|data-markdown=\"README.md\"|data-markdown=\"./$markdown\"|g" "$html_file"
-            sed -i "s|{{TITLE}}|$folder|g" "$html_file"
-            if ! grep -q "\`\`\`mermaid" "$root_dir/$dir/$folder/$markdown"; then
+            sed -i "s|{{TITLE}}|${folder}|g" "$html_file"
+            if ! grep -q "\`\`\`mermaid" "$root_dir/$dir/${folder}/$markdown"; then
                 sed -i "/mermaid\.min\.js/d" "$html_file"
             fi
         fi
