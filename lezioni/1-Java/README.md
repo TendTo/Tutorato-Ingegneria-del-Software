@@ -34,7 +34,7 @@ Il codice scritto in Java può essere eseguito su qualsiasi sistema, al costo di
 
 ### Windows
 
-- Scaricare l'installer (msi) da [qui](https://learn.microsoft.com/en-us/java/openjdk/download#openjdk-11018-lts)
+- Scaricare l'installer (msi) da [qui](https://learn.microsoft.com/en-us/java/openjdk/download#openjdk-17)
 - Lanciare l'installer
 
 <!-- New subsection -->
@@ -44,16 +44,16 @@ Il codice scritto in Java può essere eseguito su qualsiasi sistema, al costo di
 #### Homebrew
 
 - Assicurarsi di avere installato [Homebrew](https://brew.sh/)
-- Lanciare il comando `brew install openjdk@11`
+- Lanciare il comando `brew install openjdk@17`
 - [Ulteriori dettagli](https://formulae.brew.sh/formula/openjdk)
 
 <!-- New subsection -->
 
 #### Manualmente
 
-- Scaricare l'installer (tar.gz) per la versione 11.0.2 da [qui](https://jdk.java.net/archive/)
+- Scaricare l'installer (tar.gz) per la versione 17.0.2 da [qui](https://jdk.java.net/archive/)
 - Decomprimere il file ` tar -xf <nome_fiel>.tar.gz -C <destinazione>`
-- Esportate le variabili d'ambiente `export JAVA_HOME=<destinazione>/jdk-11.0.2.jdk/Contents/Home` e `export PATH=\$JAVA_HOME/bin:\$PATH`
+- Esportate le variabili d'ambiente `export JAVA_HOME=<destinazione>/jdk-17.0.2.jdk/Contents/Home` e `export PATH=\$JAVA_HOME/bin:\$PATH`
 
 <!-- New subsection -->
 
@@ -64,19 +64,19 @@ Utilizzate il gestore dei pacchetti del vostro sistema operativo.
 #### Ubuntu
 
 ```shell
-sudo apt install openjdk-11-jdk
+sudo apt install openjdk-17-jdk
 ```
 
 #### Arch
 
 ```shell
-sudo pacman -S jdk11-openjdk
+sudo pacman -S jdk17-openjdk
 ```
 
 #### Fedora
 
 ```shell
-sudo dnf install java-11-openjdk
+sudo dnf install java-17-openjdk
 ```
 
 <!-- New section -->
@@ -134,16 +134,16 @@ Per cambiare la versione di Java in maniera permanente, bisogna aggiungere una r
 
 ```shell
 # ~/.bash_profile
-export JAVA_HOME=`/usr/libexec/java_home -v 11`
+export JAVA_HOME=`/usr/libexec/java_home -v 17`
 
 # ~/.bashrc
-export JAVA_HOME=`/usr/libexec/java_home -v 11`
+export JAVA_HOME=`/usr/libexec/java_home -v 17`
 
 # ~/.zshrc
-export JAVA_HOME=$(/usr/libexec/java_home -v 11)
+export JAVA_HOME=$(/usr/libexec/java_home -v 17)
 
 # ~/.fishrc
-set -x JAVA_HOME (/usr/libexec/java_home -d64 -v 11)
+set -x JAVA_HOME (/usr/libexec/java_home -d64 -v 17)
 ```
 
 [Ulteriori dettagli](https://stackoverflow.com/a/24657630/15153171)
@@ -165,7 +165,7 @@ sudo update-alternatives --config javac # mostra le versioni di javac installate
 
 ```shell
 sudo archlinux-java status # mostra le versioni di Java installate
-sudo archlinux-java set java-11-openjdk # cambia la versione di Java a quella indicata
+sudo archlinux-java set java-17-openjdk # cambia la versione di Java a quella indicata
 ```
 
 <!-- New section -->
