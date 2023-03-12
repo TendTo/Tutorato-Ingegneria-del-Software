@@ -4,6 +4,16 @@ Conoscere e gestire le peculiarità di Java.
 
 <!-- New section -->
 
+## Obiettivi
+
+- Valore vs Riferimento
+- Progetti con più file
+- Polimorfismo
+- Eccezioni
+- Generics
+
+<!-- New section -->
+
 ## Passaggio di parametri
 
 Nella maggior parte dei casi, chiamare un metodo di una classe prevede anche il passaggio di un certo numero di parametri.
@@ -353,7 +363,7 @@ In Java, le eccezioni sono oggetti che vengono lanciati quando si verifica un er
 ```java
 try {
     // ...
-} catch (Exception e) {
+} catch (IOException | SQLException ex) {
     // ...
 } finally {
     // ...
@@ -423,4 +433,66 @@ Le risorse vengono automaticamente chiusa alla fine del blocco `try`, anche in c
 
 <!-- .element: class="fragment" -->
 
+<!-- New subsection -->
+
+### Eccezioni: best practice
+
+- **Be specific**: catturare eccezioni che sappiamo come gestire
+- **Fail-fast**: notificare l'errore il prima possibile
+- **Catch-late**: rimandare la gestione dell'errore al livello superiore
+- **Logging**: registrare gli errori in un file di log
+- **Custom exceptions**: creare eccezioni personalizzate per i casi d'uso specifici
+- **Use judiciously**: evitare di usare eccezioni per il controllo del flusso
+
+[Ulteriori dettagli](https://www.digitalocean.com/community/tutorials/exception-handling-in-java)
+
 <!-- New section -->
+
+## Generics
+
+I generics sono un meccanismo che permette di creare classi e metodi parametrici, in grado di operare su tipi diversi.
+
+<!-- New subsection -->
+
+### Creare una classe generica
+
+```java
+public class Pair<K, V> {
+    private K key;
+    private V value;
+    public Pair(K key, V value) {
+        this.key = key;
+        this.value = value;
+    }
+    public K getKey() {
+        return key;
+    }
+    public V getValue() {
+        return value;
+    }
+}
+```
+
+All'interno della definizione della classe, è possibile specificare uno o più tipi generici fra le parentesi angolate.
+
+<!-- New subsection -->
+
+### Utilizzare una classe generica
+
+```java
+public static void main(String[] args) {
+    Pair<String, Integer> pair = new Pair<>("Hello", 42);
+    System.out.println(pair.getKey());
+    System.out.println(pair.getValue());
+}
+```
+
+Nel momento in cui si crea un oggetto di una classe generica, è necessario specificare i tipi con cui si vuole utilizzare la classe.
+
+<!-- New section -->
+
+## Challenge
+
+- Creare un wrapper per la lettura e scrittura di file
+- Creare una struttura dati simile a Pair che permetta di memorizzare più di due elementi
+- Creare un simulatore di gioco di ruolo molto semplice da riga di comando
