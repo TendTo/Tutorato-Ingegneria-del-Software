@@ -11,6 +11,7 @@ Conoscere e gestire le peculiarità di Java.
 - Polimorfismo
 - Eccezioni
 - Generics
+- Record
 
 <!-- New section -->
 
@@ -487,6 +488,128 @@ public static void main(String[] args) {
 ```
 
 Nel momento in cui si crea un oggetto di una classe generica, è necessario specificare i tipi con cui si vuole utilizzare la classe.
+
+<!-- New section -->
+
+## Record
+
+I record sono un tipo particolare di classe che permette di creare oggetti immutabili con pochissimo boilerplate.
+
+<!-- New subsection -->
+
+### Creare un record
+
+```java
+public record Item(int price, String name) {}
+```
+
+Questa sintassi equivale a.
+
+```java
+public class Item(int price, String name) {
+    public Item(int price, String name) {
+        this.price = price;
+        this.name = name;
+    }
+    public int getPrice() {
+        return price;
+    }
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Item item = (Item) o;
+        return price == item.price && Objects.equals(name, item.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(price, name);
+    }
+
+    @Override
+    public String toString() {
+        return "Item[" +
+                "price=" + price +
+                ", name='" + name + '\'' +
+                ']';
+    }
+}
+```
+
+<!-- New section -->
+
+## Switch
+
+Il costrutto `switch` è un'alternativa all'`if-else` per la gestione di casi multipli.
+
+<!-- New subsection -->
+
+### Sintassi classica
+
+```java
+switch (value) {
+    case 1:
+        // ...
+        break;
+    case 2:
+        // ...
+        break;
+    default:
+        // ...
+}
+```
+
+Il costrutto `switch` prende in input un'espressione e confronta il suo valore con i valori specificati nei `case`.
+
+Nel caso in cui il valore dell'espressione corrisponda a uno dei valori specificati, viene eseguito il codice contenuto nel `case`, proseguendo nelle sezioni sottostanti fino a che non si incontra un `break`.
+
+<!-- .element: class="fragment" -->
+
+<!-- New subsection -->
+
+### Sintassi compatta
+
+```java
+switch (value) {
+    case 1, 2, 3 -> System.out.println("Small");
+    case 4, 5, 6 -> System.out.println("Medium");
+    case 7, 8, 9 -> System.out.println("Large");
+    default -> System.out.println("Unknown");
+}
+```
+
+Nelle nuove versioni di Java è possibile utilizzare la sintassi più compatta, che evita la necessità di utilizzare il `break`.
+
+Inoltre, lo switch restituisce il valore dell'espressione contenuta nel `case` corrispondente, permettendo ad esempio di memorizzare il risultato in una variabile.
+
+<!-- .element: class="fragment" -->
+
+<!-- New subsection -->
+
+### Sintassi con yield
+
+```java
+int result = switch (value) {
+    case 1, 2, 3 -> {};
+    case 4, 5, 6 -> 2;
+    case 7, 8, 9 -> 3;
+    default -> {
+        System.out.println("Unexpected value");
+        yield 0;
+    };
+};
+```
+
+Se si ha la necessità di eseguire più istruzioni all'interno di un `case`, è possibile utilizzare la sintassi con `yield`.
+
+La keyword `yeld`, usata negli switch classici, permette di uscire subito fuori dallo switch senza necessità del `break`.
+
+<!-- .element: class="fragment" -->
 
 <!-- New section -->
 
