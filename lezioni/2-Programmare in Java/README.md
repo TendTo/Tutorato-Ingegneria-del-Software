@@ -329,14 +329,13 @@ Questo perché, sebbene i tipi siano diversi, tutti derivano dalla stessa classe
 
 ```java
 for (Entity entity : entities) {
-    if (entity instanceof Interactable) {
-        ((Interactable) entity).interact();
+    if (entity instanceof Interactable interactable) {
+        interactable.interact();
     }
-    if (entity instanceof Damageable) {
-        hero.attack((Damageable) entity);
+    if (entity instanceof Damageable damageable) {
+        hero.attack(damageable);
     }
-    if (entity instanceof Enemy) {
-        Enemy enemy = (Enemy) entity;
+    if (entity instanceof Enemy enemy) {
         if (enemy.isAlive())
             enemy.attack(hero);
     }
