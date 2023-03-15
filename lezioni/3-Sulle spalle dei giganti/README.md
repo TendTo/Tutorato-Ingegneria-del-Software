@@ -24,9 +24,41 @@ import java.util.*; // importa tutte le classi del package java.util
 
 <!-- .element: class="fragment" data-fragment-index="2" -->
 
+<!-- New section -->
+
+## Libreria standard
+
+Java offre una libreria standard molto ricca, che include classi per la gestione di file, stringhe, numeri, strutture dati e molto altro.
+
+Sarebbe impossibile mostrare tutte le classi disponibili, ma è possibile trovare una lista completa [qui](https://docs.oracle.com/javase/17/docs/api/).
+
+<!-- .element: class="fragment" -->
+
 <!-- New subsection -->
 
-### Librerie esterne
+### Esempi notevoli
+
+- `java.util.ArrayList`: classe per la gestione di array dinamici
+- `java.util.Scanner`: classe per la lettura di input da tastiera
+- `java.util.HashMap`: classe per la gestione di mappe chiave-valore
+- `java.util.Random`: classe per la generazione di numeri casuali
+- `java.util.Date`: classe per la gestione di date e orari
+- `java.io.FileReader`: classe per la lettura di file di testo
+- `java.io.BufferedReader`: classe per la lettura di stream di testo bufferizzati
+
+<!-- New subsection -->
+
+### Google è vostro amico
+
+È impossibile conoscere a memoria tutte le utility offerte dalla libreria standard.
+
+Piuttosto di fare lo sforzo inutile di ricordare centinaia di classi, memorizzate quelle che vi capiterà di usare più frequentemente e affidatevi a Google per il resto.
+
+<!-- .element: class="fragment" -->
+
+<!-- New section -->
+
+## Librerie esterne
 
 La maggior parte delle librerie esterne può essere trovata su [Maven repository](https://mvnrepository.com/).
 
