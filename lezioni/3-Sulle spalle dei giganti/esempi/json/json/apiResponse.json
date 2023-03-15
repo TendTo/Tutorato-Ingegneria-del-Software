@@ -1,0 +1,43 @@
+{
+    "users": [
+        {
+            "name": "John",
+            "age": 30
+        },
+        {
+            "name": "Mary",
+            "age": 28
+        },
+        {
+            "name": "Peter",
+            "age": 45
+        }
+    ],
+    "messages": [
+        {
+            "from": "John",
+            "to": "Mary",
+            "message": "Hi, how are you?"
+        },
+        {
+            "from": "Mary",
+            "to": "John",
+            "message": "I'm fine, thanks!"
+        },
+        {
+            "from": "John",
+            "to": "Mary",
+            "message": "What about you?"
+        },
+        {
+            "from": "Mary",
+            "to": "John",
+            "message": "I'm fine too, thanks for asking!"
+        },
+        {
+            "from": "John",
+            "to": "Mary",
+            "message": "You're welcome!"
+        }
+    ]
+}
