@@ -414,7 +414,7 @@ Il primo programma di ogni buon informatico.
 
 ### Codice
 
-```java[1|3,7|4-6|4|5]
+```java[|1|3,7|4-6|4|5|]
 // HelloWorld.java
 
 class HelloWorld {
@@ -447,7 +447,7 @@ public static void main(String[] args)
 
 ### Codice
 
-```java[1|21|22-26|28,29|30|4|5-18|32]
+```java[|1|21|22-26|28,29|30|4|5-18|32|]
 // Calculator.java
 
 class Calculator {
@@ -505,7 +505,7 @@ In questo caso utilizzeremo la classe `Scanner`.
 
 ### Codice
 
-```java[4|1,2|48|49,50|52|7-23|53|25-38|57|58|40-45|60-64]
+```java[|4|1,2|48|49,50|52|7-23|53|25-38|57|58|40-45|60-64|]
 import java.util.Random;
 import java.util.Scanner;
 
@@ -597,7 +597,7 @@ Per leggere e scrivere su file si utilizzerà la classe `FileReader` e `FileWrit
 
 ### Codice
 
-```java[8|1-6|42-45|49|11-27|50|29-39]
+```java[|8|1-6|42-45|49|11-27|50|29-39|]
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
