@@ -652,6 +652,15 @@ public class WordCounter {
 }
 ```
 
+<!-- New subsection -->
+
+### Compilazione ed esecuzione
+
+```shell
+javac WordCount.java
+java WordCount.java input.txt output.txt
+```
+
 <!-- New section -->
 
 ## Challenge
