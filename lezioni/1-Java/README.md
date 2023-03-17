@@ -81,28 +81,6 @@ sudo dnf install java-17-openjdk
 
 <!-- New section -->
 
-## Comandi utili per Java
-
-- `java -version`
-  - mostra la versione di Java installata
-- `java -jar <nome_file>.jar`
-  - esegue un file jar
-- `javac <nome_file>.java`
-  - compila un file java in bytecode (_.class_)
-- `java <nome_file>`
-  - esegue un file java
-
-<!-- New subsection -->
-
-- `javap <nome_file>.class`
-  - decompila un file file bytecode restituendo il codice sorgente, se possibile
-- `jar cf <nome_output_file>.jar <files>.class`
-  - crea un file jar archivio contenente i file _class_
-- `jar cfe <nome_output_file>.jar <main_class> <files>.class`
-  - crea un file jar eseguibile contenente i file _class_
-
-<!-- New subsection -->
-
 ### Cambiare versione di Java
 
 Se si hanno installate più versioni di Java, è possibile cambiare la versione predefinita.
@@ -148,7 +126,7 @@ set -x JAVA_HOME (/usr/libexec/java_home -d64 -v 17)
 
 [Ulteriori dettagli](https://stackoverflow.com/a/24657630/15153171)
 
-<!-- New section -->
+<!-- New subsection -->
 
 #### Linux
 
@@ -167,6 +145,28 @@ sudo update-alternatives --config javac # mostra le versioni di javac installate
 sudo archlinux-java status # mostra le versioni di Java installate
 sudo archlinux-java set java-17-openjdk # cambia la versione di Java a quella indicata
 ```
+
+<!-- New section -->
+
+## Comandi utili per Java
+
+- `java -version`
+  - mostra la versione di Java installata
+- `java -jar <nome_file>.jar`
+  - esegue un file jar
+- `javac <nome_file>.java`
+  - compila un file java in bytecode (_.class_)
+- `java <nome_file>`
+  - esegue un file java
+
+<!-- New subsection -->
+
+- `javap <nome_file>.class`
+  - decompila un file file bytecode restituendo il codice sorgente, se possibile
+- `jar cf <nome_output_file>.jar <files>.class`
+  - crea un file jar archivio contenente i file _class_
+- `jar cfe <nome_output_file>.jar <main_class> <files>.class`
+  - crea un file jar eseguibile contenente i file _class_
 
 <!-- New section -->
 
