@@ -24,12 +24,12 @@ Per eventuali cambi, verificare il [gruppo telegram](https://t.me/+VgP5Dogke9phO
 
 ## Lezioni
 
-| Lezione                                                                                                 | Descrizione                                 | Data |
-| ------------------------------------------------------------------------------------------------------- | ------------------------------------------- | ---- |
-| [0](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/0-Introduzione)                   | Presentazione e introduzione al corso       | /    |
-| [1](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/1-Java)                           | Setup di Java e introduzione alla sintassi  | /    |
-| [2](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/2-Programmare%20in%20Java)        | Conoscere e gestire le peculiarità di Java. | /    |
-| [3](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/3-Sulle%20spalle%20dei%20giganti) | Includere ed utilizzare librerie.           | /    |
+| Lezione                                                                                                 | Descrizione                                 | Data A-L   | Data M-Z   |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------------------- | ---------- | ---------- |
+| [0](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/0-Introduzione)                   | Presentazione e introduzione al corso       | 17/03/2023 | 17/03/2023 |
+| [1](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/1-Java)                           | Setup di Java e introduzione alla sintassi  | 17/03/2023 | 17/03/2023 |
+| [2](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/2-Programmare%20in%20Java)        | Conoscere e gestire le peculiarità di Java. |            |            |
+| [3](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/3-Sulle%20spalle%20dei%20giganti) | Includere ed utilizzare librerie.           |            |            |
 
 <!-- New section -->
 
