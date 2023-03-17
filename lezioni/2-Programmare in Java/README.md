@@ -6,12 +6,58 @@ Conoscere e gestire le peculiarità di Java.
 
 ## Obiettivi
 
+- Casting
 - Valore vs Riferimento
+- Confronto fra oggetti
 - Progetti con più file
 - Polimorfismo
 - Eccezioni
 - Generics
 - Record
+
+<!-- New section -->
+
+## Casting
+
+```java
+public static void main(String[] args) {
+    int x = 10;
+    double y = 5.5;
+    x = (int) y;
+}
+```
+
+Java è un linguaggio staticamente tipizzato.  
+Generalmente non è permesso convertire automaticamente un oggetto di tipo in un altro.
+
+Il casting deve essere esplicito, ed è responsabilità del programmatore.
+
+<!-- .element: class="fragment" -->
+
+<!-- New subsection -->
+
+### Casting fra oggetti
+
+```java[|1,2|5|6,7|8-11|]
+class Shape{}
+class Circle extends Shape{}
+
+public static void main(String[] args) {
+    Circle c = new Circle();
+    // Il cerchio è una sottclasse di Shape
+    Shape s = c;
+    // Controllo sul tipo di s
+    if (s instanceof Circle){
+        Circle c2 = (Circle) s;
+    }
+}
+```
+
+Prima di fare un casting, è buona norma assicurarsi che l'oggetto sia del tipo atteso.
+
+Il casting implicito è consentito da una classe derivata alla superclasse, mentre viceversa l'operazione deve essere forzata esplicitamente.
+
+<!-- .element: class="fragment" -->
 
 <!-- New section -->
 
@@ -181,6 +227,49 @@ value --> value5
 <!-- .element: class="fragment" -->
 
 </div>
+
+<!-- New section -->
+
+## Confronto fra oggetti
+
+```java
+public class Circle{
+    public int radius;
+    public Circle(int radius){
+        this.radius = radius;
+    }
+}
+```
+
+In Java, tutto ciò che non è un tipo primitivo è gestito tramite puntatori.
+
+Fare un confronto fra due oggetti con `obj1 == obj2` significa confrontare i puntatori.
+
+<!-- .element: class="fragment" -->
+
+<!-- New subsection -->
+
+### Metodo `equals()`
+
+```java[|3,4|5|6|7|8,9|]
+class Circle{
+    // ...
+    @Override
+    public boolean equals(Object obj){
+        if (obj == null) return false;
+        if (obj == this) return true;
+        if (!(obj instanceof Circle)) return false;
+        Circle other = (Circle) obj;
+        return this.radius == other.radius;
+    }
+}
+```
+
+Per fare un confronto logico fra due oggetti, è necessario sovrascrivere il metodo `equals()`.
+
+La logica può essere complessa a piacimento, ma generalmente si controllano i tipi dell'oggetto e i valori dei campi della classe.
+
+<!-- .element: class="fragment" -->
 
 <!-- New section -->
 
@@ -503,7 +592,7 @@ I record sono un tipo particolare di classe che permette di creare oggetti immut
 public record Item(int price, String name) {}
 ```
 
-Questa sintassi equivale a.
+Questa sintassi equivale a:
 
 ```java
 public class Item(int price, String name) {
@@ -615,6 +704,9 @@ La keyword `yeld`, usata negli switch classici, permette di uscire subito fuori 
 
 ## Challenge
 
+- Creare una coda utilizzando i generics
+- Utilizzare la classe ArrayList per implementare lo stack o la coda e che utilizzi le eccezioni per gestire i casi limite
+- Creare una coda di priorità generica che si specializza in max-heap o min-heap in base alla sottoclasse
 - Creare un wrapper per la lettura e scrittura di file
 - Creare una struttura dati simile a Pair che permetta di memorizzare più di due elementi
 - Creare un simulatore di gioco di ruolo molto semplice da riga di comando
