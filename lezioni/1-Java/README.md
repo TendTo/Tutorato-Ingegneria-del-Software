@@ -21,10 +21,12 @@ Installazione e primi passi in Java.
 Java è un linguaggio di programmazione sviluppato da Sun Microsystems nel 1995.  
 Si tratta un linguaggio ad alto livello orientato agli oggetti e fortemente tipizzato.
 
+<!-- New subsection -->
+
+### Compile once, run everywhere
+
 Dopo averlo compilato i programmi in bytecode, questo viene eseguito su una macchina virtuale (JVM), disponibile per tutti i sistemi operativi.  
 Il codice scritto in Java può essere eseguito su qualsiasi sistema, al costo di una penalità di prestazioni.
-
-<!-- .element: class="fragment" -->
 
 <!-- New section -->
 
