@@ -550,7 +550,6 @@ public class InverseCalculator {
     private static int readAnswer() {
         Scanner scanner = new Scanner(System.in);
         int answer = scanner.nextInt();
-        scanner.close();
         return answer;
     }
 

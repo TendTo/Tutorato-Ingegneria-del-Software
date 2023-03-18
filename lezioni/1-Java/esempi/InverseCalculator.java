@@ -37,10 +37,10 @@ public class InverseCalculator {
         }
     }
 
+    @SuppressWarnings("resource")
     private static int readAnswer() {
         Scanner scanner = new Scanner(System.in);
         int answer = scanner.nextInt();
-        scanner.close();
         return answer;
     }
 
