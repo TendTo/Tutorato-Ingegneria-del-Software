@@ -442,8 +442,32 @@ java HelloWorld
 Quando si lancia un programma da linea di comando, è possibile passare dei parametri che saranno poi accessibili al programma stesso sotto forma di un array di stringhe.
 
 ```java
-public static void main(String[] args)
+public static void main(String[] args) {
+    // ...
+}
 ```
+
+<!-- New subsection -->
+
+### Invocare il programma
+
+Quando viene lanciato il programma, gli argomenti che seguono il nome del programma vengono passati al metodo main nel parametro `args`.
+
+<code class="shell">
+<span class="hljs-keyword">java</span>
+<span class="hljs-title">Calculator</span>
+<span class="hljs-string">1</span>
+<span class="hljs-string">+</span>
+<span class="hljs-string">2</span>
+</code>
+
+<br/>
+
+- <code class="shell"><span class="hljs-keyword">java</span></code>: invoca la JVM
+- <code class="shell"><span class="hljs-title">Calculator</span></code>: nome della classe che contiene il metodo main
+- <code class="shell"><span class="hljs-string">1</span></code>: primo parametro (args[0])
+- <code class="shell"><span class="hljs-string">+</span></code>: secondo parametro (args[1])
+- <code class="shell"><span class="hljs-string">2</span></code>: terzo parametro (args[2])
 
 <!-- New subsection -->
 
@@ -547,6 +571,7 @@ public class InverseCalculator {
         }
     }
 
+    @SuppressWarnings("resource")
     private static int readAnswer() {
         Scanner scanner = new Scanner(System.in);
         int answer = scanner.nextInt();
