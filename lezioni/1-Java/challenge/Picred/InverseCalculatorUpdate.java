@@ -2,7 +2,7 @@ import java.util.Random;
 
 // InverseCalculator.java update
 
-public class InverseCalculator {
+public class InverseCalculatorUpdate {
     private static int result;
 
 
