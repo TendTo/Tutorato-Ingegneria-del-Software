@@ -146,7 +146,7 @@ Il file JAR viene creato con il comando
 ```shell
 jar cfm <nome-file>.jar <percorso-file-manifest> -C <percorso-cartella-classes> .
 # Esempio
-jar -cfm out/JsonReader.jar src/main/resources/META-INF/MANIFEST.MF -C out .
+jar cfm out/JsonReader.jar src/main/resources/META-INF/MANIFEST.MF -C out .
 ```
 
 <!-- .element: class="fragment" data-fragment-index="2" -->

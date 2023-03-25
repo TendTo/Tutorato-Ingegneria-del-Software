@@ -386,6 +386,11 @@ javac Main.java
 jar cvfe Main.jar Main Main.class entity/*.class
 ```
 
+- `c`: crea un nuovo archivio
+- `v`: sii verboso nell'output
+- `f`: specifica il nome del file JAR prodotto
+- `e`: specifica la classe entrypoint
+
 <!-- .element: class="fragment" -->
 
 <!-- New section -->
@@ -419,11 +424,12 @@ Questo perché, sebbene i tipi siano diversi, tutti derivano dalla stessa classe
 
 ```java
 for (Entity entity : entities) {
-    if (entity instanceof Interactable interactable) {
+    if (entity instanceof Interactable) {
+        Interactable interactable = (Interactable) entity;
         interactable.interact();
     }
-    if (entity instanceof Damageable damageable) {
-        hero.attack(damageable);
+    if (entity instanceof Damageable) {
+        hero.attack((Damageable) entity);
     }
     if (entity instanceof Enemy enemy) {
         if (enemy.isAlive())
@@ -539,7 +545,7 @@ Le risorse vengono automaticamente chiusa alla fine del blocco `try`, anche in c
 
 ## Generics
 
-I generics sono un meccanismo che permette di creare classi e metodi parametrici, in grado di operare su tipi diversi.
+I generics sono un meccanismo che permette di creare classi e metodi parametrici, in grado di operare su qualsiasi tipo non primitivo.
 
 <!-- New subsection -->
 
@@ -577,6 +583,30 @@ public static void main(String[] args) {
 ```
 
 Nel momento in cui si crea un oggetto di una classe generica, è necessario specificare i tipi con cui si vuole utilizzare la classe.
+
+Solo i tipi non primitivi possono essere usati come tipi generici.
+
+<!-- .element: class="fragment" -->
+
+<!-- New subsection -->
+
+### Limitare i tipi generici
+
+```java
+public class Pair<K extends Comparable<K>, V> {
+    // ...
+}
+
+public class Box<K super Serializable & Iterable> {
+    // ...
+}
+```
+
+È possibile specificare un limite superiore o inferiore per i tipi generici in termini di ereditarietà.
+
+Nel caso di Pair, il tipo `K` deve implementare l'interfaccia `Comparable`.
+
+<!-- .element: class="fragment" -->
 
 <!-- New section -->
 
