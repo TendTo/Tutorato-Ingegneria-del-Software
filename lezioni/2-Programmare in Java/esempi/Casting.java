@@ -13,7 +13,7 @@ class Casting {
     public static void main(String[] args) {
         Circle c = new Circle(1);
 
-        // Il cerchio è una sottclasse di Shape
+        // Il cerchio è una sotto-classe di Shape
         Shape s = c;
 
         System.out.println("c: " + c.getClass());
