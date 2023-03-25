@@ -22,11 +22,12 @@ public class Main {
         // Loop over all the entities the heroes meets and interact with them
         // accordingly
         for (Entity entity : entities) {
-            if (entity instanceof Interactable interactable) {
+            if (entity instanceof Interactable) {
+                Interactable interactable = (Interactable) entity;
                 interactable.interact();
             }
-            if (entity instanceof Damageable damageable) {
-                hero.attack(damageable);
+            if (entity instanceof Damageable) {
+                hero.attack((Damageable) entity);
             }
             if (entity instanceof Enemy enemy) {
                 if (enemy.isAlive())
