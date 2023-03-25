@@ -150,6 +150,45 @@ sudo archlinux-java set java-17-openjdk # cambia la versione di Java a quella in
 
 <!-- New section -->
 
+## Java Locale
+
+Quando viene installata, la JVM seleziona un locale predefinito.  
+Per visualizzare il locale corrente, utilizzare il comando:
+
+```shell
+java -XshowSettings:locale -version
+```
+
+<div>
+
+Per cambiare il locale da riga di comando:
+
+```shell
+java -Duser.language=<language> -Duser.region=<region> <nome_file>.java
+```
+
+</div>
+
+<!-- .element: class="fragment" -->
+
+<div>
+
+o direttamente nel codice:
+
+```java
+Locale.setDefault(Locale.ITALY);
+```
+
+</div>
+
+<!-- .element: class="fragment" -->
+
+[Ulteriori dettagli](https://mkyong.com/java/how-to-change-the-jvm-default-locale/)
+
+<!-- .element: class="fragment" -->
+
+<!-- New section -->
+
 ## Comandi utili per Java
 
 - `java -version`
