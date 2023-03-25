@@ -131,12 +131,8 @@ function parse_args
 
 function clean
 {
-    for folder in "$dir"/*; do
-        if [[ -d "$folder" ]]; then
-            folder="$(basename $folder)"
-            rm -f "$root_dir/$dir/$folder/index.html"
-        fi
-    done
+    find "$dir" -name "*.html" -type f -delete
+    find "$dir" -name "*.class" -type f -delete
     rm -f "$root_dir/index.html"
 }
 
