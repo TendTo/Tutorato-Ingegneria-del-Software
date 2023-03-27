@@ -47,10 +47,6 @@ Tutorato del corso di [Ingegneria del Software](https://web.dmi.unict.it/corsi/l
 
 ## Materiale
 
-<div class="cols">
-
-<div>
-
 Tutto il materiale, lezione per lezione, sarà disponibile su [Github](https://github.com/TendTo/Tutorato-Ingegneria-del-Software).
 
 Le slide, in particolare, saranno consultabili [online](https://tendto.github.io/Tutorato-Ingegneria-del-Software), sotto forma di slideshow.

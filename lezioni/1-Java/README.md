@@ -159,33 +159,29 @@ Per visualizzare il locale corrente, utilizzare il comando:
 java -XshowSettings:locale -version
 ```
 
-<div>
-
 Per cambiare il locale da riga di comando:
+
+<!-- .element: class="fragment" data-fragment-index="1" -->
 
 ```shell
 java -Duser.language=<language> -Duser.region=<region> <nome_file>.java
 ```
 
-</div>
-
-<!-- .element: class="fragment" -->
-
-<div>
+<!-- .element: class="fragment" data-fragment-index="1" -->
 
 o direttamente nel codice:
+
+<!-- .element: class="fragment" data-fragment-index="2" -->
 
 ```java
 Locale.setDefault(Locale.ITALY);
 ```
 
-</div>
-
-<!-- .element: class="fragment" -->
+<!-- .element: class="fragment" data-fragment-index="2" -->
 
 [Ulteriori dettagli](https://mkyong.com/java/how-to-change-the-jvm-default-locale/)
 
-<!-- .element: class="fragment" -->
+<!-- .element: class="fragment" data-fragment-index="3" -->
 
 <!-- New section -->
 
