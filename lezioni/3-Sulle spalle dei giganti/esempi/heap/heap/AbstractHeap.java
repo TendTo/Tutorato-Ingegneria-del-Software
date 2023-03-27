@@ -1,15 +1,38 @@
 package heap;
 
+/**
+ * Implementazione di un heap generico.
+ */
 abstract class AbstractHeap<T extends Comparable<T>> implements Heap<T> {
+    /**
+     * Numero corrente di elementi contenuti nell'heap
+     */
     protected int size;
+    /**
+     * Array di elementi contenuti nell'heap
+     */
     protected T[] heapArray;
 
+    /**
+     * Crea un heap a partire da un array di elementi.
+     * <p>
+     * L'array sarà usato come struttura dati per memorizzare gli elementi.
+     * <p>
+     * La lunghezza dell'array sarà anche la dimensione massima dell'heap.
+     * 
+     * @param array l'array di elementi da cui partire per creare l'heap
+     */
     @SuppressWarnings("unchecked")
     public AbstractHeap(int maxSize) {
         this.size = 0;
         heapArray = (T[]) new Comparable<?>[maxSize];
     }
 
+    /**
+     * Crea un heap di dimensione massima size
+     * 
+     * @param size la dimensione massima dell'heap
+     */
     public AbstractHeap(T[] array) {
         heapArray = array;
         size = array.length;
@@ -103,26 +126,66 @@ abstract class AbstractHeap<T extends Comparable<T>> implements Heap<T> {
         return sb.toString();
     }
 
+    /**
+     * Restituisce l'indice del figlio sinistro di un nodo
+     * 
+     * @param index l'indice del nodo
+     * @return l'indice del figlio sinistro
+     */
     protected int getLeft(int index) {
         return 2 * index + 1;
     }
 
+    /**
+     * Restituisce l'indice del figlio destro di un nodo
+     * 
+     * @param index l'indice del nodo
+     * @return l'indice del figlio destro
+     */
     protected int getRight(int index) {
         return 2 * index + 2;
     }
 
+    /**
+     * Restituisce l'indice del nodo padre di un nodo
+     * 
+     * @param index l'indice del nodo
+     * @return l'indice del nodo padre
+     */
     protected int getParent(int index) {
         return (index - 1) / 2;
     }
 
+    /**
+     * Scambia due elementi dell'array {@link #heapArray}
+     * 
+     * @param index1 indice del primo elemento
+     * @param index2 indice del secondo elemento
+     */
     protected void swap(int index1, int index2) {
         T temp = heapArray[index1];
         heapArray[index1] = heapArray[index2];
         heapArray[index2] = temp;
     }
 
+    /**
+     * Determina se il nodo corrente è un candidato a diventare il nuovo nodo padre
+     * applicando la funzione {@code compareTo} degli elementi di tipo {@link T}
+     * 
+     * @param currentParent   l'indice del padre attuale
+     * @param candidateParent l'indice del candidato a nuovo padre
+     * @return {@code true} se il candidato, se spostato in posizione del padre
+     *         attuale, ripristina la proprietà di ordinamento dell'heap,
+     *         {@code false} altrimenti
+     */
     protected abstract boolean shouldUpdateParent(int currentParent, int candidateParent);
 
+    /**
+     * Ripristina la proprietà di heap a partire da un nodo.
+     * Si assume che la proprietà sia rispettata per i nodi figli.
+     * 
+     * @param index l'indice del nodo da cui partire
+     */
     protected void heapify(int index) {
         int left = getLeft(index);
         int right = getRight(index);
@@ -139,12 +202,22 @@ abstract class AbstractHeap<T extends Comparable<T>> implements Heap<T> {
         }
     }
 
+    /**
+     * Ripristina la proprietà di heap per tutti i nodi dell'heap, partendo dai nodi
+     * non foglia più in basso e risalendo fino alla radice.
+     */
     protected void fullHeapify() {
         for (int i = size / 2; i >= 0; i--) {
             heapify(i);
         }
     }
 
+    /**
+     * Ripristina la proprietà di heap a partire da un nodo e risalendo fino alla
+     * radice.
+     * 
+     * @param index l'indice del nodo da cui partire
+     */
     protected void heapifyUp(int index) {
         int parent = getParent(index);
         if (parent >= 0 && shouldUpdateParent(parent, index)) {

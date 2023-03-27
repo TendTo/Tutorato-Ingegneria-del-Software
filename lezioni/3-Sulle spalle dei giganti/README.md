@@ -247,6 +247,115 @@ ApiResponse json = new Gson().fromJson(reader, ApiResponse.class);
 
 <!-- New section -->
 
+## Documentazione
+
+Documentare il proprio codice è fondamentale per la sua comprensione e manutenibilità, soprattutto nel momento in cui il proprio lavoro deve essere condiviso con altri.
+
+<!-- New subsection -->
+
+### Commenti
+
+```java
+// Questo è un commento
+
+/*
+Questo è un commento
+su più righe
+*/
+```
+
+I commenti sono utili per spiegare il funzionamento di una porzione di codice.
+Non vengono considerati dal compilatore.
+
+<!-- New subsection -->
+
+### Javadoc
+
+Un tool standard per la produzione della documentazione per il linguaggio java è [Javadoc](https://www.oracle.com/java/technologies/javase/javadoc-tool.html).
+
+Oltre a poter essere usato per generare un sito web statico contenente la documentazione, i commenti Javadoc sono utilizzati dalla maggior parte degli IDE per fornire informazioni aggiuntive durante la scrittura del codice.
+
+<!-- .element: class="fragment" -->
+
+<!-- New subsection -->
+
+### Commenti Javadoc
+
+I commenti Javadoc seguono un formato standard che permette loro di essere utilizzati dal parser.
+
+```java
+/**
+* Questo è un commento Javadoc che descrive la classe, il metodo, etc...
+*
+* @param nomeParam1 descrizione del primo parametro
+* @param nomeParam2 descrizione del secondo parametro
+* @return descrizione del valore di ritorno
+*/
+```
+
+<!-- New subsection -->
+
+### Tag Javadoc
+
+Tag più frequenti
+
+- **@author**: classi e interfacce
+- **@version**: classi e interfacce
+- **@param**: metodi e costruttori
+- **@return**: metodi
+- **@exception**: (o @throws)
+- **@see**
+- **@since**
+- **@serial** (o @serialfield, @serialdata)
+- **@deprecated**
+
+[Ulteriori dettagli](https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html)
+
+<!-- New subsection -->
+
+### Esempio: Commento Javadoc
+
+```java
+/**
+* Returns an Image object that can then be painted on the screen.
+* The url argument must specify an absolute <a href="#{@link}">{@link URL}</a>. The name
+* argument is a specifier that is relative to the url argument.
+* <p>
+* This method always returns immediately, whether or not the
+* image exists. When this applet attempts to draw the image on
+* the screen, the data will be loaded. The graphics primitives
+* that draw the image will incrementally paint on the screen.
+*
+* @param  url  an absolute URL giving the base location of the image
+* @param  name the location of the image, relative to the url argument
+* @return      the image at the specified URL
+* @see         Image
+*/
+public Image getImage(URL url, String name) {
+  try {
+    return getImage(new URL(url, name));
+  } catch (MalformedURLException e) {
+    return null;
+  }
+}
+```
+
+<!-- New subsection -->
+
+### Generare la documentazione
+
+Per generare la documentazione, è necessario utilizzare il comando `javadoc` fornito dal JDK.
+
+```shell
+javadoc -d <path/to/output/dir> <package o file>
+```
+
+Verrà generato un sito web statico contenente la documentazione.
+
+<!-- .element: class="fragment" -->
+
+<!-- New section -->
+
 ## Challenge
 
 - Applicazione in grado di leggere più formati di file JSON, in base all'input dell'utente
