@@ -4,6 +4,16 @@ Includere ed utilizzare librerie.
 
 <!-- New section -->
 
+## Obiettivi
+
+- Libreria standard
+- Librerie esterne
+- Gson
+- Javadoc
+- Commenti in Java
+
+<!-- New section -->
+
 ## Librerie
 
 Le librerie sono dei pacchetti di codice che possono essere riutilizzati in più progetti.
