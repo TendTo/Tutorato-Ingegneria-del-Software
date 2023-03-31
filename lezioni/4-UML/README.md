@@ -95,7 +95,7 @@ abstract class AbstractPerson implements Person{
 ```
 
 ```java
-class Student extends Person {
+class Student extends AbstractPerson {
     public String getFullName() {
         return this.name + " " + this.surname;
     }
@@ -121,9 +121,7 @@ classDiagram
         #String name
         #String surname
     }
-    class Student {
-        +getFullName() String
-    }
+    class Student
 
     Person <|.. AbstractPerson
     AbstractPerson <|-- Student
@@ -142,9 +140,7 @@ classDiagram
         #String name
         #String surname
     }
-    class Student {
-        +getFullName() String
-    }
+    class Student
     Person <|.. AbstractPerson : implementa
     AbstractPerson <|-- Student : estende
 ```
@@ -226,15 +222,14 @@ I diagrammi di sequenza mostrano le interazioni che avvengono fra gli oggetti, p
 ```java
 class Product {
     private float cost;
-    public float getCost() { return product.getCost(); }
+    public float getCost() { return this.cost; }
 }
 ```
 
 ```java
 class State {
     public long timestamp;
-
-    public updateTimestamp() { System.currentTimeMillis() / 1000L; }
+    public updateTimestamp() { this.timestamp = System.currentTimeMillis() / 1000L; }
 }
 ```
 
@@ -247,7 +242,6 @@ class Order {
         state.updateTimestamp();
         return product.getCost();
     }
-    public void updateTimestamp() { state.updateTimestamp(); }
 }
 ```
 
@@ -264,10 +258,10 @@ sequenceDiagram
 
     User ->>+ Order : getCost()
     Order ->>+ State : updateTimestamp()
-    State -->- Order : #10003;
+    State -->>- Order : #10003;
     Order ->>+ Product : getCost()
-    Product -->- Order : cost
-    Order -->- User : #10003;
+    Product -->>- Order : cost
+    Order -->>- User : #10003;
 ```
 
 ```mermaid
@@ -275,10 +269,10 @@ sequenceDiagram
     actor User;
     User ->>+ Order : getCost()
     Order ->>+ State : updateTimestamp()
-    State -->- Order : #10003;
+    State -->>- Order : #10003;
     Order ->>+ Product : getCost()
-    Product -->- Order : cost
-    Order -->- User : #10003;
+    Product -->>- Order : cost
+    Order -->>- User : cost
 ```
 
 </div>

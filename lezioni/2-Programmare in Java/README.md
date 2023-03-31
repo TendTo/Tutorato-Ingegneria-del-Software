@@ -625,7 +625,9 @@ public record Item(int price, String name) {}
 Questa sintassi equivale a:
 
 ```java
-public class Item(int price, String name) {
+public class Item {
+    private int price;
+    private String name;
     public Item(int price, String name) {
         this.price = price;
         this.name = name;
@@ -704,10 +706,6 @@ switch (value) {
 
 Nelle nuove versioni di Java è possibile utilizzare la sintassi più compatta, che evita la necessità di utilizzare il `break`.
 
-Inoltre, lo switch restituisce il valore dell'espressione contenuta nel `case` corrispondente, permettendo ad esempio di memorizzare il risultato in una variabile.
-
-<!-- .element: class="fragment" -->
-
 <!-- New subsection -->
 
 ### Sintassi con yield
@@ -724,9 +722,9 @@ int result = switch (value) {
 };
 ```
 
-Se si ha la necessità di eseguire più istruzioni all'interno di un `case`, è possibile utilizzare la sintassi con `yield`.
+Lo switch  può anche restituisce il valore dell'espressione contenuta nel `case` corrispondente, permettendo ad esempio di memorizzare il risultato in una variabile.
 
-La keyword `yeld`, usata negli switch classici, permette di uscire subito fuori dallo switch senza necessità del `break`.
+Se si ha la necessità di eseguire più istruzioni all'interno di un `case`, è possibile utilizzare un blocco di codice e restituire il valore finale con la keyword `yield`.
 
 <!-- .element: class="fragment" -->
 

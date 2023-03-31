@@ -1,6 +1,7 @@
 import java.util.Objects;
 
 public class Record {
+
     public static record PairRecord<K, V>(K key, V value) {
 
     }
@@ -38,7 +39,6 @@ public class Record {
                 return false;
             PairClass<?, ?> item = (PairClass<?, ?>) o;
             return key.equals(item.key) && value.equals(item.value);
-
         }
 
         @Override
