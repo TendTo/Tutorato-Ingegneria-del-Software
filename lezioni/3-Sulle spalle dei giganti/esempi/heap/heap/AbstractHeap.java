@@ -1,9 +1,40 @@
 package heap;
 
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
 /**
  * Implementazione di un heap generico.
  */
 abstract class AbstractHeap<T extends Comparable<T>> implements Heap<T> {
+
+    /**
+     * Iterator utilizzato per scorrere l'heap in un ciclo foreach
+     */
+    class HeapIterator implements Iterator<T> {
+        /**
+         * Indice dell'elemento corrente
+         */
+        private int index;
+
+        @Override
+        public boolean hasNext() {
+            if (index < getSize())
+                return true;
+            return false;
+        }
+
+        @Override
+        public T next() {
+            if (hasNext()) {
+                T element = heapArray[index];
+                index++;
+                return element;
+            }
+            throw new NoSuchElementException();
+        }
+    }
+
     /**
      * Numero corrente di elementi contenuti nell'heap
      */
@@ -224,5 +255,10 @@ abstract class AbstractHeap<T extends Comparable<T>> implements Heap<T> {
             swap(parent, index);
             heapifyUp(parent);
         }
+    }
+
+    @Override
+    public HeapIterator iterator() {
+        return new HeapIterator();
     }
 }

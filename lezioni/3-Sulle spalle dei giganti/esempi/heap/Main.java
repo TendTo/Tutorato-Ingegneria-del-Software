@@ -1,4 +1,3 @@
-// import heap.AbstractHeap;
 import heap.MaxHeap;
 import heap.MinHeap;
 import heap.Heap;
@@ -22,8 +21,8 @@ public class Main {
         System.out.println("The heap is: \n" + heap);
 
         System.out.println("The ordered list is: ");
-        while (!heap.isEmpty()) {
-            System.out.println(heap.extract());
+        for (Integer i : heap) {
+            System.out.println(i);
         }
     }
 }

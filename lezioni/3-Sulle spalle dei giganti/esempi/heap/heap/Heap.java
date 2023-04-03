@@ -7,7 +7,7 @@ package heap;
  * 
  * @param <T> il tipo degli elementi memorizzati
  */
-public interface Heap<T extends Comparable<T>> {
+public interface Heap<T extends Comparable<T>> extends Iterable<T> {
 
     /**
      * Inserisce un elemento nell'heap
