@@ -46,25 +46,27 @@
         Reveal.addEventListener("ready", (event) => {
           const graphs = document.getElementsByClassName("mermaid");
           graphs.forEach((item, index) => {
-            const parent = item.parentElement;
-            parent.classList.add("mermaid");
-            parent.innerHTML = item.innerText;
+            const graphCode = item.textContent.trim();
+            const mermaidDiv = document.createElement("div");
+            mermaidDiv.classList.add("mermaid");
+            mermaidDiv.setAttribute("data-processed", "true");
+
+            try {
+              mermaid.mermaidAPI.render(
+                "graph-" + index,
+                graphCode,
+                (svgCode) => (mermaidDiv.innerHTML = svgCode)
+              );
+              item.parentNode.parentNode.insertBefore(
+                mermaidDiv,
+                item.parentNode
+              );
+              item.parentNode.remove();
+            } catch (err) {
+              console.error(`Cannot render diagram ${index}\n${graphCode}`);
+              console.error(err.message);
+            }
           });
-        });
-        Reveal.addEventListener("slidetransitionend", (event) => {
-          const graphs = event.currentSlide.getElementsByClassName("mermaid");
-          graphs.forEach((item, index) => {
-            if (!item.classList.contains("fragment"))
-              mermaid.init(undefined, item);
-          });
-        });
-        Reveal.addEventListener("fragmentshown", (event) => {
-          if (
-            event.fragment.classList.contains("mermaid") &&
-            event.fragment.classList.contains("visible")
-          ) {
-            mermaid.init(undefined, event.fragment);
-          }
         });
       }
 
