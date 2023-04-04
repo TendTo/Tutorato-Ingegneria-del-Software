@@ -52,6 +52,7 @@ Per eventuali cambi, verificare il [gruppo telegram](https://t.me/+VgP5Dogke9phO
 - [Syllabus](https://web.dmi.unict.it/corsi/l-31/insegnamenti?seuid=609219B7-63E2-417A-BDFD-A86B9856BAF1)
 - [Sito del docente](https://www.dmi.unict.it/tramonta/se/ingegneria-software.html)
 - [Refactoring Guru](https://refactoring.guru/design-patterns/catalog)
+- [Maven: The Complete Reference](https://books.sonatype.com/mvnref-book/reference/index.html)
 
 <!-- New section -->
 
