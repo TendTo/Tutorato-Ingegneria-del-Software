@@ -321,3 +321,6 @@ index.html
 # Java
 *.class
 *.jar
+
+# env
+.env

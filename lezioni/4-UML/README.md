@@ -261,7 +261,7 @@ sequenceDiagram
     State -->>- Order : #10003;
     Order ->>+ Product : getCost()
     Product -->>- Order : cost
-    Order -->>- User : #10003;
+    Order -->>- User : cost
 ```
 
 ```mermaid
