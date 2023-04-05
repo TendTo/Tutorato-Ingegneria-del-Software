@@ -34,58 +34,27 @@
     <script src="./js/highlight.js"></script>
     <script src="./js/math.js"></script>
     <script src="./js/menu.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script src="./js/mermaid-load.js" type="module"></script>
 
     <script>
-      function initMermaid() {
-        mermaid.initialize({
-          startOnLoad: false,
-          theme: "dark",
-          flowchart: { htmlLabels: false },
+      window.addEventListener("load", () => {
+        if (typeof window.loadMermaid !== "undefined") window.loadMermaid();
+        Reveal.initialize({
+          width: 1280,
+          height: 720,
+          slideNumber: true,
+          hash: true,
+          menu: {
+            path: "./css",
+          },
+          plugins: [
+            RevealMarkdown,
+            RevealHighlight,
+            RevealNotes,
+            RevealMath.MathJax3,
+            RevealMenu,
+          ],
         });
-        Reveal.addEventListener("ready", (event) => {
-          const graphs = document.getElementsByClassName("mermaid");
-          graphs.forEach((item, index) => {
-            const graphCode = item.textContent.trim();
-            const mermaidDiv = document.createElement("div");
-            mermaidDiv.classList.add("mermaid");
-            mermaidDiv.setAttribute("data-processed", "true");
-
-            try {
-              mermaid.mermaidAPI.render(
-                "graph-" + index,
-                graphCode,
-                (svgCode) => (mermaidDiv.innerHTML = svgCode)
-              );
-              item.parentNode.parentNode.insertBefore(
-                mermaidDiv,
-                item.parentNode
-              );
-              item.parentNode.remove();
-            } catch (err) {
-              console.error(`Cannot render diagram ${index}\n${graphCode}`);
-              console.error(err.message);
-            }
-          });
-        });
-      }
-
-      if (typeof mermaid !== "undefined") initMermaid();
-      Reveal.initialize({
-        width: 1280,
-        height: 720,
-        slideNumber: true,
-        hash: true,
-        menu: {
-          path: "./css",
-        },
-        plugins: [
-          RevealMarkdown,
-          RevealHighlight,
-          RevealNotes,
-          RevealMath.MathJax3,
-          RevealMenu,
-        ],
       });
     </script>
   </body>
