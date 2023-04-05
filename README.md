@@ -24,13 +24,15 @@ Per eventuali cambi, verificare il [gruppo telegram](https://t.me/+VgP5Dogke9phO
 
 ## Lezioni
 
-| Lezione                                                                                                 | Descrizione                                        | Data A-L   | Data M-Z   |
-| ------------------------------------------------------------------------------------------------------- | -------------------------------------------------- | ---------- | ---------- |
-| [0](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/0-Introduzione)                   | Presentazione e introduzione al corso              | 17/03/2023 | 17/03/2023 |
-| [1](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/1-Java)                           | Setup di Java e introduzione alla sintassi         | 17/03/2023 | 17/03/2023 |
-| [2](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/2-Programmare%20in%20Java)        | Conoscere e gestire le peculiarità di Java.        | 24/03/2023 | 24/03/2023 |
-| [3](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/3-Sulle%20spalle%20dei%20giganti) | Includere ed utilizzare librerie.                  |            | 31/03/2023 |
-| [4](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/4-UML)                            | Diagrammi per la modellazione di sistemi software. | 31/03/2023 | 31/03/2023 |
+| Lezione                                                                                                      | Descrizione                                                      | Data A-L   | Data M-Z   |
+| ------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------- | ---------- | ---------- |
+| [0](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/0-Introduzione)                        | Presentazione e introduzione al corso                            | 17/03/2023 | 17/03/2023 |
+| [1](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/1-Java)                                | Setup di Java e introduzione alla sintassi                       | 17/03/2023 | 17/03/2023 |
+| [2](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/2-Programmare%20in%20Java)             | Conoscere e gestire le peculiarità di Java.                      | 24/03/2023 | 24/03/2023 |
+| [3](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/3-Sulle%20spalle%20dei%20giganti)      | Includere ed utilizzare librerie.                                |            | 31/03/2023 |
+| [4](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/4-UML)                                 | Diagrammi per la modellazione di sistemi software.               | 31/03/2023 | 31/03/2023 |
+| [5](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/5-Maven)                               | Il build automation tool più famoso.                             |            |            |
+| [6](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/6-Singleton,%20Iterator,%20NullObject) | Descrizione dei design pattern Singleton, Iterator e NullObject. |            |            |
 
 <!-- New section -->
 

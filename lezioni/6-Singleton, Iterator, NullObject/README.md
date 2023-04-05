@@ -8,8 +8,8 @@ Descrizione dei design pattern Singleton, Iterator e NullObject.
 
 Il Singleton è un design pattern creazionale.
 
-Utilizzarlo assicura che solo un'istanza di una specifica classe possa essere creata.
-L'oggetto singleton rimane comunque accessibile da qualsiasi parte del programma.
+Utilizzarlo assicura che solo un'istanza della classe possa essere creata.  
+L'oggetto singleton è accessibile da qualsiasi parte del programma.
 
 <!-- .element: class="fragment" -->
 
