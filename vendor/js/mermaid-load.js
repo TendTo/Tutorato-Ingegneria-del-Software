@@ -14,6 +14,7 @@ function uniqueIds(svgString, idx) {
         set.add(id);
         return match.replace(id, `${id}-${idx}`);
     });
+    if (set.size === 0) return svgString;
     const re = new RegExp(`#(${Array.from(set.values()).join('|')})`, "g");
     return svgString.replace(re, `#$1-${idx}`);
 }
