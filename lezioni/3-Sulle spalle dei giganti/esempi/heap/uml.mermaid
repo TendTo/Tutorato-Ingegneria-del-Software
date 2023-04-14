@@ -1,0 +1,65 @@
+classDiagram
+direction TB
+
+class Iterable~T~ {
+    <<Interface>>
+}
+
+class Heap~T~ {
+    <<Interface>>
+    +insert(T newEl)
+    +extract() T
+    +getSizr() int
+    +getHeight() int
+    +isEmpty() boolean
+}
+
+class AbstractHeap~T~ {
+    <<Abstract>>
+    #int size
+    #T[] heapArray
+    #getLeft(int idx) int
+    #swap(int idx1, int idx2)
+    #shouldUpdateParent(int parent, int candidate) boolean
+}
+
+class MaxHeap~T~
+class MinHeap~T~
+
+Iterable <|.. Heap
+Heap <|.. AbstractHeap
+AbstractHeap <|-- MaxHeap
+AbstractHeap <|-- MinHeap
+
+classDiagram
+direction TB
+
+class Iterable~T~ {
+    <<Interface>>
+}
+
+class Heap~T~ {
+    <<Interface>>
+    +insert(T newEl)
+    +extract() T
+    +getSizr() int
+    +getHeight() int
+    +isEmpty() boolean
+}
+
+class AbstractHeap~T~ {
+    <<Abstract>>
+    #int size
+    #T[] heapArray
+    #getLeft(int idx) int
+    #swap(int idx1, int idx2)
+    #shouldUpdateParent(int parent, int candidate) boolean
+}
+
+class MaxHeap~T~
+class MinHeap~T~
+
+Iterable <|.. Heap
+Heap <|.. AbstractHeap
+AbstractHeap <|-- MaxHeap
+AbstractHeap <|-- MinHeap

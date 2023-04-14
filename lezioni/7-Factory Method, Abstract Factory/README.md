@@ -268,4 +268,4 @@ public class SquareCreator implements Creator {
 ## Challenge
 
 - (Factory method) Gestione di più figure geometriche in base al numero di lati e/o angoli
-- (Abstract factory) Supportare un menù multilinga con un apposito AbstractFactory
+- (Abstract factory) Supportare un menù multilingua con un apposito AbstractFactory
