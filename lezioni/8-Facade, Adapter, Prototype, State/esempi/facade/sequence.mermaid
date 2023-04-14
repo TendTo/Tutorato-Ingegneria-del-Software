@@ -1,0 +1,16 @@
+sequenceDiagram
+
+actor Client
+participant WeatherForecast
+participant WeatherApi
+participant WeatherApiParser
+
+Client ->>+ WeatherForecast:  printForecast()
+WeatherForecast ->>+ WeatherApi: new WeatherApi()
+WeatherApi -->>- WeatherForecast: weatherApi
+WeatherForecast ->>+ WeatherApiParser: new WeatherApiParser(weatherApi)
+WeatherApiParser -->>- WeatherForecast: weatherApiParser
+WeatherForecast ->>+ WeatherApiParser: getForecast()
+WeatherApiParser -->>- WeatherForecast: list of DailyWeather
+WeatherForecast ->> WeatherForecast: print list of DailyWeather
+WeatherForecast -->>- Client: #10003;

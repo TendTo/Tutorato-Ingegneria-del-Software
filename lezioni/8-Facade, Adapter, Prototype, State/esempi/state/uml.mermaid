@@ -1,0 +1,31 @@
+classDiagram
+direction LR
+
+class Chest~T~ {
+    -items: List<T>
+    -state: ChestState~T~
+    +open()
+    +close()
+    +seal()
+    +add(T)
+    +get() T
+}
+
+class ChestState~T~ {
+    <<Interface>>
+    +open() ChestState
+    +close() ChestState
+    +seal() ChestState
+    +add()
+    +get() T
+}
+
+class OpenChestState~T~ 
+class ClosedChestState~T~
+class SealedChestState~T~
+
+Chest *-- ChestState
+ChestState <|-- OpenChestState
+ChestState <|-- ClosedChestState
+ChestState <|-- SealedChestState
+note for Chest "Client"

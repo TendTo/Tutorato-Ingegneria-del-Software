@@ -1,0 +1,36 @@
+classDiagram
+    class WetherForecast {
+        -float latitude
+        -float longitude
+        -cityToCoordinates(String city)
+        +WetherForecast(String city)
+        +WetherForecast(float latitude, float longitude)
+        +printForecast()
+        +getLatitude() float
+        +getLongitude() float
+    }
+
+    class WetherApi {
+        #String BASE_URL
+        #float latitude
+        #float longitude
+        +WetherApi(float latitude, float longitude)
+        -buildUrl() String
+        +getForcastJson() String
+    }
+
+    class DailyWeather {
+        -String date
+        -int code
+        +getDate() String
+        +getCode() int
+        +getCodeToString() String
+    }
+
+    class WeatherParser {
+        -String weatherJson
+        +WetherParser(String whetherApiResponse)
+        -parseForecast()
+        +getWeatherJson() String
+        +getFoecast() List<DailyWeather>
+    }
