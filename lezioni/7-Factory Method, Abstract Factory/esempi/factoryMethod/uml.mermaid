@@ -1,0 +1,22 @@
+classDiagram
+    class LoremFactory {
+        <<Abstract>>
+        +createLorem(String source) Lorem
+    }
+    class ConcreteLoremFactory
+
+    class Lorem {
+        <<Interface>>
+        +getLorem() String
+    }
+
+    class StringLorem
+    class LocalLorem
+    class OnlineLorem
+
+    LoremFactory <|-- ConcreteLoremFactory
+    Lorem <|.. StringLorem
+    Lorem <|.. LocalLorem
+    Lorem <|.. OnlineLorem
+
+    note for LoremFactory "Client"
