@@ -1,0 +1,44 @@
+classDiagram
+    class ButtonFactory {
+        <<Interface>>
+        +getMinimizeButton() Button
+        +getMaximizeButton() Button
+        +getCloseButton() Button
+    }
+
+    class SquareButtonFactory
+    class CircleButtonFactory
+
+    class Button {
+        <<Interface>>
+        +draw()
+    }
+    class CloseButton {
+        <<Abstract>>
+    }
+    class MaximizeButton {
+        <<Abstract>>
+    }
+    class MinimizeButton {
+        <<Abstract>>
+    }
+
+    class SquareMinimizeButton
+    class SquareMaximizeButton
+    class SquareCloseButton
+    class CircleMinimizeButton
+    class CircleMaximizeButton
+    class CircleCloseButton
+
+    ButtonFactory <|.. SquareButtonFactory
+    ButtonFactory <|.. CircleButtonFactory
+
+    Button <|.. CloseButton
+    Button <|.. MaximizeButton
+    Button <|.. MinimizeButton
+    MinimizeButton <|.. SquareMinimizeButton
+    MaximizeButton <|.. SquareMaximizeButton
+    CloseButton <|.. SquareCloseButton
+    MinimizeButton <|.. CircleMinimizeButton
+    MaximizeButton <|.. CircleMaximizeButton
+    CloseButton <|.. CircleCloseButton

@@ -1,4 +1,4 @@
-public class SquareMinimizeButton implements Button {
+public class SquareMinimizeButton extends MinimizeButton {
     @Override
     public void draw() {
         System.out.print("[-]");

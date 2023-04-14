@@ -13,7 +13,8 @@ public class Window {
         System.out.println("---------------------------");
         System.out.print("|                ");
         min.draw();
-        max.draw();close.draw();
+        max.draw();
+        close.draw();
         System.out.println("|");
         System.out.println("|                         |");
         System.out.println("|                         |");
