@@ -205,6 +205,15 @@ public class JSListAdapter<T> implements JSList<T> {
 
 <!-- New subsection -->
 
+### Varianti
+
+#### Adapter a due vie
+
+Nell'adapter a due vie, l'adapter, oltre l'interfaccia target, implementa anche quella dell'adaptee.
+Può essere utilizzato sia come adapter che come adaptee.
+
+<!-- New subsection -->
+
 ### Possibili applicazioni
 
 - Tradurre le richieste di un client in chiamate comprensibili ad un'api esterna
@@ -228,7 +237,7 @@ public class JSListAdapter<T> implements JSList<T> {
 
 <!-- New section -->
 
-### Prototype
+## Prototype
 
 Il prototype è un design pattern creazionale.
 
@@ -402,7 +411,7 @@ Context -->>- Client: result
 class MusicPlayer {
     private PlayerState state;
 
-    public Player() { this.state = new PlayerStopState(); }
+    public MusicPlayer() { this.state = new PlayerStopState(); }
 
     public void play() { this.state = this.state.play(); }
 
