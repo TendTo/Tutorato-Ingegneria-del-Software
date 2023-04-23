@@ -1,0 +1,19 @@
+sequenceDiagram
+actor c as Client
+participant S as EventManager
+participant L as Logger
+participant C as Cleaner
+
+c ->>+ S : loaded()
+S ->> S : notify()
+S ->>+ L : onLoaded()
+L -->>- S : #10003;
+S -->>- c : #10003;
+
+c ->>+ S : stop()
+S ->> S : notify()
+S ->>+ L : onStopped()
+L -->>- S : #10003;
+S ->>+ C : onStopped()
+C -->- S : #10003;
+S -->>- c : #10003;

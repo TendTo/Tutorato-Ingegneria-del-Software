@@ -36,7 +36,7 @@ Per eventuali cambi, verificare il [gruppo telegram](https://t.me/+VgP5Dogke9phO
 | [5](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/5-Maven)                                   | Il build automation tool più famoso.                               |            |            |
 | [6](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/6-Singleton,%20Iterator,%20NullObject)     | Descrizione dei design pattern Singleton, Iterator e NullObject.   |            |            |
 | [7](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/7-Factory%20Method,%20Abstract%20Factory)  | Descrizione dei design pattern Factory method e Abstract Factory.  | 14/04/2023 | 14/04/2023 |
-| [8](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/8-Facade,%20Adapter,%20Prototype,%20State) | Descrizione dei design pattern Facade, Adapter, Prototype e State. |            |            |
+| [8](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/8-Facade,%20Adapter,%20Prototype,%20State) | Descrizione dei design pattern Facade, Adapter, Prototype e State. | 21/04/2023 | 21/04/2023 |
 
 </div>
 

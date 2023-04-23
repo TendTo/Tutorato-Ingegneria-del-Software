@@ -1,4 +1,4 @@
-public class State {
+public class Main {
     public static void main(String[] args) {
         Chest<String> chest = new Chest<String>();
 

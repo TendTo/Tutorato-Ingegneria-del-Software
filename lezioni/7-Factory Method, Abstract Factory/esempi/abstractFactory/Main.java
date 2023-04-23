@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class AbstractFactory {
+public class Main {
     public static void main(String[] args) {
         ButtonFactory factory;
         if (args.length == 1) {

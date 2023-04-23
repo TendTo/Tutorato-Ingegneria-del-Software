@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Adapter {
+public class Main {
     public static void main(String[] args) {
         List<Integer> list = new ArrayList<>();
         JSList<Integer> jsList = new JsListAdapter<>(list);

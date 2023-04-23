@@ -1,9 +1,6 @@
 import java.io.IOException;
 
-/**
- * Singleton
- */
-public class Singleton {
+public class Main {
 
     public static void main(String[] args) {
         try {

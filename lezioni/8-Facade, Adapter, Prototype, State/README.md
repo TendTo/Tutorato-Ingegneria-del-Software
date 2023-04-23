@@ -411,13 +411,13 @@ Context -->>- Client: result
 class MusicPlayer {
     private PlayerState state;
 
-    public MusicPlayer() { this.state = new PlayerStopState(); }
+    public MusicPlayer() { state = new PlayerStopState(); }
 
-    public void play() { this.state = this.state.play(); }
+    public void play() { state = state.play(); }
 
-    public void stop() { this.state = this.state.stop(); }
+    public void stop() { state = state.stop(); }
 
-    public void sound() { this.state.sound(); }
+    public void sound() { state.sound(); }
 }
 ```
 
