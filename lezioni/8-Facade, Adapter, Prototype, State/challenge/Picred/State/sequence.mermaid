@@ -1,0 +1,39 @@
+sequenceDiagram
+
+    actor Player;
+    
+    %% normal state
+    Player ->>+ Character: attack()
+    Character ->>+ CharacterState: atack(damage)
+    CharacterState ->>+ NormalCharacterState: attack(damage)
+
+    NormalCharacterState -->>- CharacterState: ✓
+    CharacterState -->>- Character: ✓
+    Character -->>- Player: ✓
+
+    %% buffed state
+    Player ->>+ Character: drinkPotion()
+    Character ->>+ CharacterState: potion()
+    CharacterState ->>+ BuffedCharacterState: potion()
+
+    BuffedCharacterState -->>- CharacterState: ✓
+    CharacterState -->>- Character: ✓
+    Character -->>- Player: ✓
+
+
+    Player ->>+ Character: attack()
+    Character ->>+ CharacterState: atack(damage)
+    CharacterState ->>+ BuffedCharacterState: attack(damage)
+
+    BuffedCharacterState -->>- CharacterState: ✓
+    CharacterState -->>- Character: ✓
+    Character -->>- Player: ✓
+
+    %% stunned state
+    Player ->>+ Character: useSkill()
+    Character ->>+ CharacterState: useSkill()
+    CharacterState ->>+ StunnedCharacterState: useSkill()
+
+    StunnedCharacterState -->>- CharacterState: ✓
+    CharacterState -->>- Character: ✓
+    Character -->>- Player: ✓
