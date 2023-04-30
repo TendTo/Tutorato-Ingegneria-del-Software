@@ -1,0 +1,9 @@
+sequenceDiagram
+
+actor MainFile
+
+    MainFile ->>+ File: write()
+    File ->> MainFile: ✔️
+
+    MainFile ->> File: readFirstLine()
+    File ->>- MainFile: ✔️
