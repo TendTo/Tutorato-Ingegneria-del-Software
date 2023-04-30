@@ -1,0 +1,47 @@
+---
+title: State Example
+---
+
+classDiagram
+direction LR
+
+class Character{
+    - damage: int
+    - state: CharacterState
+    +attack()
+    +useSkill()
+    +drinkPotion()
+}
+
+class CharacterState{
+    <<interface>>
+    +attack(damage: int): CharacterState
+    +useSkill(): CharacterState
+    +potion(): CharacterState
+}
+
+class NormalCharacterState{
+    +attack(damaeg: int): CharacterState
+    +useSkill(): CharacterState
+    +potion(): CharacterState
+}
+
+class StunnedCharacterState{
+    +attack(damaeg: int): CharacterState
+    +useSkill(): CharacterState
+    +potion(): CharacterState
+}
+
+class BuffedCharacterState{
+    +attack(damaeg: int): CharacterState
+    +useSkill(): CharacterState
+    +potion(): CharacterState
+}
+
+
+
+Player --> Character
+Character *-- CharacterState
+NormalCharacterState ..|> CharacterState
+BuffedCharacterState ..|> CharacterState
+StunnedCharacterState ..|> CharacterState
