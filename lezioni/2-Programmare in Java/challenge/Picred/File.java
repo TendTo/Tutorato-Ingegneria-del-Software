@@ -21,7 +21,7 @@ public class File{
             return line;
         } catch (IOException e) {
             e.printStackTrace();
-            return "ERROR!";
+            return "";
         }
     }
 
@@ -36,7 +36,7 @@ public class File{
             return builder.toString();
         } catch (IOException e) {
             e.printStackTrace();
-            return "File not found!";
+            return "";
         }
     }
 
