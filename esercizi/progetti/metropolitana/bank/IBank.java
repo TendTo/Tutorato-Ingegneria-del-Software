@@ -1,5 +1,7 @@
 package bank;
 
+import user.User;
+
 /**
  * Singleton che si occupa dei movimenti di denaro.
  * Quando un biglietto viene acquistato, la transazione deve prima essere
@@ -16,7 +18,7 @@ public interface IBank {
      * 
      * @param amount conto iniziale
      */
-    public abstract void addAccount(String user, int amount);
+    public void addAccount(User user, int amount);
 
     /**
      * Ritorna il conto dell'utente.
@@ -24,7 +26,7 @@ public interface IBank {
      * @param user id dell'utente
      * @return conto dell'utente
      */
-    public abstract int getAmount(String user);
+    public int getAmount(User user);
 
     /**
      * Prova ad acquistare un biglietto.
@@ -36,5 +38,5 @@ public interface IBank {
      * @param price costo del biglietto
      * @return true se l'acquisto va a buon fine, false altrimenti
      */
-    public abstract boolean buyTicket(String user, int price);
+    public boolean buyTicket(User user, int price);
 }

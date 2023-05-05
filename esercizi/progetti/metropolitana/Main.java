@@ -23,7 +23,7 @@ public class Main {
 
         ITicket luigiTicket = metroEntrance.getVendingMachine().buyTicket(luigi, TicketType.STANDARD);
         luigi.setTicket(luigiTicket);
-        
+
         turnstile = metroEntrance.getTurnstile();
 
         // Mario si è dimenticato di convalidare il biglietto
@@ -49,9 +49,12 @@ public class Main {
         // Dopo aver fatto la loro vacanza, Mario e Luigi tornano a casa, ma Luigi non
         // ha abbastanza soldi per comprare un biglietto premium, quindi si accontenta
         // di uno standard
-        metroEntrance.getVendingMachine().buyTicket(mario, TicketType.PREMIUM);
-        metroEntrance.getVendingMachine().buyTicket(luigi, TicketType.PREMIUM);
-        metroEntrance.getVendingMachine().buyTicket(luigi, TicketType.STANDARD);
+        ITicket tMario = metroEntrance.getVendingMachine().buyTicket(mario, TicketType.PREMIUM);
+        mario.setTicket(tMario);
+        ITicket tNull = metroEntrance.getVendingMachine().buyTicket(luigi, TicketType.PREMIUM);
+        System.out.println("Il biglietto di Luigi è null? " + (tNull == null));
+        ITicket tLuigi = metroEntrance.getVendingMachine().buyTicket(luigi, TicketType.STANDARD);
+        luigi.setTicket(tLuigi);
 
         // Mario e Luigi convalidano i biglietti e passano
         mario.validateTicket();

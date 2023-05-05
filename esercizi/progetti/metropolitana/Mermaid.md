@@ -53,7 +53,9 @@ class TicketType {
 class MetroEntrance {
     -MetroEntrance instance$
     -ITurnstile[] turnstiles
+    -int turnTurnstile
     -IVendingMachine[] vendingMachines
+    -int turnVendingMachine
     -MetroEntrance()
     +getInstance()$ MetroEntrance
     +getTurnstile() ITurnstile
@@ -68,4 +70,30 @@ IVendingMachine --> Bank
 ITicket --> TicketType
 User --> ITicket
 User --> MetroEntrance
+
+
+ITurnstile <|.. Turnstile
+Turnstile o-- TurnstileState
+TurnstileState o-- CloseTurnstileState
+TurnstileState o-- OpenTurnstileState
+
+class Turnstile {
+    -TurnstileState state
+    +goThrough(User user)
+    +insertTicket(ITicket ticket)
+}
+class TurnstileState {
+    <<interface>>
+    +goThrough(User user)
+    +insertTicket(ITicket ticket)
+}
+class CloseTurnstileState {
+    +goThrough(User user)
+    +insertTicket(ITicket ticket)
+}
+class OpenTurnstileState {
+    +goThrough(User user)
+    +insertTicket(ITicket ticket)
+}
+
 ```
