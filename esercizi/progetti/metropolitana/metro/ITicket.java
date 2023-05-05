@@ -24,6 +24,11 @@ public interface ITicket {
     }
 
     /**
+     * Un biglietto viene utilizzato quando lo si insersce in un tornello.
+     */
+    public void use();
+
+    /**
      * Valida il biglietto
      */
     public void validate();

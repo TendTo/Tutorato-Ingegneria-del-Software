@@ -8,7 +8,7 @@ public class Bank implements IBank {
     /**
      * Istanza singleton della banca.
      */
-    private static Bank instance = null;
+    private static Bank instance;
     /**
      * Conto di tutti gli utenti.
      */
@@ -20,19 +20,16 @@ public class Bank implements IBank {
 
     @Override
     public void addAccount(User user, int amount) {
-        // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'addAccount'");
     }
 
     @Override
     public int getAmount(User user) {
-        // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'getAmount'");
     }
 
     @Override
     public boolean buyTicket(User user, int price) {
-        // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'buyTicket'");
     }
 }

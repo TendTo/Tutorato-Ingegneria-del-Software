@@ -9,7 +9,7 @@ public class MetroEntrance {
     /**
      * Istanza del singleton.
      */
-    private static MetroEntrance instance = null;
+    private static MetroEntrance instance;
     /**
      * Lista dei tornelli della metro.
      */
@@ -23,7 +23,6 @@ public class MetroEntrance {
      * Costruttore privato del singleton.
      */
     private MetroEntrance() {
-        // TODO
     }
 
     /**
@@ -32,8 +31,7 @@ public class MetroEntrance {
      * @return istanza del singleton
      */
     public static MetroEntrance getInstance() {
-        // TODO
-        return null;
+        throw new UnsupportedOperationException("Unimplemented method 'getInstance'");
     }
 
     /**
@@ -43,8 +41,7 @@ public class MetroEntrance {
      * @return {@link metro.ITurnstile tornello}
      */
     public ITurnstile getTurnstile() {
-        // TODO
-        return null;
+        throw new UnsupportedOperationException("Unimplemented method 'getTurnstile'");
     }
 
     /**
@@ -54,7 +51,6 @@ public class MetroEntrance {
      * @return {@link metro.IVendingMachine biglietteria}
      */
     public IVendingMachine getVendingMachine() {
-        // TODO
-        return null;
+        throw new UnsupportedOperationException("Unimplemented method 'getVendingMachine'");
     }
 }
