@@ -266,3 +266,138 @@ direction TB
     test --> 3
     3 --> [*]
 ```
+
+<!-- New section -->
+
+## Sviluppo Agile
+
+Nel processo di sviluppo Agile ci si concentra su auto-organizzazione, collaborazione e comunicazione fra i membri del team.
+
+Vengono privilegiati:
+
+<!-- .element: class="fragment" data-fragment-index="1" -->
+
+- **Individui** rispetto a processi e strumenti
+- **Sofware funzionante** rispetto alla documentazione
+- **Confronto con il client** rispetto a contratti
+- **Rispondere al cambiamento** rispetto a seguire un piano
+
+<!-- .element: class="fragment" data-fragment-index="1" -->
+
+<!-- New subsection -->
+
+### Caratteristiche chiave
+
+Tutti i processi di sviluppo che intendono essere Agile devono:
+
+- Essere in grado di effettuare modifiche anche significative al codice durante qualsiasi fase dello sviluppo
+- Fornire delle release di software funzionanti in maniera frequente
+- Cercare di coinvolgere il cliente il più possibile
+- Creare un gruppo di lavoro motivato e collaborativo
+- Attenzionare l'eccellenza tecnica
+
+<!-- New section -->
+
+## Extreme Programming (XP)
+
+L'XP è un processo di sviluppo Agile che si concentra sulla consegna di software con un numero di funzionalità che viene incrementato con ogni iterazione.
+
+- **2 settimane per lo sviluppo degli incrementi**
+- **Piccoli gruppi** (2 - 12 persone)
+- **Costante miglioramento del codice**
+- **Poca documentazione**
+- **Comunicazione diretta tra persone**
+- **Iterazioni corte**
+- **Interazioni fra sviluppatori, clienti e manager**
+- **Testabilità dei prodotti e prodotti**
+
+<!-- New subsection -->
+
+### I 12 principi dell'XP (1-2)
+
+1. **Gioco della pianificazione**: gli utenti scrivono le storie (i requisiti). Gli sviluppatori stimano il tempo di sviluppo per ogni storia, suddividendosi i compiti. In base a questo, viene identificata una possibile finestra di lancio per la prossima iterazione del software.
+2. **Piccole release**: ogni 2 settimane, dovrebbe esserci una nuova release. In questa maniera gli sviluppatori ottengono un feedback rapido da parte del cliente, nonché la possibilità di correggere gli errori in maniera tempestiva.
+
+<!-- New subsection -->
+
+### I 12 principi dell'XP (3-4)
+
+3. **Metafora**: guidare il progetto con una singola metafora, per assicurarsi che sviluppatori e cliente anno la stessa visione del progetto.
+4. **Design semplice**: il software dovrebbe
+   - Passare i test
+   - Non avere parti duplicate
+   - Essere coerente con le intenzioni degli sviluppatori
+   - Utilizzare il numero più piccolo possibile di classi e metodi
+
+<!-- New subsection -->
+
+### I 12 principi dell'XP (5-6)
+
+5. **Test**: il codice dovrebbe essere scritto in maniera tale da poter essere testato in maniera automatica, e ripetuto per ogni piccola modifica della codebase. Ci devono essere sia test funzionali, per assicurarsi che i requisiti dell'utente siano soddisfatti, che unit test, per assicurarsi che il codice continui a funzionare correttamente.
+6. **Refactoring**: il codice dovrebbe essere refattorizzato in maniera costante, per assicurarsi che sia sempre semplice e pulito. Questo permette di ridurre la complessità del codice, e di renderlo più facile da mantenere.
+
+<!-- New subsection -->
+
+### I 12 principi dell'XP (7-8-9)
+
+7. **Pair programming**: due sviluppatori lavorano insieme su un singolo computer. Uno scrive il codice, l'altro controlla che sia corretto, alternandosi. Questo permette di ridurre gli errori e di condividere le conoscenze.
+8. **Cliente in sede**: un interazione tempestiva con il client, coinvolto nel processo di sviluppo, permette di assicurarsi che la direzione che il software sta prendendo continui ad essere allineate con le necessità di chi l'ha commissionato.
+9. **Possesso del codice collettivo**: chiunque può effettuare una modifica alla codebase, anche se non è l'autore originale. Il risultato è quello di distribuire le conoscenze sul funzionamento del sistema.
+
+<!-- New subsection -->
+
+### I 12 principi dell'XP (10-11-12)
+
+10. **Integrazione continua**: il codice prodotto viene introdotto immediatamente nel software, a patto che passi i test. In caso contrario, la coppia che l'ha prodotto deve occuparsi di aggiustarlo, anche ricreando il codice da zero, se necessario.
+11. **Settimana di 40 ore**: tutti i task dovrebbero essere suddivisi in modo da poter essere svolti in settimane di 40 ore, al fine di non sforzare gli sviluppatori.
+12. **Usare gli standard per il codice**: seguire gli standard permette a chiunque di avere un'idea chiara del funzionamento del codice e favorisce la collaborazione.
+
+<!-- New subsection -->
+
+### XP: in breve
+
+- Ci si focalizza sul codice e sulle persone
+- Codifica e test sono complementari
+- La conoscenza del sistema è trasferita attraverso la comunicazione tra la gente
+- Creare prodotti di qualità tramite test rigorosi
+- Creare fiducia reciproca tra sviluppatori e clienti tramite comunicazione continua
+
+<!-- New section -->
+
+## Scrum
+
+La metodologia Scrum è un framework Agile per lo sviluppo di prodotti complessi.
+
+Nella metodologia Scrum, c'è un **Product owner** che elenca il lavoro da svolgere tramite un **Produt backlog**.
+Lo **Scrum team** effettua una parte del lavoro, incrementado le funzionalità del prodotto, in uno **sprint**.
+Ci si confronta quanto più spesso possibile per valutare i progressi e aggiornare il backlog, stabilendo i prossimi sprint.
+
+<!-- New subsection -->
+
+### I pilastri dello Scrum: Trasparenza
+
+Tutti i membri del team devono avere una visione chiara del prodotto e del lavoro da svolgere. Le decisioni importanti sono prese sulla base di tre artefatti: **Product backlog**, **Sprint backlog** e **Incremento**.
+
+- **Product backlog**: elenco di tutto il lavoro ancora da svolgere sul prodotto
+- **Sprint backlog**: elenco di tutto il lavoro ancora da svolgere durante lo sprint
+- **Incremento**: insieme di tutte le funzionalità aggiunte durante lo sprint
+
+<!-- New subsection -->
+
+### I pilastri dello Scrum: Ispezione
+
+Iprogressi vengono valutati in maniera costante durante il corrispettivo evento, per assicurarsi che il prodotto stia procedendo nella direzione giusta.
+
+- **Sprint**: lunghezza fissata, tipicamente un mese
+- **Sprint planning**: pianificazione dello sprint
+- **Daily scrum**: evento giornaliero in cui si valuta e aggiorna lo sprint backlog
+- **Sprint review**: vengono verificati i risultato dello sprint
+- **Sprint retrospective**: vengono valutati i risultati dello sprint, successi e criticità
+
+<!-- New subsection -->
+
+### I pilastri dello Scrum: Adattamento
+
+Se si incontra una criticità nello sviluppo, il processo o ciò che è prodotto deve essere aggiustato.
+L’aggiustamento si attua subito per evitare ulteriori divergenze
+
