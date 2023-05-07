@@ -213,6 +213,8 @@ Il NullObject è un design pattern comportamentale.
 
 Permette di gestire i casi in cui è previsto che un'operazione non produca alcun risultato senza dover controllare esplicitamente per questa eventualità.
 
+[Ulteriori dettagli](https://medium.com/@lordmoma/use-null-object-pattern-not-try-catch-blocks-232d93b3ae29)
+
 <!-- New subsection -->
 
 ### Problema e soluzione
