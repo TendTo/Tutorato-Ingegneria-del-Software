@@ -46,9 +46,10 @@ Per eventuali cambi, verificare il [gruppo telegram](https://t.me/+VgP5Dogke9phO
 
 ## Esercizi
 
-| Esercizio                                                                                                               | Design pattern                                | Data       |
-| ----------------------------------------------------------------------------------------------------------------------- | --------------------------------------------- | ---------- |
-| [Metropolitana](https://github.com/TendTo/Tutorato-Ingegneria-del-Software/tree/master/esercizi/progetti/metropolitana) | Singleton, Object pool, Factory Method, State | 05/54/2023 |
+| Esercizio                                                                                                               | Design pattern                                       | Data A-L   | Data M-Z   |
+| ----------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- | ---------- | ---------- |
+| [Metropolitana](https://github.com/TendTo/Tutorato-Ingegneria-del-Software/tree/master/esercizi/progetti/metropolitana) | Singleton, Object pool, Factory Method, State        | 05/05/2023 | 05/05/2023 |
+| [Biblioteca](https://github.com/TendTo/Tutorato-Ingegneria-del-Software/tree/master/esercizi/progetti/biblioteca)       | Singleton, Facade, Prototype, FactoryMethod, Adapter |            |            |
 
 <!-- New section -->
 

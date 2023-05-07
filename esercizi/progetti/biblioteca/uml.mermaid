@@ -1,0 +1,103 @@
+classDiagram
+
+class IBook {
+    <<Interface>>
+    +read() String
+    +getBookInfo() BookInfo
+    +useBookToKillMosquito()
+    +getDownloadURL() String
+}
+
+class Typography {
+    -Boolean produceDigitalBooks
+    -Typography instance
+    +getInstance()$ Typography
+    +printBook(BookInfo info, String text) IBook
+    +isProducingDigitalBooks() Boolean
+    +setProduceDigitalBooks(boolean produceDigitalBooks)
+}
+
+class BookInfo {
+    +String title
+    +String author
+    +String genre
+    +int year
+}
+
+class ILibrary {
+    <<Interface>>
+    +addBook(IBook book) BookPosition
+    +removeBook(BookPosition position)
+    +searchBook(String search, SearchFilter filer) List~BookPosition~
+    +getBook(BookPosition position) IBook
+    +getNumberOfRacks() int
+}
+
+class Library {
+    -List~Rack~ racks
+    -Library instance
+    -IBookRegistry bookRegistry
+    -IEbookServer ebookServer
+    -IBookRack[] racks
+    +getInstance()$ Library
+}
+
+class IBookRegistry {
+    <<Interface>>
+    +registerBook(IBook book, BookPosition)
+    +unregisterBook(IBook book)
+    +searchBook(String search, SearchFilter filter) List~BookPosition~
+}
+
+class BookPosition {
+    +int rackNumber
+    +int shelfNumber
+    +String bookUrl
+    +boolean isEbook
+}
+
+class BookSearchResult {
+    +BookInfo info
+    +BookPosition position
+}
+
+class SearchFilter {
+    <<Enum>>
+    TITLE
+    AUTHOR
+    GENRE
+    YEAR
+    ALL
+}
+
+class IBookRack {
+    <<Interface>>
+    +addBook(IBook book) int
+    +removeBook(int shelfNumber)
+    +getBook(int shelfNumber) IBook
+    +getNumberOfShelves() int
+}
+
+class IBookServer {
+    <<Interface>>
+    +uploadBook(IBook book) String
+    +downloadBook(String url) IBook
+    +deleteBook(String url)
+}
+
+Typography --> IBook
+IBook *-- BookInfo
+
+ILibrary <|.. Library
+
+Library *-- IBookRegistry
+Library *-- IBookRack
+Library o-- IBookServer
+
+IBookRegistry --> BookSearchResult
+IBookRegistry --> SearchFilter
+
+IBookServer --> IBook
+IBookRack --> IBook
+IBookRegistry --> BookPosition
+IBookRegistry --> BookInfo
