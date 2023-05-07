@@ -278,7 +278,7 @@ Vengono privilegiati:
 <!-- .element: class="fragment" data-fragment-index="1" -->
 
 - **Individui** rispetto a processi e strumenti
-- **Sofware funzionante** rispetto alla documentazione
+- **Software funzionante** rispetto alla documentazione
 - **Confronto con il client** rispetto a contratti
 - **Rispondere al cambiamento** rispetto a seguire un piano
 
@@ -368,8 +368,8 @@ L'XP è un processo di sviluppo Agile che si concentra sulla consegna di softwar
 
 La metodologia Scrum è un framework Agile per lo sviluppo di prodotti complessi.
 
-Nella metodologia Scrum, c'è un **Product owner** che elenca il lavoro da svolgere tramite un **Produt backlog**.
-Lo **Scrum team** effettua una parte del lavoro, incrementado le funzionalità del prodotto, in uno **sprint**.
+Nella metodologia Scrum, c'è un **Product owner** che elenca il lavoro da svolgere tramite un **Product backlog**.
+Lo **Scrum team** effettua una parte del lavoro, incrementando le funzionalità del prodotto, in uno **sprint**.
 Ci si confronta quanto più spesso possibile per valutare i progressi e aggiornare il backlog, stabilendo i prossimi sprint.
 
 <!-- New subsection -->
@@ -386,7 +386,7 @@ Tutti i membri del team devono avere una visione chiara del prodotto e del lavor
 
 ### I pilastri dello Scrum: Ispezione
 
-Iprogressi vengono valutati in maniera costante durante il corrispettivo evento, per assicurarsi che il prodotto stia procedendo nella direzione giusta.
+I progressi vengono valutati in maniera costante durante il corrispettivo evento, per assicurarsi che il prodotto stia procedendo nella direzione giusta.
 
 - **Sprint**: lunghezza fissata, tipicamente un mese
 - **Sprint planning**: pianificazione dello sprint
