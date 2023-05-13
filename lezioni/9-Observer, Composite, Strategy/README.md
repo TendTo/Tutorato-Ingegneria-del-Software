@@ -46,18 +46,18 @@ class Subject {
 
 class ConcreteSubject {
     +State state
-    +setState()
+    +setState(State state)
     +getState(): State
 }
 
 class Observer {
     <<Interface>>
-    +update()
+    +update(Subject subject)
 }
 
 class ConcreteObserver {
     +State state
-    +update()
+    +update(Subject subject)
 }
 
 Subject <|-- ConcreteSubject
@@ -77,7 +77,7 @@ participant O as ConcreteObserver
 c ->>+ S : attach(concreteObject)
 S -->>- c : #10003;
 c ->>+ S : modify()
-S ->>+ O : update()
+S ->>+ O : update(this)
 O ->>+ S : getStet()
 S -->>- O : state
 O -->>- S : #10003;
