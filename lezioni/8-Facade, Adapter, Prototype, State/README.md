@@ -292,7 +292,6 @@ public class User implements Cloneable {
     private String name;
     private int age;
     private Address address;
-
     @Override
     public User clone() {
         User clone = (User) super.clone();
@@ -302,7 +301,8 @@ public class User implements Cloneable {
 }
 ```
 
-In java tutti gli oggetti possiedono un metodo `clone()`, ma per poterlo utilizzare, bisogna implementare l'interfaccia `Cloneable`.
+In java tutti gli oggetti possiedono un metodo `clone()`.  
+Per poterlo utilizzare però, bisogna implementare l'interfaccia `Cloneable` e cambiare la visibilità del metodo a `public`.
 
 Usando il metodo di default, la copia è shallow.  
 Possiamo fare un override che faccia il clone in modo ricorsivo.
