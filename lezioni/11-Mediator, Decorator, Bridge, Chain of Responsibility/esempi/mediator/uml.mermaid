@@ -1,0 +1,58 @@
+classDiagram
+class Appliance {
+    <<Abstract>>
+    -int consumption
+    -boolean isOn
+    +turnOn()
+    +turnOff()
+    +getConsumption() int
+    +readConsumption() int
+    +use()
+}
+
+class Light
+class Fridge
+class Fan
+
+class Meter {
+    -int reading
+    -Grid grid
+    +turnOn()
+    +turnOff()
+    +updateMeter(int reading)
+    +getReading() int
+}
+
+class Switch {
+    -Grid grid
+    +turnOn()
+    +turnOff()
+}
+
+class Button {
+    -Grid grid
+    +turnOn()
+    +turnOff()
+}
+
+class Grid {
+    -List~Appliance~ appliances
+    -Meter meter
+    +getMeter() Meter
+    +setMeter(Meter meter)
+    +addAppliance(Appliance appliance)
+    +turnOnAll()
+    +turnOffAll()
+    +updateAll()
+    +turnOn(String appliance)
+    +turnOff(String appliance)
+}
+
+Appliance <|-- Light
+Appliance <|-- Fridge
+Appliance <|-- Fan
+
+Grid <--> Meter
+Grid <-- Switch
+Grid <-- Button
+Grid <--> Appliance
