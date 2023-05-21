@@ -8,5 +8,5 @@
 .scrollable {
   overflow-y: scroll !important;
   overflow-x: hidden !important;
-  height: 100vh;
+  height: 60vh;
 }
