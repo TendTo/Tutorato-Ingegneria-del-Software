@@ -1,0 +1,38 @@
+```mermaid
+classDiagram
+
+class Command {
+    <<Interface>>
+    +execute()
+}
+
+class PrepareMealCommand {
+    <<Abstract>>
+    #Kitchen kitchen
+    +setKitchen(Kitchen)
+}
+
+class PreparePizzaCommand
+class PrepareSpaghettiCommand
+
+class Kitchen {
+    -Kitchen instance$
+    +getInstance()$
+    +putInOven(Meal meal)
+    +takeOutOfOven(Meal meal)
+    +cook(Meal meal)
+    +announceIsReady(Meal meal)
+}
+
+class Server {
+    -PrepareMealCommand order
+    +setOrder(PrepareMealCommand order)
+    +makeOrder()
+}
+
+Command <|.. PrepareMealCommand
+PrepareMealCommand <|-- PreparePizzaCommand
+PrepareMealCommand <|-- PrepareSpaghettiCommand
+Server --> PrepareMealCommand
+PrepareMealCommand --> Kitchen
+```

@@ -1,6 +1,6 @@
-# Observer, Composite, Strategy
+# Observer, Composite, Strategy, Command
 
-Descrizione dei design pattern Observer, Composite e Strategy.
+Descrizione dei design pattern Observer, Composite, Strategy e Command.
 
 <!-- New section -->
 
@@ -407,9 +407,189 @@ public class BellmanFord implements SPAlgorithm {
 
 <!-- New section -->
 
+## Command
+
+Il command è un design pattern comportamentale.
+
+Prevede di incapsulare una richiesta in un oggetto, permettendo di parametrizzare uno stesso invoker con richieste diverse, impostando arbitrariamente il receiver della determinata richiesta.
+
+<!-- New subsection -->
+
+### Problema e soluzione
+
+<div class="cols">
+
+- Mantenere separata la logica di presentazione da quella di business
+- Permettere ad uno stesso invoker di lanciare richieste diverse senza preoccuparsi della loro implementazione
+- Riutilizzare l'implementazione di una richiesta in più contesti
+
+<br/>
+
+- Incapsulare la richiesta stessa in un oggetto
+- Parametrizzare l'invoker con un oggetto che implementa l'interfaccia della richiesta
+- Far conoscere alla richiesta il receiver in grado di eseguirla
+
+</div>
+
+<!-- New subsection -->
+
+### UML
+
+```mermaid
+classDiagram
+direction LR
+
+class Command {
+    <<Interface>>
+    +execute()
+}
+
+class ConcreteCommand1 {
+    -Receiver receiver
+    ConcreteCommand1(Receiver r)
+    +execute()
+}
+
+class ConcreteCommand2 {
+    -Receiver receiver
+    +setReceiver(Receiver r)
+    +execute()
+}
+
+class Invoker {
+    -Command command
+    +setCommand(Command c)
+    +executeCommand()
+}
+
+class Receiver {
+    +operation()
+}
+
+note for Invoker "Client"
+Command <|.. ConcreteCommand1
+Command <|.. ConcreteCommand2
+Invoker o-- Command
+ConcreteCommand1 --> Receiver
+ConcreteCommand2 --> Receiver
+```
+
+<!-- New subsection -->
+
+### Diagramma di sequenza
+
+```mermaid
+sequenceDiagram
+
+actor c as Client
+participant I as Invoker
+participant C as ConcreteCommand
+participant R as Receiver
+
+c ->>+ I: setCommand(Command c)
+I -->>- c: #10003;
+c ->>+ I: executeCommand()
+I ->>+ C: execute()
+C ->>+ R: operation()
+R -->>- C: #10003;
+C -->>- I: #10003;
+```
+
+<!-- New subsection -->
+
+### Invoker e receiver
+
+```java
+// Invoker
+public class Button {
+    Command command;
+    public void setCommand(Command command) {
+        this.command = command;
+    }
+    public void click() {
+        command.execute();
+    }
+}
+```
+
+```java
+// Receiver
+public class DeathStar {
+    private int x, y;
+    public void selfDestroy() {
+        System.out.println("La Death Star si è autodistrutta. But why?");
+    }
+    public void fireLaser() {
+        System.out.println("Si spara il laser nel punto (" + x + ", " + y + ")");
+    }
+    public void aim(int x, int y) {
+        this.x = x; this.y = y;
+    }
+}
+```
+
+<!-- New subsection -->
+
+### Command
+
+```java
+public interface Command {
+    void execute();
+}
+```
+
+```java
+public class SelfDestructCommand implements Command {
+    private DeathStar deathStar;
+    public SelfDestructCommand(DeathStar deathStar) {
+        this.deathStar = deathStar;
+    }
+    public void execute() { deathStar.selfDestroy(); }
+}
+```
+
+```java
+public class ShootCommand implements Command {
+    private DeathStar deathStar;
+    private int x, y;
+    public ShootCommand(DeathStar deathStar, int x, int y) {
+        this.deathStar = deathStar;
+        this.x = x;
+        this.y = y;
+    }
+    public void execute() { deathStar.aim(x, y); deathStar.fireLaser(); }
+}
+```
+
+<!-- New subsection -->
+
+### Possibili applicazioni
+
+- Comandi invocati da più sorgenti (GUI, CLI, etc.)
+- Trasferimento di un comando su un altro thread
+- Implementazione di un undo/redo
+- Scheduling dei comandi
+
+<!-- New subsection -->
+
+### Pro e contro
+
+<div class="cols">
+
+- I comandi possono essere facilmente riutilizzati da più sender (invoker)
+- Separazione di responsabilità fra sender e receiver
+- Possibilità di comporre una sequenza di comandi
+
+<br/>
+
+- Aggiunta di un layer in più fra sender (invoker) e receiver
+
+</div>
+
+<!-- New section -->
+
 ## Challenge
 
 - (Observer) Implementare un sistema di notifiche per un sistema di messaggistica istantanea
 - (Composite) Simulare un file system con la possibilità di ottenere informazioni come la memoria occupata
 - (Strategy) Implementare un sistema di ordinamento di array di interi con diverse strategie (Bubble Sort, Merge Sort, Quick Sort, etc.)
-

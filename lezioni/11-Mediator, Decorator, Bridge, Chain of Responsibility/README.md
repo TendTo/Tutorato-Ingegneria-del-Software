@@ -409,6 +409,7 @@ public abstract class Shape {
     public void setImplementor(Drawing imp) { this.impl = imp; }
     public void drawLine(int x, int y, int z, int t){ impl.drawLine(x, y, z, t);}
     public abstract void draw();
+}
 ```
 
 ```java
@@ -425,6 +426,7 @@ public class Rectangle extends Shape {
         drawLine(x1, y1, x1, y2); drawLine(x1, y1, x2, y1);
         drawLine(x1, y2, x2, y2); drawLine(x2, y1, x2, y2);
     }
+}
 ```
 
 <!-- New subsection -->

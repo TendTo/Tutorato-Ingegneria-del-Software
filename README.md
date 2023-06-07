@@ -36,7 +36,7 @@ Per eventuali cambi, verificare il [gruppo telegram](https://t.me/+VgP5Dogke9phO
 | [6](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/6-Singleton,%20Iterator,%20NullObject)                                         | Singleton, Iterator e NullObject                      |            |            |
 | [7](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/7-Factory%20Method,%20Abstract%20Factory)                                      | Factory method e Abstract Factory                     | 14/04/2023 | 14/04/2023 |
 | [8](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/8-Facade,%20Adapter,%20Prototype,%20State)                                     | Facade, Adapter, Prototype e State                    | 21/04/2023 | 21/04/2023 |
-| [9](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/9-Observer,%20Composite,%20Strategy)                                           | Observer, Composite e Strategy                        |            |            |
+| [9](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/9-Observer,%20Composite,%20Strategy,%20Command)                                | Observer, Composite, Strategy e command               |            |            |
 | [10](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/10-Processi%20di%20sviluppo%20software/)                                      | Processi di sviluppo software                         |            |            |
 | [11](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/11-Mediator,%20Decorator,%20Bridge,%20Chain%20of%20Responsibility/index.html) | Mediator, Decorator, Bridge e Chain of Responsibility |            |            |
 
