@@ -36,10 +36,10 @@ Per eventuali cambi, verificare il [gruppo telegram](https://t.me/+VgP5Dogke9phO
 | [6](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/6-Singleton,%20Iterator,%20NullObject)                              | Singleton, Iterator e NullObject                      |            |            |
 | [7](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/7-Factory%20Method,%20Abstract%20Factory)                           | Factory method e Abstract Factory                     | 14/04/2023 | 14/04/2023 |
 | [8](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/8-Facade,%20Adapter,%20Prototype,%20State)                          | Facade, Adapter, Prototype e State                    | 21/04/2023 | 21/04/2023 |
-| [9](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/9-Observer,%20Composite,%20Strategy,%20Command)                     | Observer, Composite, Strategy e command               |            |            |
+| [9](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/9-Observer,%20Composite,%20Strategy,%20Command)                     | Observer, Composite, Strategy e Command               |            |            |
 | [10](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/10-Processi%20di%20sviluppo%20software/)                           | Processi di sviluppo software                         |            |            |
-| [11](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/11-Mediator,%20Decorator,%20Bridge,%20Chain%20of%20Responsibility) | Mediator, Decorator, Bridge e Chain of Responsibility |            |            |
-| [12](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/12-Stream)                                                         | Utilizzo degli stream in Java.                        |            |            |
+| [11](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/11-Mediator,%20Decorator,%20Bridge,%20Chain%20of%20Responsibility) | Mediator, Decorator, Bridge e Chain of Responsibility | 07/06/2023 | 07/06/2023 |
+| [12](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/12-Stream)                                                         | Utilizzo degli stream in Java                         |            |            |
 
 </div>
 
