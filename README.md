@@ -25,20 +25,21 @@ Per eventuali cambi, verificare il [gruppo telegram](https://t.me/+VgP5Dogke9phO
 
 <div class="scrollable">
 
-| Lezione                                                                                                                                              | Titolo                                                | Data A-L   | Data M-Z   |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- | ---------- | ---------- |
-| [0](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/0-Introduzione)                                                                | Introduzione                                          | 17/03/2023 | 17/03/2023 |
-| [1](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/1-Java)                                                                        | Java                                                  | 17/03/2023 | 17/03/2023 |
-| [2](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/2-Programmare%20in%20Java)                                                     | Programmare in Java                                   | 24/03/2023 | 24/03/2023 |
-| [3](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/3-Sulle%20spalle%20dei%20giganti)                                              | Sulle spalle dei giganti                              | 14/04/2023 | 31/03/2023 |
-| [4](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/4-UML)                                                                         | UML                                                   | 31/03/2023 | 31/03/2023 |
-| [5](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/5-Maven)                                                                       | Maven                                                 |            |            |
-| [6](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/6-Singleton,%20Iterator,%20NullObject)                                         | Singleton, Iterator e NullObject                      |            |            |
-| [7](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/7-Factory%20Method,%20Abstract%20Factory)                                      | Factory method e Abstract Factory                     | 14/04/2023 | 14/04/2023 |
-| [8](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/8-Facade,%20Adapter,%20Prototype,%20State)                                     | Facade, Adapter, Prototype e State                    | 21/04/2023 | 21/04/2023 |
-| [9](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/9-Observer,%20Composite,%20Strategy,%20Command)                                | Observer, Composite, Strategy e command               |            |            |
-| [10](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/10-Processi%20di%20sviluppo%20software/)                                      | Processi di sviluppo software                         |            |            |
-| [11](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/11-Mediator,%20Decorator,%20Bridge,%20Chain%20of%20Responsibility/index.html) | Mediator, Decorator, Bridge e Chain of Responsibility |            |            |
+| Lezione                                                                                                                                   | Titolo                                                | Data A-L   | Data M-Z   |
+| ----------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- | ---------- | ---------- |
+| [0](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/0-Introduzione)                                                     | Introduzione                                          | 17/03/2023 | 17/03/2023 |
+| [1](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/1-Java)                                                             | Java                                                  | 17/03/2023 | 17/03/2023 |
+| [2](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/2-Programmare%20in%20Java)                                          | Programmare in Java                                   | 24/03/2023 | 24/03/2023 |
+| [3](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/3-Sulle%20spalle%20dei%20giganti)                                   | Sulle spalle dei giganti                              | 14/04/2023 | 31/03/2023 |
+| [4](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/4-UML)                                                              | UML                                                   | 31/03/2023 | 31/03/2023 |
+| [5](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/5-Maven)                                                            | Maven                                                 |            |            |
+| [6](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/6-Singleton,%20Iterator,%20NullObject)                              | Singleton, Iterator e NullObject                      |            |            |
+| [7](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/7-Factory%20Method,%20Abstract%20Factory)                           | Factory method e Abstract Factory                     | 14/04/2023 | 14/04/2023 |
+| [8](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/8-Facade,%20Adapter,%20Prototype,%20State)                          | Facade, Adapter, Prototype e State                    | 21/04/2023 | 21/04/2023 |
+| [9](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/9-Observer,%20Composite,%20Strategy,%20Command)                     | Observer, Composite, Strategy e command               |            |            |
+| [10](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/10-Processi%20di%20sviluppo%20software/)                           | Processi di sviluppo software                         |            |            |
+| [11](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/11-Mediator,%20Decorator,%20Bridge,%20Chain%20of%20Responsibility) | Mediator, Decorator, Bridge e Chain of Responsibility |            |            |
+| [12](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/12-Stream)                                                         | Utilizzo degli stream in Java.                        |            |            |
 
 </div>
 
