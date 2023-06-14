@@ -40,7 +40,7 @@ Per eventuali cambi, verificare il [gruppo telegram](https://t.me/+VgP5Dogke9phO
 | [10](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/10-Processi%20di%20sviluppo%20software/)                           | Processi di sviluppo software                         |            |            |
 | [11](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/11-Mediator,%20Decorator,%20Bridge,%20Chain%20of%20Responsibility) | Mediator, Decorator, Bridge e Chain of Responsibility | 07/06/2023 | 07/06/2023 |
 | [12](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/12-Stream)                                                         | Utilizzo degli stream in Java                         |            |            |
-| [12](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/13-Esercizi)                                                       | Esercizi presi dai compiti in classe                  |            |            |
+| [13](https://tendto.github.io/Tutorato-Ingegneria-del-Software/lezioni/13-Esercizi)                                                       | Esercizi presi dai compiti in classe                  |            |            |
 
 </div>
 
