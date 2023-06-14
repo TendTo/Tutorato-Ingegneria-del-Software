@@ -212,6 +212,11 @@ public class JSListAdapter<T> implements JSList<T> {
 Nell'adapter a due vie, l'adapter, oltre l'interfaccia target, implementa anche quella dell'adaptee.
 Può essere utilizzato sia come adapter che come adaptee.
 
+#### Class adapter vs Object adapter
+
+Nel class adapter, l'adapter estende l'adaptee.  
+Nell'object adapter, l'adapter contiene un'istanza dell'adaptee.
+
 <!-- New subsection -->
 
 ### Possibili applicazioni
