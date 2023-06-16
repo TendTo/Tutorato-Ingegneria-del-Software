@@ -1,4 +1,4 @@
-# Tutorato di Ingegneria del Software
+# <img src="icon.png" align="left" width="35" height="35" alt="Icona del corso"> Tutorato di Ingegneria del Software
 
 <!-- New section -->
 
