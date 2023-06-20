@@ -876,6 +876,134 @@ La coesione di una classe è alta se tutti i metodi contribuiscono ad implementa
 La legge di Lehman è pensata per software di grandi dimensioni, e afferma che un software deve essere modificato per rimanere utile.
 </details>
 
+<!-- New subsection -->
+
+<details>
+<summary>
+<b>Sia la classe Agent un Singleton.
+Si abbia la linea di codice:
+Agent a = Agent.getInstance()</b>
+  <ol>
+    <li> Verrà creata una volta sola l'istanza di Agent, a prescindere dal numero di esecuzioni
+    <li> Viene restituito un errore a compile time
+    <li> Viene restituito un errore a run time appena si incontra per la seconda volta tale linea di codice
+    <li> Verrà creata una istanza di Agent ogni volta che viene incontrata la suddetta linea di codice
+  </ol>
+</summary>
+<i>1. Verrà creata una volta sola l'istanza di Agent, a prescindere dal numero di esecuzioni</i>
+<br/>
+Il design pattern singleton assicura che venga creata una sola istanza di una classe, e che questa sia accessibile globalmente, tramite un metodo statico.
+Il costruttore della classe è privato.
+</details>
+
+<!-- New subsection -->
+
+<details>
+<summary>
+<b>Per il Factory Method</b>
+  <ol>
+    <li> La classe Creator ha un metodo che ritorna ConcreteProduct
+    <li> La classe ConcreteProduct ha un metodo che ritorna Product
+    <li> La classe ConcreteProduct ha un metodo che ritorna Creator
+    <li> La classe ConcreteCreator ha un metodo che ritorna ConcreteProduct
+  </ol>
+</summary>
+<i>2. La classe ConcreteCreator ha un metodo che ritorna Product</i>
+<br/>
+Con il factory method, il client si disinteressa dell'instanziazione di un product, delegando il compito al ConcreteCreator.
+Agli occhi del client, gli verrà restituito un Product.
+Sarà compito del ConcreteCreator scegliere ed instanziare il ConcreteProduct corretto.
+</details>
+
+<!-- New subsection -->
+
+<details>
+<summary>
+<b>Fissata un'interfaccia, il design pattern Decorator</b>
+  <ol>
+    <li> Lascia non fissati alcuni nomi dei metodi pubblici delle classi
+    <li> Fornisce una lista di istanze di classi che la implementano
+    <li> Richiede di implementare metodi con lo stesso nome ma in classi diverse
+    <li> Richiede classi client diverse fra loro
+  </ol>
+</summary>
+<i>3. Richiede di implementare metodi con lo stesso nome ma in classi diverse</i>
+<br/>
+Nel design pattern Decorator, si ha un'interfaccia che definisce un metodo pubblico.
+Le classi ConcreteDecorator implementano l'interfaccia e contengono un riferimento ad Component, aggiungendo funzionalità al metodo, e finendo poi per richiamare il metodo del Component stesso.
+</details>
+
+<!-- New subsection -->
+
+<details>
+<summary>
+<b>In genere, quale dei seguenti prende decisioni su instanziazione di classi?</b>
+  <ol>
+    <li> Una abstract class
+    <li> Mediator
+    <li> Singleton
+    <li> Observer
+  </ol>
+</summary>
+<i>3. Singleton</i>
+<br/>
+Il singleton è un pattern creazionale, che assicura che venga creata una sola istanza di una classe, e che questa sia accessibile globalmente, tramite un metodo statico.
+</details>
+
+<!-- New subsection -->
+
+<details>
+<summary>
+<b>In un codice che utilizza il pattern Bridge vengono creati 3 ConcreteImplementor e 4 Refined Abstraction.
+Se non utilizzassi il pattern, e volessi mantenere tutte le possibili combinazioni, quante classi dovrei creare?</b>
+  <ol>
+    <li> 7
+    <li> 12
+    <li> 9
+    <li> 16
+  </ol>
+</summary>
+<i>2. 12</i>
+<br/>
+Per poter combinare tutti i ConcreteImplementor con tutti i Refined Abstraction, dovrei creare 3*4=12 classi.
+</details>
+
+<!-- New subsection -->
+
+<details>
+<summary>
+<b>Quale fra questi è un vantaggio che ottengo utilizzando il pattern Adapter</b>
+  <ol>
+    <li> Nascondere la complessità di un sotto-sistema
+    <li> Poter cambiare delle interfacce senza dover modificare il client
+    <li> Poter far interagire due server web diversi
+    <li> Aggiungere funzionalità ad una classe più semplice
+  </ol>
+</summary>
+<i>2. Poter cambiare delle interfacce senza dover modificare il client</i>
+<br/>
+Utilizzare il pattern Adapter slega il client dall'implementazione di un'interfaccia esterna.
+Volendola cambiare, sarà sufficiente aggiornare l'Adapter, senza dover modificare il client.
+</details>
+
+<!-- New subsection -->
+
+<details>
+<summary>
+<b>Quale pattern è particolarmente indicato per rappresentare delle strutture ricorsive ed operare su esse?</b>
+  <ol>
+    <li> Chain of Responsibility
+    <li> Decorator
+    <li> Composite
+    <li> Bridge
+  </ol>
+</summary>
+<i>3. Composite</i>
+<br/>
+Il Composite è un pattern strutturale, che permette di utilizzare indistintamente un oggetto singolo o un insieme di oggetti tramite un'interfaccia comune.
+Nell'interfaccia sarà definito un metodo implementato in modo diverso a seconda che l'oggetto sia singolo o composto (implementazione ricorsiva).
+</details>
+
 <!-- New section -->
 
 ## Domande a risposta aperta
@@ -1118,10 +1246,131 @@ Fire -->>- C1: Fire
 C1 ->>+ Berlina: new Berlina(Fire)
 Berlina -->>- C1: Berlina
 C1 -->>- C2: Berlina
-C2 ->>+ Berlina: getTipo()
-Berlina -->>- C2: tipo
-C2 ->>+ Berlina: getPeso()
-Berlina -->>- C2: peso
 C2 ->>+ Berlina: getDistanza(10)
+Berlina -->>+ Fire: getPotenza()
+Fire -->>- Berlina: potenza
 Berlina -->>- C2: distanza
+```
+
+<!-- New section -->
+
+## Stream
+
+Esercizi sugli stream di Java.
+
+<!-- New subsection -->
+
+Data una lista di istanze di Persona trovare i nomi delle persone che sono giovani ed hanno ruolo Programmer, e
+ordinare i risultati
+
+```java
+public record Persona(String name, int age, String role) {}
+
+public static void main(String[] args) {
+  List<Persona> l = List.of(new Persona("Kent", 29, "CTO"), new Persona ("Luigi", 25, "Programmer"), new
+Persona("Andrea", 26, "GrLeader"), new Persona("Sofia", 26, "Programmer"));
+  // ...
+  // result = ["Luigi", "Sofia"]
+}
+```
+
+<!-- New subsection -->
+
+Data una lista di istanze di Persona trovare i diversi ruoli.
+
+```java
+public record Persona(String name, int age, String role) {}
+
+public static void main(String[] args) {
+  List<Persona> l = List.of(new Persona("Kent", 29, "CTO"), new Persona ("Luigi", 25, "Programmer"), new
+Persona("Andrea", 26, "GrLeader"), new Persona("Sofia", 26, "Programmer"));
+  // ...
+  // result = ["CTO", "Programmer", "GrLeader"]
+}
+```
+
+<!-- New subsection -->
+
+Data una lista di stringhe, produrre una lista che contiene solo le stringhe che cominciano con un certo prefisso noto.
+
+```java
+public static void main(String[] args) {
+  List<String> l = List.of("author", "auto", "autocorrect", "begin", "big", "bigger", "biggish");
+  // ...
+  // se prefisso = "au", result = ["auto", "autocorrect"]
+}
+```
+
+<!-- New subsection -->
+
+Data una lista di stringhe, produrre una stringa contenente le iniziali di ciascuna stringa della lista.
+
+```java
+public static void main(String[] args) {
+  List<String> l = List.of("to", "speak", "the", "truth", "and", "pay", "your", "debts");
+  // ...
+  // result = "tsttapyd"
+}
+```
+
+<!-- New subsection -->
+
+Data una lista di terne di numeri interi, per ciascuna terna verificare se essa costituisce un triangolo. Restituire la lista dei perimetri per le terne che rappresentano triangoli.  
+In un triangolo, ciascun lato è minore della somma degli altri due.  
+Si può rappresentare la terna come un array di tre elementi interi
+
+```java
+public static void main(String[] args) {
+  List<List<Integer>> l = List.of(List.of(3, 4, 5), List.of(3, 4, 6), List.of(3, 4, 7), List.of(3, 4, 8));
+  // ...
+}
+```
+
+<!-- New subsection -->
+
+Data una lista di numeri interi positivi, verificare se la lista è ordinata.  
+Suggerimenti:
+
+- Si generano gli indici da 0 a n-1
+- Per ciascun valore dell'indice i, si confrontano l'elemento con indice i ed il successivo, se il secondo è minore del primo la lista non è ordinata e si può fermare la verifica
+
+<!-- New subsection -->
+
+Data una lista di prodotti, restituire il costo totale dei prodotti che hanno un prezzo maggiore di 10.
+
+```java
+public record Prodotto(String nome, double prezzo) {}
+
+public static void main(String[] args) {
+  List<Prodotto> l = List.of(new Prodotto("p1", 5.0), new Prodotto("p2", 10.0), new Prodotto("p3", 15.0), new Prodotto("p4", 20.0));
+  // ...
+  // result = 35.0
+}
+```
+
+<!-- New subsection -->
+
+Produrre una lista contenente i primi n multipli di 7.
+
+```java
+public static void main(String[] args) {
+  int n = 10;
+  // ...
+  // result = [7, 14, 21, 28, 35, 42, 49, 56, 63, 70]
+}
+```
+
+<!-- New subsection -->
+
+Data una lista di utenti, restituire tutti i loro commenti ordinati per data.
+
+```java
+public record Utente(String nome, List<Commento> commenti) {}
+public record Commento(String testo, Date data) {}
+
+public static void main(String[] args) {
+  List<Utente> l = List.of(new Utente("u1", List.of(new Commento("c1", new Date(2021, 1, 1)), new Commento("c2", new Date(2021, 1, 2)))), new Utente("u2", List.of(new Commento("c4", new Date(2021, 1, 3)), new Commento("c3", new Date(2021, 1, 4)), new Commento("p", new Date(2021, 1, 5)))));
+  // ...
+  // result = ["c1", "c2", "c3", "c4", "p"]
+}
 ```
