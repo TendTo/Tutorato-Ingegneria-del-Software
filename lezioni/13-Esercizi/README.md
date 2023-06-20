@@ -1004,6 +1004,46 @@ Il Composite è un pattern strutturale, che permette di utilizzare indistintamen
 Nell'interfaccia sarà definito un metodo implementato in modo diverso a seconda che l'oggetto sia singolo o composto (implementazione ricorsiva).
 </details>
 
+<!-- New subsection -->
+
+<details>
+<summary>
+<b>Un negozio vende una collezione di blocchi. Questi possono essere di metallo o di legno, dipinti, graffiati o patinati. Talvolta possono addirittura essere radioattivi o magnetizzati.
+<br/>
+Quale design pattern permetterebbe di introdurre nuove tipologie di blocchi senza modificare codice già esistente?
+</b>
+  <ol>
+    <li> Observer
+    <li> State
+    <li> Bridge
+    <li> Decorator
+  </ol>
+</summary>
+<i>4. Decorator</i>
+<br/>
+Utilizzando il Decorator, è possibile aggiungere funzionalità ad un oggetto senza dover modificarne la classe.
+Si possono anche mettere insieme più Decorator, combinandone le funzionalità.
+</details>
+
+<!-- New subsection -->
+
+<details>
+<summary>
+<b>In un gioco il personaggio protagonista acquisisce sempre più potenziamenti man mano che prosegue. Questi sbloccano nuove abilità, permettendogli di compiere azioni che gli erano precluse.<br>
+Che pattern si può utilizzare per gestire il comportamento del personaggio?</b>
+</b>
+<ol>
+  <li> State
+  <li> Composite
+  <li> Bridge
+  <li> Observer
+</ol>
+</summary>
+<i>1. State</i>
+<br/>
+Durante la sua avventura, lo stato del personaggio cambia, e con esso le sue abilità e azioni possibili.
+</details>
+
 <!-- New section -->
 
 ## Domande a risposta aperta
@@ -1100,6 +1140,81 @@ class OrderManager {
 ### Codice
 
 ```java
+public interface IDataSource {
+ public String getNomeCompleto();
+ public int getEta();
+}
+```
+
+```java
+public class Info {
+  private String nome;
+  private String cognome;
+  private Date dataDiNascita;
+  public Info(String nome, String cognome, Date dataDiNascita) {
+    this.nome = nome; this.cognome = cognome; this.dataDiNascita = dataDiNascita;
+  }
+  public String getNome() { return nome;}
+  public String getCognome() { return cognome;}
+  public Date getDataDiNascita() { return dataDiNascita;}
+}
+```
+
+<!-- New subsection -->
+
+### Domande
+
+<details>
+<summary>
+<b>Il client vuole ottenere dei dati di un utente utilizzando l'interfaccia IDataSource.
+Quale pattern potrebbe utilizzare?
+Scrivere tutte le componenti mancanti necessarie per realizzare il pattern</b>
+</summary>
+<i>Il design pattern Adapter</i>
+</details>
+
+```java
+public class InfoAdapter implements IDataSource {
+  private Info info;
+  public InfoAdapter(Info info) { this.info = info; }
+  public String getNomeCompleto() {
+    return info.getNome() + " " + info.getCognome();
+  }
+  public int getEta() {
+    return LocalDate.now().getYear() - info.getDataDiNascita().getYear();
+  }
+}
+```
+
+<!-- .element: class="fragment" -->
+
+<!-- New subsection -->
+
+### Domanda
+
+Utilizzare una variante del pattern per risolvere lo stesso problema.
+
+```java
+public class InfoAdapter extends Info implements IDataSource {
+  public InfoAdapter(String nome, String cognome, Date dataDiNascita) {
+    super(nome, cognome, dataDiNascita);
+  }
+  public String getNomeCompleto() {
+    return getNome() + " " + getCognome();
+  }
+  public int getEta() {
+    return LocalDate.now().getYear() - getDataDiNascita().getYear();
+  }
+}
+```
+
+<!-- .element: class="fragment" -->
+
+<!-- New subsection -->
+
+### Codice
+
+```java
 public interface Auto {
   public String getTipo();
   public int getPeso();
@@ -1160,6 +1275,8 @@ public class C1 {
 }
 ```
 
+<!-- .element: class="fragment" -->
+
 <!-- New subsection -->
 
 ### Domande
@@ -1176,6 +1293,8 @@ public class C2 {
   }
 }
 ```
+
+<!-- .element: class="fragment" -->
 
 <!-- New subsection -->
 
@@ -1226,6 +1345,8 @@ C1 --> Auto
 C2 --> C1
 ```
 
+<!-- .element: class="fragment" -->
+
 <!-- New subsection -->
 
 ### Domande
@@ -1252,11 +1373,11 @@ Fire -->>- Berlina: potenza
 Berlina -->>- C2: distanza
 ```
 
+<!-- .element: class="fragment" -->
+
 <!-- New section -->
 
 ## Stream
-
-Esercizi sugli stream di Java.
 
 <!-- New subsection -->
 
@@ -1267,8 +1388,10 @@ ordinare i risultati
 public record Persona(String name, int age, String role) {}
 
 public static void main(String[] args) {
-  List<Persona> l = List.of(new Persona("Kent", 29, "CTO"), new Persona ("Luigi", 25, "Programmer"), new
-Persona("Andrea", 26, "GrLeader"), new Persona("Sofia", 26, "Programmer"));
+  List<Persona> l = List.of(new Persona("Kent", 29, "CTO"),
+                            new Persona("Luigi", 25, "Programmer"),
+                            new Persona("Andrea", 26, "GrLeader"),
+                            new Persona("Sofia", 26, "Programmer"));
   // ...
   // result = ["Luigi", "Sofia"]
 }
@@ -1282,8 +1405,10 @@ Data una lista di istanze di Persona trovare i diversi ruoli.
 public record Persona(String name, int age, String role) {}
 
 public static void main(String[] args) {
-  List<Persona> l = List.of(new Persona("Kent", 29, "CTO"), new Persona ("Luigi", 25, "Programmer"), new
-Persona("Andrea", 26, "GrLeader"), new Persona("Sofia", 26, "Programmer"));
+  List<Persona> l = List.of(new Persona("Kent", 29, "CTO"), 
+                            new Persona("Luigi", 25, "Programmer"),
+                            new Persona("Andrea", 26, "GrLeader"),
+                            new Persona("Sofia", 26, "Programmer"));
   // ...
   // result = ["CTO", "Programmer", "GrLeader"]
 }
@@ -1295,7 +1420,9 @@ Data una lista di stringhe, produrre una lista che contiene solo le stringhe che
 
 ```java
 public static void main(String[] args) {
-  List<String> l = List.of("author", "auto", "autocorrect", "begin", "big", "bigger", "biggish");
+  List<String> l = List.of("author", "auto",
+                           "autocorrect", "begin",
+                           "big", "bigger", "biggish");
   // ...
   // se prefisso = "au", result = ["auto", "autocorrect"]
 }
@@ -1307,7 +1434,8 @@ Data una lista di stringhe, produrre una stringa contenente le iniziali di ciasc
 
 ```java
 public static void main(String[] args) {
-  List<String> l = List.of("to", "speak", "the", "truth", "and", "pay", "your", "debts");
+  List<String> l = List.of("to", "speak", "the", "truth", 
+                           "and", "pay", "your", "debts");
   // ...
   // result = "tsttapyd"
 }
@@ -1321,7 +1449,8 @@ Si può rappresentare la terna come un array di tre elementi interi
 
 ```java
 public static void main(String[] args) {
-  List<List<Integer>> l = List.of(List.of(3, 4, 5), List.of(3, 4, 6), List.of(3, 4, 7), List.of(3, 4, 8));
+  List<List<Integer>> l = List.of(List.of(3, 4, 5), List.of(3, 4, 6), 
+                                  List.of(3, 4, 7), List.of(3, 4, 8));
   // ...
 }
 ```
@@ -1342,7 +1471,8 @@ Data una lista di prodotti, restituire il costo totale dei prodotti che hanno un
 public record Prodotto(String nome, double prezzo) {}
 
 public static void main(String[] args) {
-  List<Prodotto> l = List.of(new Prodotto("p1", 5.0), new Prodotto("p2", 10.0), new Prodotto("p3", 15.0), new Prodotto("p4", 20.0));
+  List<Prodotto> l = List.of(new Prodotto("p1", 5.0), new Prodotto("p2", 10.0), 
+                             new Prodotto("p3", 15.0), new Prodotto("p4", 20.0));
   // ...
   // result = 35.0
 }
@@ -1369,7 +1499,10 @@ public record Utente(String nome, List<Commento> commenti) {}
 public record Commento(String testo, Date data) {}
 
 public static void main(String[] args) {
-  List<Utente> l = List.of(new Utente("u1", List.of(new Commento("c1", new Date(2021, 1, 1)), new Commento("c2", new Date(2021, 1, 2)))), new Utente("u2", List.of(new Commento("c4", new Date(2021, 1, 3)), new Commento("c3", new Date(2021, 1, 4)), new Commento("p", new Date(2021, 1, 5)))));
+  List<Utente> l = List.of(new Utente("u1", 
+    List.of(new Commento("c1", new Date(2021, 1, 1)), new Commento("c2", new Date(2021, 1, 2)))), 
+  new Utente("u2", 
+    List.of(new Commento("c4", new Date(2021, 1, 3)), new Commento("c3", new Date(2021, 1, 4)), new Commento("p", new Date(2021, 1, 5)))));
   // ...
   // result = ["c1", "c2", "c3", "c4", "p"]
 }
