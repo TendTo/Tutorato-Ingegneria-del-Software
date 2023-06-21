@@ -903,7 +903,7 @@ Il costruttore della classe è privato.
 <b>Per il Factory Method</b>
   <ol>
     <li> La classe Creator ha un metodo che ritorna ConcreteProduct
-    <li> La classe ConcreteProduct ha un metodo che ritorna Product
+    <li> La classe ConcreteCreator ha un metodo che ritorna Product
     <li> La classe ConcreteProduct ha un metodo che ritorna Creator
     <li> La classe ConcreteCreator ha un metodo che ritorna ConcreteProduct
   </ol>
@@ -938,6 +938,7 @@ Le classi ConcreteDecorator implementano l'interfaccia e contengono un riferimen
 <details>
 <summary>
 <b>In genere, quale dei seguenti prende decisioni su instanziazione di classi?</b>
+<br>
   <ol>
     <li> Una abstract class
     <li> Mediator
@@ -956,6 +957,7 @@ Il singleton è un pattern creazionale, che assicura che venga creata una sola i
 <summary>
 <b>In un codice che utilizza il pattern Bridge vengono creati 3 ConcreteImplementor e 4 Refined Abstraction.
 Se non utilizzassi il pattern, e volessi mantenere tutte le possibili combinazioni, quante classi dovrei creare?</b>
+<br>
   <ol>
     <li> 7
     <li> 12
@@ -991,6 +993,7 @@ Volendola cambiare, sarà sufficiente aggiornare l'Adapter, senza dover modifica
 <details>
 <summary>
 <b>Quale pattern è particolarmente indicato per rappresentare delle strutture ricorsive ed operare su esse?</b>
+<br>
   <ol>
     <li> Chain of Responsibility
     <li> Decorator
@@ -1011,6 +1014,7 @@ Nell'interfaccia sarà definito un metodo implementato in modo diverso a seconda
 <b>Un negozio vende una collezione di blocchi. Questi possono essere di metallo o di legno, dipinti, graffiati o patinati. Talvolta possono addirittura essere radioattivi o magnetizzati.
 <br/>
 Quale design pattern permetterebbe di introdurre nuove tipologie di blocchi senza modificare codice già esistente?
+<br>
 </b>
   <ol>
     <li> Observer
@@ -1019,10 +1023,10 @@ Quale design pattern permetterebbe di introdurre nuove tipologie di blocchi senz
     <li> Decorator
   </ol>
 </summary>
-<i>4. Decorator</i>
+<i>3. Bridge</i>
 <br/>
-Utilizzando il Decorator, è possibile aggiungere funzionalità ad un oggetto senza dover modificarne la classe.
-Si possono anche mettere insieme più Decorator, combinandone le funzionalità.
+Utilizzando il Bridge, abstraction (Blocco) e implementor (Caratteristica) sono separate.
+Diviene semplice aggiungere un ulteriore concrete implementor (ad esempio, blocchi di vetro) o refined abstraction senza dover modificare il codice già esistente.
 </details>
 
 <!-- New subsection -->
@@ -1031,6 +1035,7 @@ Si possono anche mettere insieme più Decorator, combinandone le funzionalità.
 <summary>
 <b>In un gioco il personaggio protagonista acquisisce sempre più potenziamenti man mano che prosegue. Questi sbloccano nuove abilità, permettendogli di compiere azioni che gli erano precluse.<br>
 Che pattern si può utilizzare per gestire il comportamento del personaggio?</b>
+<br>
 </b>
 <ol>
   <li> State
@@ -1381,8 +1386,7 @@ Berlina -->>- C2: distanza
 
 <!-- New subsection -->
 
-Data una lista di istanze di Persona trovare i nomi delle persone che sono giovani ed hanno ruolo Programmer, e
-ordinare i risultati
+Data una lista di persone, trovare i nomi dei programmatori con età minore di 30 anni.
 
 ```java
 public record Persona(String name, int age, String role) {}
@@ -1391,7 +1395,8 @@ public static void main(String[] args) {
   List<Persona> l = List.of(new Persona("Kent", 29, "CTO"),
                             new Persona("Luigi", 25, "Programmer"),
                             new Persona("Andrea", 26, "GrLeader"),
-                            new Persona("Sofia", 26, "Programmer"));
+                            new Persona("Sofia", 26, "Programmer"),
+                            new Persona("Alfio", 63, "Programmer"));
   // ...
   // result = ["Luigi", "Sofia"]
 }
@@ -1405,7 +1410,7 @@ Data una lista di istanze di Persona trovare i diversi ruoli.
 public record Persona(String name, int age, String role) {}
 
 public static void main(String[] args) {
-  List<Persona> l = List.of(new Persona("Kent", 29, "CTO"), 
+  List<Persona> l = List.of(new Persona("Kent", 29, "CTO"),
                             new Persona("Luigi", 25, "Programmer"),
                             new Persona("Andrea", 26, "GrLeader"),
                             new Persona("Sofia", 26, "Programmer"));
@@ -1424,7 +1429,7 @@ public static void main(String[] args) {
                            "autocorrect", "begin",
                            "big", "bigger", "biggish");
   // ...
-  // se prefisso = "au", result = ["auto", "autocorrect"]
+  // se prefisso = "au", result = ["author", "auto", "autocorrect"]
 }
 ```
 
@@ -1434,7 +1439,7 @@ Data una lista di stringhe, produrre una stringa contenente le iniziali di ciasc
 
 ```java
 public static void main(String[] args) {
-  List<String> l = List.of("to", "speak", "the", "truth", 
+  List<String> l = List.of("to", "speak", "the", "truth",
                            "and", "pay", "your", "debts");
   // ...
   // result = "tsttapyd"
@@ -1449,9 +1454,10 @@ Si può rappresentare la terna come un array di tre elementi interi
 
 ```java
 public static void main(String[] args) {
-  List<List<Integer>> l = List.of(List.of(3, 4, 5), List.of(3, 4, 6), 
+  List<List<Integer>> l = List.of(List.of(3, 4, 5), List.of(3, 4, 6),
                                   List.of(3, 4, 7), List.of(3, 4, 8));
   // ...
+  // result = [12, 13, 14]
 }
 ```
 
@@ -1471,7 +1477,7 @@ Data una lista di prodotti, restituire il costo totale dei prodotti che hanno un
 public record Prodotto(String nome, double prezzo) {}
 
 public static void main(String[] args) {
-  List<Prodotto> l = List.of(new Prodotto("p1", 5.0), new Prodotto("p2", 10.0), 
+  List<Prodotto> l = List.of(new Prodotto("p1", 5.0), new Prodotto("p2", 10.0),
                              new Prodotto("p3", 15.0), new Prodotto("p4", 20.0));
   // ...
   // result = 35.0
@@ -1499,11 +1505,14 @@ public record Utente(String nome, List<Commento> commenti) {}
 public record Commento(String testo, Date data) {}
 
 public static void main(String[] args) {
-  List<Utente> l = List.of(new Utente("u1", 
-    List.of(new Commento("c1", new Date(2021, 1, 1)), new Commento("c2", new Date(2021, 1, 2)))), 
-  new Utente("u2", 
-    List.of(new Commento("c4", new Date(2021, 1, 3)), new Commento("c3", new Date(2021, 1, 4)), new Commento("p", new Date(2021, 1, 5)))));
-  // ...
-  // result = ["c1", "c2", "c3", "c4", "p"]
+  List<Utente> l = List.of(
+          new Utente("u1",
+                  List.of(new Commento("c2", LocalDate.of(2021, 1, 2)),
+                          new Commento("c1", LocalDate.of(2021, 1, 1)),
+                          new Commento("c5", LocalDate.of(2021, 1, 5)))),
+          new Utente("u2",
+                  List.of(new Commento("c4", LocalDate.of(2021, 1, 4)),
+                          new Commento("c3", LocalDate.of(2021, 1, 3)))));
+  // result = ["c1", "c2", "c3", "c4", "c5"]
 }
 ```
