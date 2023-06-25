@@ -1516,3 +1516,40 @@ public static void main(String[] args) {
   // result = ["c1", "c2", "c3", "c4", "c5"]
 }
 ```
+
+<!-- New subsection -->
+
+Restituire gli utenti che hanno pubblicato almeno un commento prima di una certa data
+
+```java
+private static void es10() {
+    LocalDate date = LocalDate.of(2021, 1, 3);
+    List<Utente> l = List.of(
+            new Utente("u1",
+                    List.of(new Commento("c2", LocalDate.of(2021, 1, 2)),
+                            new Commento("c1", LocalDate.of(2021, 1, 1)),
+                            new Commento("c5", LocalDate.of(2021, 1, 5)))),
+            new Utente("u2",
+                    List.of(new Commento("c4", LocalDate.of(2021, 1, 4)),
+                            new Commento("c3", LocalDate.of(2021, 1, 3)))));
+    // result = ["u1"]
+}
+```
+
+<!-- New subsection -->
+
+Restituire l'utente che ha pubblicato il commento più recente
+
+```java
+private static void es11() {
+    List<Utente> l = List.of(
+            new Utente("u1",
+                    List.of(new Commento("c2", LocalDate.of(2021, 1, 2)),
+                            new Commento("c1", LocalDate.of(2021, 1, 1)),
+                            new Commento("c5", LocalDate.of(2021, 1, 5)))),
+            new Utente("u2",
+                    List.of(new Commento("c4", LocalDate.of(2021, 1, 4)),
+                            new Commento("c3", LocalDate.of(2021, 1, 3)))));
+    // result = "u1"
+}
+```

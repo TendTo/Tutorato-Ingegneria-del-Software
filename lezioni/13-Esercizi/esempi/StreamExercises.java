@@ -196,6 +196,54 @@ public class StreamExercises {
                 .forEach(System.out::println);
     }
 
+    /**
+     * Restituire gli utenti che hanno pubblicato almeno un commento prima di una
+     * certa data
+     */
+    private static void es10() {
+        LocalDate date = LocalDate.of(2021, 1, 3);
+        List<Utente> l = List.of(
+                new Utente("u1",
+                        List.of(new Commento("c2", LocalDate.of(2021, 1, 2)),
+                                new Commento("c1", LocalDate.of(2021, 1, 1)),
+                                new Commento("c5", LocalDate.of(2021, 1, 5)))),
+                new Utente("u2",
+                        List.of(new Commento("c4", LocalDate.of(2021, 1, 4)),
+                                new Commento("c3", LocalDate.of(2021, 1, 3)))));
+
+        l.stream()
+                .filter(u -> u.commenti().stream()
+                        .anyMatch(c -> c.data().isBefore(date)))
+                .forEach(System.out::println);
+    }
+
+    /**
+     * Restituire l'utente che ha pubblicato il commento più recente
+     */
+    private static void es11() {
+        List<Utente> l = List.of(
+                new Utente("u1",
+                        List.of(new Commento("c2", LocalDate.of(2021, 1, 2)),
+                                new Commento("c1", LocalDate.of(2021, 1, 1)),
+                                new Commento("c5", LocalDate.of(2021, 1, 5)))),
+                new Utente("u2",
+                        List.of(new Commento("c4", LocalDate.of(2021, 1, 4)),
+                                new Commento("c3", LocalDate.of(2021, 1, 3)))));
+
+        Utente u = l.stream()
+                .max((u1, u2) -> u1.commenti().stream()
+                        .map(Commento::data)
+                        .max(LocalDate::compareTo)
+                        .orElse(LocalDate.MIN)
+                        .compareTo(u2.commenti().stream()
+                                .map(Commento::data)
+                                .max(LocalDate::compareTo)
+                                .orElse(LocalDate.MIN)))
+                .orElse(null);
+
+        System.out.println(u);
+    }
+
     public static void main(String[] args) {
         // es1();
         // es2();
@@ -206,6 +254,8 @@ public class StreamExercises {
         // es7();
         // es8();
         // es9();
+        // es10();
+        // es11();
     }
 
 }
