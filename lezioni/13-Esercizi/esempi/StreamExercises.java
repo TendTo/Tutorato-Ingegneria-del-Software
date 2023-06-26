@@ -182,6 +182,8 @@ public class StreamExercises {
                         List.of(new Commento("c4", LocalDate.of(2021, 1, 4)),
                                 new Commento("c3", LocalDate.of(2021, 1, 3)))));
 
+        // [U1, U2, U3] -> [[C1, C2], [C3, C4, C5], [C6]] # Con la map
+        // [U1, U2, U3] -> [C1, C2, C3, C4, C5, C6] # Con la flatMap
         l.stream()
                 .flatMap(u -> u.commenti().stream())
                 .sorted((c1, c2) -> c1.data().compareTo(c2.data()))
@@ -221,25 +223,25 @@ public class StreamExercises {
                         List.of(new Commento("c4", LocalDate.of(2021, 1, 4)),
                                 new Commento("c3", LocalDate.of(2021, 1, 3)))));
         /*
-        Utente u = l.stream()
-                .max((u1, u2) -> u1.commenti().stream()
-                        .map(Commento::data)
-                        .max(LocalDate::compareTo)
-                        .orElse(LocalDate.MIN)
-                        .compareTo(u2.commenti().stream()
-                                .map(Commento::data)
-                                .max(LocalDate::compareTo)
-                                .orElse(LocalDate.MIN)))
-                .orElse(null);
-
-        System.out.println(u);
-        */
+         * Utente u = l.stream()
+         * .max((u1, u2) -> u1.commenti().stream()
+         * .map(Commento::data)
+         * .max(LocalDate::compareTo)
+         * .orElse(LocalDate.MIN)
+         * .compareTo(u2.commenti().stream()
+         * .map(Commento::data)
+         * .max(LocalDate::compareTo)
+         * .orElse(LocalDate.MIN)))
+         * .orElse(null);
+         * 
+         * System.out.println(u);
+         */
 
         Optional<Utente> result = l.stream()
-                                   .max(Comparator.comparing(u -> u.comment.stream()
-                                                                           .map(Commento::date)
-                                                                           .max(LocalDate::compareTo)
-                                                                           .orElse(LocalDate.MIN)));
+                .max(Comparator.comparing(u -> u.comment().stream()
+                        .map(Commento::date)
+                        .max(LocalDate::compareTo)
+                        .orElse(LocalDate.MIN)));
         result.ifPresent(System.out::println);
     }
 
