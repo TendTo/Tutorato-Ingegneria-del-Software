@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -232,6 +233,17 @@ public class StreamExercises {
                 .orElse(null);
 
         System.out.println(u);
+
+        /*
+        Soluzione proposta
+
+        Optional<Utente> result = l.stream()
+                                   .max(Comparator.comparing(u -> u.comment.stream()
+                                                                           .map(Commento::date)
+                                                                           .max(LocalDate::compareTo)
+                                                                           .orElse(LocalDate.MIN)));
+        result.ifPresent(System.out::println);
+        */
     }
 
     @Consegna("Restituire il prodotto più economico")
