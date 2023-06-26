@@ -1553,3 +1553,15 @@ private static void es11() {
     // result = "u1"
 }
 ```
+
+<!-- New subsection -->
+
+Restituire il prodotto più economico
+
+```java
+List<Prodotto> l = List.of(new Prodotto("p1", 80), new Prodotto("p2", 50),
+                           new Prodotto("p3", 10), new Prodotto("p4", 20));
+
+// result = "p3"
+}
+```

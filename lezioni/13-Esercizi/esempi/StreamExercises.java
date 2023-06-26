@@ -4,9 +4,33 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Repeatable;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.time.LocalDate;
 
 public class StreamExercises {
+
+    private static final String ANSI_GREEN = "\u001B[32m";
+    private static final String ANSI_BOLD = "\u001B[1m";
+    private static final String ANSI_RESET = "\u001B[0m";
+
+    @Target(ElementType.METHOD)
+    @Retention(RetentionPolicy.RUNTIME)
+    @Repeatable(Consegne.class)
+    public @interface Consegna {
+        String value();
+    }
+
+    @Target(ElementType.METHOD)
+    @Retention(RetentionPolicy.RUNTIME)
+    public @interface Consegne {
+        Consegna[] value();
+    }
 
     public record Persona(String name, int age, String role) {
     }
@@ -20,9 +44,7 @@ public class StreamExercises {
     public record Commento(String testo, LocalDate data) {
     }
 
-    /**
-     * Trovare i nomi dei programmatori con età minore di 30 anni.
-     */
+    @Consegna("Trovare i nomi dei programmatori con età minore di 30 anni.")
     private static void es1() {
         List<Persona> l = List.of(new Persona("Kent", 29, "CTO"),
                 new Persona("Luigi", 25, "Programmer"),
@@ -36,9 +58,7 @@ public class StreamExercises {
                 .forEach(System.out::println);
     }
 
-    /**
-     * Trovare tutti i ruoli distinti delle persone nella lista.
-     */
+    @Consegna("Trovare tutti i ruoli distinti delle persone nella lista.")
     private static void es2() {
         List<Persona> l = List.of(new Persona("Kent", 29, "CTO"),
                 new Persona("Luigi", 25, "Programmer"),
@@ -49,16 +69,9 @@ public class StreamExercises {
                 .map(Persona::role)
                 .distinct()
                 .forEach(System.out::println);
-
-        List<Persona> newL = l.stream()
-                .sorted(Comparator.comparing(x -> x.name()))
-                .collect(Collectors.toList());
     }
 
-    /**
-     * Produrre una lista che contiene solo le stringhe che cominciano con un certo
-     * prefisso noto.
-     */
+    @Consegna("Produrre una lista che contiene solo le stringhe che cominciano con un certo prefisso noto.")
     private static void es3() {
         String prefix = "au";
         List<String> l = List.of("f", "author", "auto",
@@ -72,9 +85,7 @@ public class StreamExercises {
                 .forEach(System.out::println);
     }
 
-    /**
-     * Produrre una stringa contenente le iniziali di ciascuna stringa della lista.
-     */
+    @Consegna("Produrre una stringa contenente le iniziali di ciascuna stringa della lista.")
     private static void es4() {
         List<String> l = List.of("to", "speak", "the", "truth",
                 "and", "pay", "your", "debts");
@@ -87,13 +98,9 @@ public class StreamExercises {
         System.out.println(startingLetter);
     }
 
-    /**
-     * Data una lista di terne di numeri interi, per ciascuna terna verificare se
-     * essa costituisce un triangolo. Restituire la lista dei perimetri per le terne
-     * che rappresentano triangoli.
-     * In un triangolo, ciascun lato è minore della somma degli altri due.
-     * Si può rappresentare la terna come un array di tre elementi interi
-     */
+    @Consegna("Data una lista di terne di numeri interi, per ciascuna terna verificare se essa costituisce un triangolo. Restituire la lista dei perimetri per le terne che rappresentano triangoli.")
+    @Consegna("In un triangolo, ciascun lato è minore della somma degli altri due.")
+    @Consegna("Si può rappresentare la terna come un array di tre elementi interi")
     private static void es5() {
         List<List<Integer>> l = List.of(List.of(3, 4, 5), List.of(3, 4, 6),
                 List.of(3, 4, 7), List.of(3, 4, 8));
@@ -110,16 +117,10 @@ public class StreamExercises {
             System.out.println(i);
     }
 
-    /**
-     * Data una lista di numeri interi positivi, verificare se la lista è ordinata.
-     * 
-     * Suggerimenti:
-     *
-     * - Si generano gli indici da 0 a n-1
-     * - Per ciascun valore dell'indice i, si confrontano l'elemento con indice i ed
-     * il successivo, se il secondo è minore del primo la lista non è ordinata e si
-     * può fermare la verifica
-     */
+    @Consegna("Data una lista di numeri interi positivi, verificare se la lista è ordinata.")
+    @Consegna("Suggerimenti:")
+    @Consegna("- Si generano gli indici da 0 a n-1")
+    @Consegna("- Per ciascun valore dell'indice i, si confrontano l'elemento con indice i ed il successivo, se il secondo è minore del primo la lista non è ordinata e si può fermare la verifica")
     private static void es6() {
         List<Integer> ordL = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
         List<Integer> notOrdL = List.of(5, 6, 1, 2, 3, 4, 9, 8, 7);
@@ -139,9 +140,7 @@ public class StreamExercises {
         System.out.println("emptyList: " + isEmptyOrd);
     }
 
-    /**
-     * Restituire il costo totale dei prodotti che hanno un prezzo maggiore di 10.
-     */
+    @Consegna("Restituire il costo totale dei prodotti che hanno un prezzo maggiore di 10.")
     private static void es7() {
         List<Prodotto> l = List.of(new Prodotto("p1", 5.0), new Prodotto("p2", 10.0),
                 new Prodotto("p3", 15.0), new Prodotto("p4", 20.0));
@@ -159,9 +158,7 @@ public class StreamExercises {
         System.out.println(sum);
     }
 
-    /**
-     * Produrre una lista contenente i primi n multipli di 7
-     */
+    @Consegna("Produrre una lista contenente i primi n multipli di 7")
     private static void es8() {
         int n = 10;
         List<Integer> l = Stream.iterate(0, i -> i + 7)
@@ -173,13 +170,7 @@ public class StreamExercises {
 
     }
 
-    /**
-     * Restituire tutti i commenti degli utenti ordinati per data
-     * 
-     * Stream<Utente> -> Stream<Stream<Commento>> -> Stream<Commento>
-     * [U1, U2, U3] -> [[C1, C2], [C3, C4, C5], [C6]] # Con la map
-     * [U1, U2, U3] -> [C1, C2, C3, C4, C5, C6] # Con la flatMap
-     */
+    @Consegna("Restituire tutti i commenti degli utenti ordinati per data")
     private static void es9() {
         List<Utente> l = List.of(
                 new Utente("u1",
@@ -196,10 +187,7 @@ public class StreamExercises {
                 .forEach(System.out::println);
     }
 
-    /**
-     * Restituire gli utenti che hanno pubblicato almeno un commento prima di una
-     * certa data
-     */
+    @Consegna("Restituire gli utenti che hanno pubblicato almeno un commento prima di una certa data")
     private static void es10() {
         LocalDate date = LocalDate.of(2021, 1, 3);
         List<Utente> l = List.of(
@@ -213,13 +201,15 @@ public class StreamExercises {
 
         l.stream()
                 .filter(u -> u.commenti().stream()
-                        .anyMatch(c -> c.data().isBefore(date)))
+                        .filter(c -> c.data().isBefore(date))
+                        .findAny()
+                        .isPresent())
+                // In un solo passaggio con anyMatch
+                // .anyMatch(c -> c.data().isBefore(date)))
                 .forEach(System.out::println);
     }
 
-    /**
-     * Restituire l'utente che ha pubblicato il commento più recente
-     */
+    @Consegna("Restituire l'utente che ha pubblicato il commento più recente")
     private static void es11() {
         List<Utente> l = List.of(
                 new Utente("u1",
@@ -244,18 +234,54 @@ public class StreamExercises {
         System.out.println(u);
     }
 
-    public static void main(String[] args) {
-        // es1();
-        // es2();
-        // es3();
-        // es4();
-        // es5();
-        // es6();
-        // es7();
-        // es8();
-        // es9();
-        // es10();
-        // es11();
+    @Consegna("Restituire il prodotto più economico")
+    private static void es12() {
+        List<Prodotto> l = List.of(new Prodotto("p1", 80), new Prodotto("p2", 50),
+                new Prodotto("p3", 10), new Prodotto("p4", 20));
+
+        Prodotto p = l.stream()
+                .min(Comparator.comparing(Prodotto::prezzo))
+                .orElse(null);
+
+        System.out.println(p);
     }
 
+    /**
+     * Stampa la consegna dell'esercizio
+     * 
+     * @param method il metodo che rappresenta l'esercizio
+     */
+    private static void printEsercizio(Method method) {
+        StringBuilder sb = new StringBuilder();
+        sb
+                .append(ANSI_BOLD)
+                .append(ANSI_GREEN)
+                .append("Esercizio '")
+                .append(method.getName())
+                .append("'\n")
+                .append(ANSI_RESET)
+                .append("Consegna: ");
+
+        Consegna[] consegne = method.getAnnotationsByType(Consegna.class);
+        for (int i = 0; i < consegne.length; i++) {
+            sb.append(consegne[i].value());
+            sb.append("\n");
+        }
+        System.out.println(sb.toString());
+    }
+
+    public static void main(String[] args) {
+        for (Method method : StreamExercises.class.getDeclaredMethods()) {
+            if (method.getAnnotationsByType(Consegna.class).length > 0) {
+                printEsercizio(method);
+                try {
+                    method.invoke(null);
+                } catch (IllegalAccessException | IllegalArgumentException
+                        | InvocationTargetException e) {
+                    e.printStackTrace();
+                }
+                System.out.println();
+            }
+        }
+    }
 }
