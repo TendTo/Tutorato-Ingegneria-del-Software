@@ -1565,3 +1565,51 @@ List<Prodotto> l = List.of(new Prodotto("p1", 80), new Prodotto("p2", 50),
 // result = "p3"
 }
 ```
+
+<!-- New subsection -->
+
+Restituire tutte le figure che siano rettangoli o quadrati (tutti gli angoli uguali)
+
+```java
+List<Figura> l = List.of(new Figura(12, 12, 12, 12, 45, 45, 135, 135),
+                         new Figura(2, 2, 2, 2, 90, 90, 90, 90),
+                         new Figura(1, 2, 1, 2, 90, 90, 90, 90));
+// ...
+// result = [Figura2, Figura3]
+```
+
+<!-- New subsection -->
+
+Restituire uno stream che contenga il lato minore per ogni figura
+
+```java
+List<Figura> l = List.of(new Figura(12, 12, 12, 12, 45, 45, 135, 135),
+                         new Figura(2, 2, 2, 2, 90, 90, 90, 90),
+                         new Figura(1, 2, 1, 2, 90, 90, 90, 90));
+// ...
+// result = [12, 2, 1]
+```
+
+<!-- New subsection -->
+
+Restituire il perimetro minore tra tutte le figure
+
+```java
+List<Figura> l = List.of(new Figura(12, 12, 12, 12, 45, 45, 135, 135),
+                         new Figura(2, 2, 2, 2, 90, 90, 90, 90),
+                         new Figura(1, 2, 1, 2, 90, 90, 90, 90));
+// ...
+// result = 6
+```
+
+<!-- New subsection -->
+
+Ottenere la somma del valore dell'area di tutte le figure
+
+```java
+List<Figura> l = List.of(new Figura(12, 12, 12, 12, 45, 45, 135, 135),
+                         new Figura(2, 2, 2, 2, 90, 90, 90, 90),
+                         new Figura(1, 2, 1, 2, 90, 90, 90, 90));
+// ...
+// result = 150
+```

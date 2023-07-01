@@ -45,6 +45,9 @@ public class StreamExercises {
     public record Commento(String testo, LocalDate data) {
     }
 
+    record Figura(int lato1, int lato2, int lato3, int lato4, int angolo1, int angolo2, int angolo3, int angolo4) {
+    }
+
     @Consegna("Trovare i nomi dei programmatori con età minore di 30 anni.")
     private static void es1() {
         List<Persona> l = List.of(new Persona("Kent", 29, "CTO"),
@@ -238,8 +241,8 @@ public class StreamExercises {
          */
 
         Optional<Utente> result = l.stream()
-                .max(Comparator.comparing(u -> u.comment().stream()
-                        .map(Commento::date)
+                .max(Comparator.comparing(u -> u.commenti().stream()
+                        .map(Commento::data)
                         .max(LocalDate::compareTo)
                         .orElse(LocalDate.MIN)));
         result.ifPresent(System.out::println);
@@ -255,6 +258,60 @@ public class StreamExercises {
                 .orElse(null);
 
         System.out.println(p);
+    }
+
+    @Consegna("Restituire tutte le figure che siano rettangoli o quadrati (tutti gli angoli uguali)")
+    private static void es13() {
+        List<Figura> l = List.of(new Figura(12, 12, 12, 12, 45, 45, 135, 135),
+                new Figura(2, 2, 2, 2, 90, 90, 90, 90),
+                new Figura(1, 2, 1, 2, 90, 90, 90, 90));
+
+        l.stream()
+                .filter(f -> f.angolo1() == f.angolo2())
+                .filter(f -> f.angolo2() == f.angolo3())
+                .filter(f -> f.angolo3() == f.angolo4())
+                .filter(f -> f.angolo4() == f.angolo1())
+                .forEach(System.out::println);
+    }
+
+    @Consegna("Restituire uno stream che contenga il lato minore per ogni figura")
+    private static void es14() {
+        List<Figura> l = List.of(new Figura(12, 12, 12, 12, 45, 45, 135, 135),
+                new Figura(2, 2, 2, 2, 90, 90, 90, 90),
+                new Figura(1, 2, 1, 2, 90, 90, 90, 90));
+
+        l.stream()
+                .map(f -> IntStream.of(f.lato1(), f.lato2(), f.lato3(), f.lato4())
+                        .min()
+                        .orElseThrow())
+                .forEach(System.out::println);
+    }
+
+    @Consegna("Restituire il perimetro minore tra tutte le figure")
+    private static void es15() {
+        List<Figura> l = List.of(new Figura(12, 12, 12, 12, 45, 45, 135, 135),
+                new Figura(2, 2, 2, 2, 90, 90, 90, 90),
+                new Figura(1, 2, 1, 2, 90, 90, 90, 90));
+
+        int minPerimeter = l.stream()
+                .mapToInt(f -> f.lato1() + f.lato2() + f.lato3() + f.lato4())
+                .min()
+                .orElse(Integer.MIN_VALUE);
+
+        System.out.println(minPerimeter);
+    }
+
+    @Consegna("Ottenere la somma del valore dell'area di tutte le figure")
+    private static void es16() {
+        List<Figura> l = List.of(new Figura(12, 12, 12, 12, 45, 45, 135, 135),
+                new Figura(2, 2, 2, 2, 90, 90, 90, 90),
+                new Figura(1, 2, 1, 2, 90, 90, 90, 90));
+
+        int totArea = l.stream()
+                .mapToInt(f -> f.lato1() * f.lato2()) // Semplifichiamo il calcolo dell'area come lato1 * lato2
+                .sum();
+
+        System.out.println(totArea);
     }
 
     /**
