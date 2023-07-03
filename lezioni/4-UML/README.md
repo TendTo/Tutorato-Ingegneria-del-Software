@@ -131,11 +131,11 @@ classDiagram
 ```mermaid
 classDiagram
     class Person {
-        &lt;&lt;Interface&gt;&gt;
+        <<Interface>>
         +getFullName() String
     }
     class AbstractPerson {
-        &lt;&lt;Abstract&gt;&gt;
+        <<Abstract>>
         -String id
         #String name
         #String surname

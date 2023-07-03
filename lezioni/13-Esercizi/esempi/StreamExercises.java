@@ -314,6 +314,22 @@ public class StreamExercises {
         System.out.println(totArea);
     }
 
+    @Consegna("Restituire la somma totale dei costi dei 2 prodotti meno cari")
+    private static void es17() {
+        List<Prodotto> l = List.of(new Prodotto("p1", 80),
+                new Prodotto("p2", 40),
+                new Prodotto("p3", 10),
+                new Prodotto("p4", 90));
+
+        double totCost = l.stream()
+                .mapToDouble(p -> p.prezzo())
+                .sorted()
+                .limit(2)
+                .sum();
+
+        System.out.println(totCost);
+    }
+
     /**
      * Stampa la consegna dell'esercizio
      * 

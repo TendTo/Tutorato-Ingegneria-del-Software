@@ -1049,6 +1049,74 @@ Che pattern si può utilizzare per gestire il comportamento del personaggio?</b>
 Durante la sua avventura, lo stato del personaggio cambia, e con esso le sue abilità e azioni possibili.
 </details>
 
+<!-- New subsection -->
+
+<details>
+<summary>
+<b>Limita l'istanziazione di una classe ad un solo oggetto</b>
+  <ol>
+    <li> Facade
+    <li> Observer
+    <li> Singleton
+    <li> NullObject
+  </ol>
+</summary>
+<i>3. Singleton</i>
+<br/>
+Il singleton è un pattern creazionale, che assicura che venga creata una sola istanza di una classe, e che questa sia accessibile globalmente, tramite un metodo statico.
+</details>
+
+<!-- New subsection -->
+
+<details>
+<summary>
+<b>Aggiunge delle funzionalità ad un oggetto in maniera dinamica</b>
+  <ol>
+    <li> Decorator
+    <li> Adapter
+    <li> Facade
+    <li> Composite
+  </ol>
+</summary>
+<i>1. Decorator</i>
+<br/>
+Il decorator è un pattern strutturale, che permette di aggiungere funzionalità ad un oggetto in maniera dinamica, wrappandolo in un altro oggetto che implementa la stessa interfaccia.
+</details>
+
+<!-- New subsection -->
+
+<details>
+<summary>
+<b>Viene utilizzato un oggetto per incapsulare tutte le informazioni necessarie a richiamare un metodo successivamente</b>
+  <ol>
+    <li> Bridge
+    <li> Prototype
+    <li> Strategy
+    <li> Command
+  </ol>
+</summary>
+<i>4. Command</i>
+<br/>
+Il command è un pattern comportamentale. Si introduce una classe Command che, quando eseguito tramite il metodo execute(), richiama i metodi del receiver.
+</details>
+
+<!-- New subsection -->
+
+<details>
+<summary>
+<b>Il comportamento dell'algoritmo può essere selezionato a runtime</b>
+  <ol>
+    <li> Factory Method
+    <li> Strategy
+    <li> State
+    <li> Decorator
+  </ol>
+</summary>
+<i>2. Strategy</i>
+<br/>
+Il pattern Strategy permette di selezionare a runtime il comportamento di un algoritmo, separando l'implementazione dell'algoritmo dall'oggetto che lo utilizza, che poi lo incapsulerà al suo interno.
+</details>
+
 <!-- New section -->
 
 ## Domande a risposta aperta
@@ -1391,15 +1459,13 @@ Data una lista di persone, trovare i nomi dei programmatori con età minore di 3
 ```java
 public record Persona(String name, int age, String role) {}
 
-public static void main(String[] args) {
-  List<Persona> l = List.of(new Persona("Kent", 29, "CTO"),
-                            new Persona("Luigi", 25, "Programmer"),
-                            new Persona("Andrea", 26, "GrLeader"),
-                            new Persona("Sofia", 26, "Programmer"),
-                            new Persona("Alfio", 63, "Programmer"));
-  // ...
-  // result = ["Luigi", "Sofia"]
-}
+List<Persona> l = List.of(new Persona("Kent", 29, "CTO"),
+                          new Persona("Luigi", 25, "Programmer"),
+                          new Persona("Andrea", 26, "GrLeader"),
+                          new Persona("Sofia", 26, "Programmer"),
+                          new Persona("Alfio", 63, "Programmer"));
+// ...
+// result = ["Luigi", "Sofia"]
 ```
 
 <!-- New subsection -->
@@ -1409,14 +1475,12 @@ Data una lista di istanze di Persona trovare i diversi ruoli.
 ```java
 public record Persona(String name, int age, String role) {}
 
-public static void main(String[] args) {
-  List<Persona> l = List.of(new Persona("Kent", 29, "CTO"),
-                            new Persona("Luigi", 25, "Programmer"),
-                            new Persona("Andrea", 26, "GrLeader"),
-                            new Persona("Sofia", 26, "Programmer"));
-  // ...
-  // result = ["CTO", "Programmer", "GrLeader"]
-}
+List<Persona> l = List.of(new Persona("Kent", 29, "CTO"),
+                          new Persona("Luigi", 25, "Programmer"),
+                          new Persona("Andrea", 26, "GrLeader"),
+                          new Persona("Sofia", 26, "Programmer"));
+// ...
+// result = ["CTO", "Programmer", "GrLeader"]
 ```
 
 <!-- New subsection -->
@@ -1424,13 +1488,11 @@ public static void main(String[] args) {
 Data una lista di stringhe, produrre una lista che contiene solo le stringhe che cominciano con un certo prefisso noto.
 
 ```java
-public static void main(String[] args) {
-  List<String> l = List.of("author", "auto",
-                           "autocorrect", "begin",
-                           "big", "bigger", "biggish");
-  // ...
-  // se prefisso = "au", result = ["author", "auto", "autocorrect"]
-}
+List<String> l = List.of("author", "auto",
+                          "autocorrect", "begin",
+                          "big", "bigger", "biggish");
+// ...
+// se prefisso = "au", result = ["author", "auto", "autocorrect"]
 ```
 
 <!-- New subsection -->
@@ -1438,12 +1500,10 @@ public static void main(String[] args) {
 Data una lista di stringhe, produrre una stringa contenente le iniziali di ciascuna stringa della lista.
 
 ```java
-public static void main(String[] args) {
-  List<String> l = List.of("to", "speak", "the", "truth",
-                           "and", "pay", "your", "debts");
-  // ...
-  // result = "tsttapyd"
-}
+List<String> l = List.of("to", "speak", "the", "truth",
+                          "and", "pay", "your", "debts");
+// ...
+// result = "tsttapyd"
 ```
 
 <!-- New subsection -->
@@ -1453,12 +1513,10 @@ In un triangolo, ciascun lato è minore della somma degli altri due.
 Si può rappresentare la terna come un array di tre elementi interi
 
 ```java
-public static void main(String[] args) {
-  List<List<Integer>> l = List.of(List.of(3, 4, 5), List.of(3, 4, 6),
-                                  List.of(3, 4, 7), List.of(3, 4, 8));
-  // ...
-  // result = [12, 13, 14]
-}
+List<List<Integer>> l = List.of(List.of(3, 4, 5), List.of(3, 4, 6),
+                                List.of(3, 4, 7), List.of(3, 4, 8));
+// ...
+// result = [12, 13, 14]
 ```
 
 <!-- New subsection -->
@@ -1476,12 +1534,10 @@ Data una lista di prodotti, restituire il costo totale dei prodotti che hanno un
 ```java
 public record Prodotto(String nome, double prezzo) {}
 
-public static void main(String[] args) {
-  List<Prodotto> l = List.of(new Prodotto("p1", 5.0), new Prodotto("p2", 10.0),
-                             new Prodotto("p3", 15.0), new Prodotto("p4", 20.0));
-  // ...
-  // result = 35.0
-}
+List<Prodotto> l = List.of(new Prodotto("p1", 5.0), new Prodotto("p2", 10.0),
+                            new Prodotto("p3", 15.0), new Prodotto("p4", 20.0));
+// ...
+// result = 35.0
 ```
 
 <!-- New subsection -->
@@ -1489,11 +1545,9 @@ public static void main(String[] args) {
 Produrre una lista contenente i primi n multipli di 7.
 
 ```java
-public static void main(String[] args) {
-  int n = 10;
-  // ...
-  // result = [7, 14, 21, 28, 35, 42, 49, 56, 63, 70]
-}
+int n = 10;
+// ...
+// result = [7, 14, 21, 28, 35, 42, 49, 56, 63, 70]
 ```
 
 <!-- New subsection -->
@@ -1504,17 +1558,15 @@ Data una lista di utenti, restituire tutti i loro commenti ordinati per data.
 public record Utente(String nome, List<Commento> commenti) {}
 public record Commento(String testo, Date data) {}
 
-public static void main(String[] args) {
-  List<Utente> l = List.of(
-          new Utente("u1",
-                  List.of(new Commento("c2", LocalDate.of(2021, 1, 2)),
-                          new Commento("c1", LocalDate.of(2021, 1, 1)),
-                          new Commento("c5", LocalDate.of(2021, 1, 5)))),
-          new Utente("u2",
-                  List.of(new Commento("c4", LocalDate.of(2021, 1, 4)),
-                          new Commento("c3", LocalDate.of(2021, 1, 3)))));
-  // result = ["c1", "c2", "c3", "c4", "c5"]
-}
+List<Utente> l = List.of(
+        new Utente("u1",
+                List.of(new Commento("c2", LocalDate.of(2021, 1, 2)),
+                        new Commento("c1", LocalDate.of(2021, 1, 1)),
+                        new Commento("c5", LocalDate.of(2021, 1, 5)))),
+        new Utente("u2",
+                List.of(new Commento("c4", LocalDate.of(2021, 1, 4)),
+                        new Commento("c3", LocalDate.of(2021, 1, 3)))));
+// result = ["c1", "c2", "c3", "c4", "c5"]
 ```
 
 <!-- New subsection -->
@@ -1522,17 +1574,15 @@ public static void main(String[] args) {
 Restituire gli utenti che hanno pubblicato almeno un commento prima di una certa data
 
 ```java
-private static void es10() {
-    LocalDate date = LocalDate.of(2021, 1, 3);
-    List<Utente> l = List.of(
-            new Utente("u1",
-                    List.of(new Commento("c2", LocalDate.of(2021, 1, 2)),
-                            new Commento("c1", LocalDate.of(2021, 1, 1)),
-                            new Commento("c5", LocalDate.of(2021, 1, 5)))),
-            new Utente("u2",
-                    List.of(new Commento("c4", LocalDate.of(2021, 1, 4)),
-                            new Commento("c3", LocalDate.of(2021, 1, 3)))));
-    // result = ["u1"]
+LocalDate date = LocalDate.of(2021, 1, 3);
+List<Utente> l = List.of(
+        new Utente("u1",
+                List.of(new Commento("c2", LocalDate.of(2021, 1, 2)),
+                        new Commento("c1", LocalDate.of(2021, 1, 1)),
+                        new Commento("c5", LocalDate.of(2021, 1, 5)))),
+        new Utente("u2",
+                List.of(new Commento("c4", LocalDate.of(2021, 1, 4)),
+                        new Commento("c3", LocalDate.of(2021, 1, 3)))));
 }
 ```
 
@@ -1541,17 +1591,15 @@ private static void es10() {
 Restituire l'utente che ha pubblicato il commento più recente
 
 ```java
-private static void es11() {
-    List<Utente> l = List.of(
-            new Utente("u1",
-                    List.of(new Commento("c2", LocalDate.of(2021, 1, 2)),
-                            new Commento("c1", LocalDate.of(2021, 1, 1)),
-                            new Commento("c5", LocalDate.of(2021, 1, 5)))),
-            new Utente("u2",
-                    List.of(new Commento("c4", LocalDate.of(2021, 1, 4)),
-                            new Commento("c3", LocalDate.of(2021, 1, 3)))));
-    // result = "u1"
-}
+List<Utente> l = List.of(
+        new Utente("u1",
+                List.of(new Commento("c2", LocalDate.of(2021, 1, 2)),
+                        new Commento("c1", LocalDate.of(2021, 1, 1)),
+                        new Commento("c5", LocalDate.of(2021, 1, 5)))),
+        new Utente("u2",
+                List.of(new Commento("c4", LocalDate.of(2021, 1, 4)),
+                        new Commento("c3", LocalDate.of(2021, 1, 3)))));
+// result = "u1"
 ```
 
 <!-- New subsection -->
@@ -1571,6 +1619,9 @@ List<Prodotto> l = List.of(new Prodotto("p1", 80), new Prodotto("p2", 50),
 Restituire tutte le figure che siano rettangoli o quadrati (tutti gli angoli uguali)
 
 ```java
+public record Figura(int l1, int l2, int l3, int l4,
+                     int a1, int a2, int a3, int a4) {}
+
 List<Figura> l = List.of(new Figura(12, 12, 12, 12, 45, 45, 135, 135),
                          new Figura(2, 2, 2, 2, 90, 90, 90, 90),
                          new Figura(1, 2, 1, 2, 90, 90, 90, 90));
@@ -1612,4 +1663,17 @@ List<Figura> l = List.of(new Figura(12, 12, 12, 12, 45, 45, 135, 135),
                          new Figura(1, 2, 1, 2, 90, 90, 90, 90));
 // ...
 // result = 150
+```
+
+<!-- New subsection -->
+
+Restituire la somma totale dei costi dei 2 prodotti meno cari
+
+```java
+List<Prodotto> l = List.of(new Prodotto("p1", 80),
+                           new Prodotto("p2", 40),
+                           new Prodotto("p3", 10),
+                           new Prodotto("p4", 90));
+// ...
+// result = 50
 ```
