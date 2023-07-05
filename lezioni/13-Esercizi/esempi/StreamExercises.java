@@ -45,7 +45,11 @@ public class StreamExercises {
     public record Commento(String testo, LocalDate data) {
     }
 
-    record Figura(int lato1, int lato2, int lato3, int lato4, int angolo1, int angolo2, int angolo3, int angolo4) {
+    public record Figura(int lato1, int lato2, int lato3, int lato4, int angolo1, int angolo2, int angolo3,
+            int angolo4) {
+    }
+
+    public record Triangolo(int lato1, int lato2, int lato3, int angolo1, int angolo2, int angolo3) {
     }
 
     @Consegna("Trovare i nomi dei programmatori con età minore di 30 anni.")
@@ -53,7 +57,8 @@ public class StreamExercises {
         List<Persona> l = List.of(new Persona("Kent", 29, "CTO"),
                 new Persona("Luigi", 25, "Programmer"),
                 new Persona("Andrea", 26, "GrLeader"),
-                new Persona("Sofia", 26, "Programmer"));
+                new Persona("Sofia", 26, "Programmer"),
+                new Persona("Alfio", 63, "Programmer"));
 
         l.stream()
                 .filter(p -> p.age() < 30)
@@ -96,8 +101,9 @@ public class StreamExercises {
         String startingLetter = l.stream()
                 .filter(s -> s.length() > 0)
                 .map(s -> s.substring(0, 1))
-                .reduce(String::concat).orElse("");
-        // .reduce("", (acc, i) -> acc + i);
+                .reduce("", (acc, i) -> acc + i);
+        // .reduce(String::concat)
+        // .orElse("");
 
         System.out.println(startingLetter);
     }
@@ -111,9 +117,9 @@ public class StreamExercises {
 
         List<Integer> perimeters = l.stream()
                 .filter(x -> x.size() == 3)
-                .filter(x -> x.get(0) + x.get(1) >= x.get(2))
-                .filter(x -> x.get(0) + x.get(2) >= x.get(1))
-                .filter(x -> x.get(1) + x.get(2) >= x.get(0))
+                .filter(x -> x.get(0) + x.get(1) > x.get(2))
+                .filter(x -> x.get(0) + x.get(2) > x.get(1))
+                .filter(x -> x.get(1) + x.get(2) > x.get(0))
                 .map(x -> x.get(0) + x.get(1) + x.get(2))
                 .collect(Collectors.toList());
 
@@ -169,9 +175,7 @@ public class StreamExercises {
                 .limit(n)
                 .collect(Collectors.toList());
 
-        for (Integer integer : l)
-            System.out.println(integer);
-
+        System.out.println(l);
     }
 
     @Consegna("Restituire tutti i commenti degli utenti ordinati per data")
@@ -301,14 +305,14 @@ public class StreamExercises {
         System.out.println(minPerimeter);
     }
 
-    @Consegna("Ottenere la somma del valore dell'area di tutte le figure")
+    @Consegna("Ottenere la somma dei perimetri di tutte le figure")
     private static void es16() {
         List<Figura> l = List.of(new Figura(12, 12, 12, 12, 45, 45, 135, 135),
                 new Figura(2, 2, 2, 2, 90, 90, 90, 90),
                 new Figura(1, 2, 1, 2, 90, 90, 90, 90));
 
         int totArea = l.stream()
-                .mapToInt(f -> f.lato1() * f.lato2()) // Semplifichiamo il calcolo dell'area come lato1 * lato2
+                .mapToInt(f -> f.lato1() + f.lato2() + f.lato3() + f.lato4())
                 .sum();
 
         System.out.println(totArea);
@@ -328,6 +332,35 @@ public class StreamExercises {
                 .sum();
 
         System.out.println(totCost);
+    }
+
+    @Consegna("Restituire la lista di lati maggiori dei triangoli")
+    private static void es18() {
+        List<Triangolo> l = List.of(new Triangolo(3, 4, 5, 30, 60, 90),
+                new Triangolo(4, 5, 4, 30, 30, 120),
+                new Triangolo(13, 5, 12, 30, 60, 90),
+                new Triangolo(17, 15, 8, 30, 60, 90));
+
+        List<Integer> sides = l.stream()
+                .map(t -> Stream.of(t.lato1(), t.lato2(), t.lato3())
+                        .max(Integer::compare)
+                        .get())
+                .toList();
+        System.out.println(sides);
+    }
+
+    @Consegna("Restituire una lista di triangoli isosceli.")
+    @Consegna("Un triangolo è isoscele se due suoi lati sono uguali")
+    private static void es19() {
+        List<Triangolo> l = List.of(new Triangolo(3, 4, 5, 30, 60, 90),
+                new Triangolo(4, 5, 4, 30, 30, 120),
+                new Triangolo(13, 5, 12, 30, 60, 90),
+                new Triangolo(17, 15, 8, 30, 60, 90));
+
+        List<Triangolo> triangles = l.stream()
+                .filter(t -> t.lato1() == t.lato2() || t.lato2() == t.lato3() || t.lato3() == t.lato1())
+                .toList();
+        System.out.println(triangles);
     }
 
     /**

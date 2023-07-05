@@ -69,6 +69,32 @@ list.stream()
     .forEach(System.out::println); // Equivalente a s -> System.out.println(s)
 ```
 
+<!-- New subsection -->
+
+### Comparators
+
+I comparatori sono funzioni che prendono in input due parametri e ritornano un valore intero, che indica l'ordine fra i due parametri.
+
+```java
+Comparator<Integer> intComparator = (i1, i2) -> i1 - i2;
+Comparator<String> stringComparator = (s1, s2) -> s1.compareTo(s2);
+```
+
+Per comodità, Java mette a disposizione la classe `Comparator`, che sfrutta il metodo `compareTo` dell'oggetto sul quale vogliamo effettuare il confronto.
+
+<!-- .element: class="fragment" data-fragment-index="1" -->
+
+```java
+// Ordina in maniera naturale (dal più piccolo al più grande)
+Comparator<Double> doubleComparator = Comparator.naturalOrder();
+// Ordina in maniera inversa (dal più grande al più piccolo)
+Comparator<Float> floatComparator = Comparator.reverseOrder();
+// Ordina gli utenti per età
+Comparator<User> userComparator = Comparator.comparing(User::getAge);
+```
+
+<!-- .element: class="fragment" data-fragment-index="1" -->
+
 <!-- New section -->
 
 ## Stream
@@ -165,7 +191,7 @@ $$
 Il metodo flatMap è un'operazione lazy stateless che prende in input una funzione e restituisce un nuovo stream contenente gli elementi trasformati dalla funzione, che devono essere a loro volta stream.
 
 ```java
-List<List<String>> list = List.of(List.of("a1", "a2"), List.of("b1"), 
+List<List<String>> list = List.of(List.of("a1", "a2"), List.of("b1"),
                                   List.of("c2", "c1"));
 Stream<String> stream = list.stream()
                             .flatMap(l -> l.stream());
@@ -263,6 +289,21 @@ $$
 
 <!-- New subsection -->
 
+### Max (Min)
+
+Il metodo max (min) è un'operazione eager che prende in input un comparatore e restituisce il massimo (minimo) elemento dello stream secondo il comparatore come un Optional.
+
+```java
+List<Integer> list = List.of(1, 2, 3, 4, 5, 6, 7);
+Optional<Integer> max = list.stream()
+                            .max(Comparator.naturalOrder());
+// max contiene 7
+```
+
+<!-- .element: class="fragment" -->
+
+<!-- New subsection -->
+
 ### Iterate
 
 Il metodo iterate è un'operazione lazy stateless che prende in input un valore iniziale che fa da accumulatore e una funzione che, applicando la funzione al valore corrente dell'accumulatore, restituisce il valore successivo.
@@ -287,6 +328,21 @@ Poiché di default proseguirebbe all'infinito, è necessario specificare un limi
 Stream<Integer> stream = Stream.generate(() -> Math.round(Math.random()*10))
                                 .limit(10);
 // stream contiene 10 numeri casuali
+```
+
+<!-- .element: class="fragment" -->
+
+<!-- New subsection -->
+
+### Distinct
+
+Il metodo distinct è un'operazione lazy stateful che restituisce un nuovo stream contenente gli elementi dello stream originale senza duplicati.
+
+```java
+List<Integer> list = List.of(1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3);
+Stream<Integer> stream = list.stream()
+                             .distinct();
+// stream contiene 1, 2, 3, 4, 5, 6, 7, 8
 ```
 
 <!-- .element: class="fragment" -->
@@ -328,7 +384,29 @@ int count = list.stream()
 
 <!-- New subsection -->
 
-### FindFist o FindAny
+### AnyMatch, AllMatch, NoneMatch
+
+I metodi anyMatch, allMatch e noneMatch sono operazioni eager che prendono in input un predicato e restituiscono true rispettivamente se:
+
+- esiste almeno un elemento che soddisfa il predicato
+- se tutti gli elementi soddisfano il predicato
+- se nessun elemento soddisfa il predicato
+
+```java
+List<Integer> list = List.of(1, 2, 3, 4, 5, 6, 7, 8);
+boolean any = list.stream()
+                  .anyMatch(i -> i % 2 == 0); // true
+boolean all = list.stream()
+                  .allMatch(i -> i % 2 == 0); // false
+boolean none = list.stream()
+                   .noneMatch(i -> i % 2 == 0); // false
+```
+
+<!-- .element: class="fragment" -->
+
+<!-- New subsection -->
+
+### FindFirst o FindAny
 
 I metodi findFirst e findAny sono operazioni eager che restituiscono il primo elemento dello stream che soddisfa il predicato.
 Per poi ottenere il valore dell'elemento, è necessario usare il metodo get.
@@ -347,3 +425,44 @@ Integer firstValueDefault = first.orElse(0);
 ```
 
 <!-- .element: class="fragment" -->
+
+<!-- New section -->
+
+## Tipi di Stream
+
+Finora abbiamo visto solo gli Stream di tipo `Stream<T>`, ma esistono anche dei tipi di Stream specializzati per i tipi primitivi.
+
+- IntStream
+- LongStream
+- DoubleStream
+
+<!-- New subsection -->
+
+### IntStream
+
+IntStream è uno stream di interi.
+
+```java
+IntStream stream = IntStream.of(1, 2, 3, 4, 5, 6, 7, 8);
+```
+
+Lo si può ottenere anche da uno stream di oggetti con il metodo mapToInt.
+
+<!-- .element: class="fragment" data-fragment-index="1" -->
+
+```java
+Stream<String> stream = Stream.of("a", "bc", "def", "ghij");
+IntStream intStream = stream.mapToInt(s -> s.length());
+```
+
+<!-- .element: class="fragment" data-fragment-index="1" -->
+
+<!-- New subsection -->
+
+### Vantaggi di IntStream
+
+Usare IntStream invece di `Stream<Integer>` ha diversi vantaggi:
+
+- Maneggiare gli interi è più efficiente che maneggiare gli oggetti
+- Esistono metodi specializzati per i tipi primitivi: `sum`, `average`, `min`, `max`.
+  Questi metodi non necessitano di un comparatore, perché lo stream sa già come confrontare gli elementi

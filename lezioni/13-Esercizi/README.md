@@ -1547,7 +1547,7 @@ Produrre una lista contenente i primi n multipli di 7.
 ```java
 int n = 10;
 // ...
-// result = [7, 14, 21, 28, 35, 42, 49, 56, 63, 70]
+// result = [0, 7, 14, 21, 28, 35, 42, 49, 56, 63]
 ```
 
 <!-- New subsection -->
@@ -1583,6 +1583,7 @@ List<Utente> l = List.of(
         new Utente("u2",
                 List.of(new Commento("c4", LocalDate.of(2021, 1, 4)),
                         new Commento("c3", LocalDate.of(2021, 1, 3)))));
+// result = ["u1"]
 }
 ```
 
@@ -1676,4 +1677,31 @@ List<Prodotto> l = List.of(new Prodotto("p1", 80),
                            new Prodotto("p4", 90));
 // ...
 // result = 50
+```
+
+<!-- New subsection -->
+
+Restituire la lista di lati maggiori dei triangoli.
+
+```java
+List<Triangolo> l = List.of(new Triangolo(3, 4, 5, 30, 60, 90),
+                            new Triangolo(4, 5, 4, 30, 30, 120),
+                            new Triangolo(13, 5, 12, 30, 60, 90),
+                            new Triangolo(17, 15, 8, 30, 60, 90));
+// ...
+// result = [5, 5, 13, 17]
+```
+
+<!-- New subsection -->
+
+Restituire una lista di triangoli isosceli.
+Un triangolo è isoscele se due suoi lati sono uguali.
+
+```java
+List<Triangolo> l = List.of(new Triangolo(3, 4, 5, 30, 60, 90),
+                            new Triangolo(4, 5, 4, 30, 30, 120),
+                            new Triangolo(13, 5, 12, 30, 60, 90),
+                            new Triangolo(17, 15, 8, 30, 60, 90));
+// ...
+// result = [Triangolo2]
 ```
