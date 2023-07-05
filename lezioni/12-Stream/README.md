@@ -20,10 +20,11 @@ Quando le funzioni sono anonime, si parla di funzioni o espressioni lambda.
 In Java le funzioni lambda sono definite come segue:
 
 ```java
-(int x, int y) -> x + y
+// Funzione che prende un intero e ritorna il triplo
+Function<Integer, Integer> triple = (x) -> x * 3;
 ```
 
-Dove `(int x, int y)` è la lista dei parametri, `->` è l'operatore lambda e `x + y` è il corpo della funzione.
+Dove '`x`' è il parametro, '`->`' è l'operatore lambda e '`x * 3`' è il corpo della funzione.
 
 Alcune varianti sono:
 
@@ -32,11 +33,11 @@ Alcune varianti sono:
 ```java
 // Posso usare le parentesi graffe se ho necessità di più righe di codice
 // In questo caso devo esplicitare il return
-(int x, int y) -> { int z = x + y; return z; }
+BiFunction<Float, Float, Float> sum = (x, y) -> { float z = x + y; return z; };
 // Se non ho parametri, devo usare le parentesi tonde vuote
-() -> System.out.println("Hello World");
+Runnable hello = () -> System.out.println("Hello World");
 // Se ho un solo parametro, posso omettere le parentesi tonde
-x -> x * x
+Predicate<String> startsWithF = s -> s.startsWith("F") || s.startsWith("f");
 ```
 
 <!-- .element: class="fragment" data-fragment-index="1" -->
@@ -46,13 +47,14 @@ x -> x * x
 ### Tipi delle funzioni lambda
 
 Le funzioni lambda sono associate a interfacce funzionali, ovvero interfacce che hanno un solo metodo astratto.
-In base al numero di parametri e al tipo di ritorno, le interfacce funzionali sono classificate in:
+Alcune delle interfacce più comuni sono:
 
-- `Consumer<T>`: prende un parametro di tipo `T` e non ritorna nulla
-- `Supplier<T>`: non prende parametri e ritorna un valore di tipo `T`
-- `Function<T, R>`: prende un parametro di tipo `T` e ritorna un valore di tipo `R`
-- `Predicate<T>`: prende un parametro di tipo `T` e ritorna un valore booleano (true o false)
-- `Comparator<T>`: prende due parametri di tipo `T` e ritorna un valore intero per indicare l'ordine
+- `Consumer<T>`: parametro di tipo `T` e non ritorna nulla
+- `Supplier<T>`: non ha parametri e ritorna un valore di tipo `T`
+- `Function<T, R>`: parametro di tipo `T` e ritorna un valore di tipo `R`
+- `Predicate<T>`: parametro di tipo `T` e ritorna true o false
+- `Comparator<T>`: due parametri di tipo `T` e ritorna un valore intero per indicare l'ordine
+- `Runnable`: non ha parametri e non ritorna nulla
 
 <!-- New subsection -->
 
@@ -115,6 +117,20 @@ Stream<String> stream = list.stream()
 // stream contiene solo "c2" e "c1"
 ```
 
+<!-- .element: class="fragment" -->
+
+$$
+\begin{array}{llllll}
+\text{stream}_\text{i} & \text{a1} & \text{a2} & \text{b1} & \text{c2} & \text{c1}
+\newline
+\text{filter()} & \downarrow\tiny{X} & \downarrow\tiny{X} & \downarrow\tiny{X} & \downarrow\tiny{\checkmark} & \downarrow\tiny{\checkmark}
+\newline
+\text{stream}_\text{f} & & & & \text{c2} & \text{c1}
+\end{array}
+$$
+
+<!-- .element: class="fragment" -->
+
 <!-- New subsection -->
 
 ### Map
@@ -128,6 +144,48 @@ Stream<String> stream = list.stream()
 // stream contiene "A1", "A2", "B1", "C2", "C1"
 ```
 
+<!-- .element: class="fragment" -->
+
+$$
+\begin{array}{llllll}
+\text{stream}_\text{i} & \text{a1} & \text{a2} & \text{b1} & \text{c2} & \text{c1}
+\newline
+\text{map()} & \downarrow\tiny{\text{toUpper}} & \downarrow\tiny{\text{toUpper}} & \downarrow\tiny{\text{toUpper}} & \downarrow\tiny{\text{toUpper}} & \downarrow\tiny{\text{toUpper}}
+\newline
+\text{stream}_\text{f} & \text{A1} & \text{A2} & \text{B1} & \text{C2} & \text{C1}
+\end{array}
+$$
+
+<!-- .element: class="fragment" -->
+
+<!-- New subsection -->
+
+### FlatMap
+
+Il metodo flatMap è un'operazione lazy stateless che prende in input una funzione e restituisce un nuovo stream contenente gli elementi trasformati dalla funzione, che devono essere a loro volta stream.
+
+```java
+List<List<String>> list = List.of(List.of("a1", "a2"), List.of("b1"), 
+                                  List.of("c2", "c1"));
+Stream<String> stream = list.stream()
+                            .flatMap(l -> l.stream());
+// stream contiene "a1", "a2", "b1", "c2", "c1"
+```
+
+<!-- .element: class="fragment" -->
+
+$$
+\begin{array}{llllll}
+\text{stream}_\text{i} & [\text{a1}, \text{a2}] && \text{b1} & [\text{c2}, \text{c1}]
+\newline
+\text{flatMap()} & \downarrow\tiny{\text{stream}} & \searrow & \downarrow\tiny{\text{stream}} & \downarrow\tiny{\text{stream}} & \searrow
+\newline
+\text{stream}_\text{f} & \text{a1} & \text{a2} & \text{b1} & \text{c2} & \text{c1}
+\end{array}
+$$
+
+<!-- .element: class="fragment" -->
+
 <!-- New subsection -->
 
 ### Sorted
@@ -140,6 +198,8 @@ Stream<Integer> stream = list.stream()
                              .sorted((s1, s2) -> s1 - s2);
 // stream contiene 1, 2, 3, 5, 6
 ```
+
+<!-- .element: class="fragment" -->
 
 <!-- New subsection -->
 
@@ -155,6 +215,8 @@ long count = list.stream()
 // count contiene 1
 ```
 
+<!-- .element: class="fragment" -->
+
 <!-- New subsection -->
 
 ### Collect
@@ -166,8 +228,11 @@ List<Integer> list = List.of(1, 2, 3, 4, 5, 6, 7, 8);
 List<Integer> newList = list.stream()
                            .filter(i -> i % 2 == 0)
                            .collect(Collectors.toList());
+                           // .toList(); // Versione semplificata
 // newList contiene 2, 4, 6, 8
 ```
+
+<!-- .element: class="fragment" -->
 
 <!-- New subsection -->
 
@@ -176,11 +241,25 @@ List<Integer> newList = list.stream()
 Il metodo reduce è un'operazione eager che prende in input una funzione che, a partire da un valore accumulatore, continua ad applicare un'operazione fra l'accumulatore e l'elemento corrente e restituisce il risultato dell'accumulazione.
 
 ```java
-List<Integer> list = List.of(1, 2, 3, 4, 5, 6, 7, 8);
+List<Integer> list = List.of(1, 2, 3, 4, 5, 6, 7);
 int mult = list.stream()
               .reduce(1, (acc, i) -> acc * i);
-// mult contiene 40320
+// mult contiene 5040
 ```
+
+<!-- .element: class="fragment" -->
+
+$$
+\begin{array}{llllllll}
+\text{stream}_\text{i} & 1 & 2 & 3 & 4 & 5 & 6 & 7
+\newline
+\text{reduce()} & \downarrow\tiny{\text{acc} = 1} & \downarrow\tiny{\text{acc} = 1} & \downarrow\tiny{\text{acc} = 2} & \downarrow\tiny{\text{acc} = 6} & \downarrow\tiny{\text{acc} = 24} & \downarrow\tiny{\text{acc} = 120} & \downarrow\tiny{\text{acc} = 720}
+\newline
+\text{acc} & 1 & 2 & 6 & 24 & 120 & 720 & 5040 \to \text{mult}
+\end{array}
+$$
+
+<!-- .element: class="fragment" -->
 
 <!-- New subsection -->
 
@@ -195,6 +274,8 @@ Stream<Integer> stream = Stream.iterate(0, i -> i + 1)
 // stream contiene 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
 ```
 
+<!-- .element: class="fragment" -->
+
 <!-- New subsection -->
 
 ### Generate
@@ -207,6 +288,8 @@ Stream<Integer> stream = Stream.generate(() -> Math.round(Math.random()*10))
                                 .limit(10);
 // stream contiene 10 numeri casuali
 ```
+
+<!-- .element: class="fragment" -->
 
 <!-- New subsection -->
 
@@ -221,6 +304,8 @@ list.stream()
     .forEach(System.out::println);
 // stampa 2, 4, 6, 8
 ```
+
+<!-- .element: class="fragment" -->
 
 <!-- New subsection -->
 
@@ -239,6 +324,8 @@ int count = list.stream()
 // restituisce 4
 ```
 
+<!-- .element: class="fragment" -->
+
 <!-- New subsection -->
 
 ### FindFist o FindAny
@@ -254,7 +341,9 @@ Optional<Integer> first = list.stream()
                               .findFirst();
 // first contiene 2
 // Se l'optional è vuoto, viene lanciata un'eccezione
-Integer firstValue = first.get(); 
+Integer firstValue = first.get();
 // Se l'optional è vuoto, firstValue contiene 0
-Integer firstValueDefault = first.orElse(0); 
+Integer firstValueDefault = first.orElse(0);
 ```
+
+<!-- .element: class="fragment" -->
