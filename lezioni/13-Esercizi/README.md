@@ -1420,6 +1420,8 @@ C2 --> C1
 
 <!-- .element: class="fragment" -->
 
+<!-- New subsection -->
+
 #### Domanda 5
 
 Disegnare il diagramma UML di sequenza per il codice mostrato e per le classi C1 e C2 indicate

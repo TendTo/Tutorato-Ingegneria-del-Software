@@ -40,6 +40,9 @@ function loadMermaid() {
                     mermaidDiv,
                     item.parentNode
                 );
+                if (item.parentNode.classList.contains("fragment")) {
+                    mermaidDiv.classList.add("fragment");
+                }
                 item.parentNode.remove();
             } catch (err) {
                 console.error(`Cannot render diagram ${index}\n${graphCode}`);
