@@ -304,11 +304,11 @@ classDiagram
 direction LR
 
 class Interactable{
-    &lt;&lt;Interface&gt;&gt;
+    <<Interface>>
     +interact()
 }
 class Damageable{
-    &lt;&lt;Interface&gt;&gt;
+    <<Interface>>
     +damage()
 }
 class Entity{
@@ -320,7 +320,7 @@ class LightSwitch{
     +isOn() boolean
 }
 class Character{
-    &lt;&lt;Abstract&gt;&gt;
+    <<Abstract>>
     -int maxHealth
     -int currentHealth
     -int damage
@@ -333,7 +333,7 @@ class Character{
 }
 class Hero
 class Enemy {
-    &lt;&lt;Abstract&gt;&gt;
+    <<Abstract>>
 }
 class Orc
 class Ghost

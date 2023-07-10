@@ -1210,7 +1210,7 @@ class OrderManager {
 
 <!-- New subsection -->
 
-### Codice
+### Esercizio 1
 
 ```java
 public interface IDataSource {
@@ -1235,7 +1235,7 @@ public class Info {
 
 <!-- New subsection -->
 
-### Domande
+#### Domanda 1
 
 <details>
 <summary>
@@ -1263,7 +1263,7 @@ public class InfoAdapter implements IDataSource {
 
 <!-- New subsection -->
 
-### Domanda
+#### Domanda 2
 
 Utilizzare una variante del pattern per risolvere lo stesso problema.
 
@@ -1285,7 +1285,7 @@ public class InfoAdapter extends Info implements IDataSource {
 
 <!-- New subsection -->
 
-### Codice
+### Esercizio 2
 
 ```java
 public interface Auto {
@@ -1321,7 +1321,7 @@ public class Fire implements Motore {
 
 <!-- New subsection -->
 
-### Domande
+#### Domanda 1
 
 <details>
 <summary>
@@ -1335,7 +1335,7 @@ Auto è l'abstraction, Berlina è la refined abstraction, Motore è l'implemento
 
 <!-- New subsection -->
 
-### Domande
+#### Domanda 2
 
 Implementare la classe C1 che istanzia le classi Berlina e Fire in modo opportuno.
 
@@ -1352,7 +1352,7 @@ public class C1 {
 
 <!-- New subsection -->
 
-### Domande
+#### Domanda 3
 
 Implementare la classe C2 che chiama i metodi definiti in Auto.
 
@@ -1371,7 +1371,7 @@ public class C2 {
 
 <!-- New subsection -->
 
-### Domande
+#### Domanda 4
 
 Disegnare il diagramma UML delle classi per il codice mostrato e per le classi C1 e C2 indicate
 
@@ -1420,9 +1420,7 @@ C2 --> C1
 
 <!-- .element: class="fragment" -->
 
-<!-- New subsection -->
-
-### Domande
+#### Domanda 5
 
 Disegnare il diagramma UML di sequenza per il codice mostrato e per le classi C1 e C2 indicate
 
@@ -1444,6 +1442,229 @@ C2 ->>+ Berlina: getDistanza(10)
 Berlina -->>+ Fire: getPotenza()
 Fire -->>- Berlina: potenza
 Berlina -->>- C2: distanza
+```
+
+<!-- .element: class="fragment" -->
+
+<!-- New subsection -->
+
+### Esercizio 3
+
+```java
+public interface Esame {
+  public void prenota();
+  public void registra();
+}
+public class Nuovo implements Esame {
+  public void prenota() { System.out.println("Presentazione Ok"); }
+  public void registra() { System.out.println("Impossibile registrare l’esame"); }
+}
+public class Prenotato implements Esame {
+  public void prenota() { System.out.println("Impossibile prenotare l'esame"); }
+  public void registra() { System.out.println("Registrazione Ok"); }
+}
+```
+
+<!-- New subsection -->
+
+#### Domanda 1
+
+Completare l'implementazione del design Pattern State con almeno due classi.
+
+<!-- New subsection -->
+
+```java
+// Context
+public class Appello {
+  private Esame state = new Nuovo(this);
+  public void prenota() {
+    this.state = this.state.prenota();
+  }
+  public void registra() {
+    this.state = this.state.registra();
+  }
+}
+```
+
+```java
+// Concrete State 1
+public class Nuovo implements Esame {
+  private Appello appello;
+  public Nuovo(Appello appello) { this.appello = appello; }
+  public Esame prenota() {
+    System.out.println("Presentazione Ok");
+    return new Prenotato(appello);
+  }
+  public Esame registra() {
+    System.out.println("Non è possibile registrare l’esame");
+    return this;
+  }
+}
+```
+
+<!-- New subsection -->
+
+```java
+// Concrete State 2
+public class Prenotato implements Esame {
+  private Appello appello;
+  public Prenotato(Appello appello) { this.appello = appello; }
+  public Esame prenota() {
+    System.out.println("Non è possibile prenotare l’esame");
+    return this;
+  }
+  public Esame registra() {
+    System.out.println("Registrazione Ok");
+    return new Registrato(appello);
+  }
+}
+```
+
+```java
+// Concrete State 3
+public class Registrato implements Esame {
+  private Appello appello;
+  public Registrato(Appello appello) { this.appello = appello; }
+  public Esame prenota() {
+    System.out.println("Non è possibile prenotare l’esame");
+    return this;
+  }
+  public Esame registra() {
+    System.out.println("Non è possibile registrare l’esame");
+    return this;
+  }
+}
+```
+
+<!-- New subsection -->
+
+#### Domanda 2
+
+Inserire in una delle classi la memorizzazione del nome della materia e della data dell'esame.
+
+<!-- New subsection -->
+
+```java
+public class Appello {
+  // ...
+  private String materia;
+  private LocalDate date;
+  public Appello(String materia, LocalDate date) {
+    this.materia = materia;
+    this.date = date;
+  }
+  public String getMateria() { return this.materia; }
+  public LocalDate getDate() { return this.data; }
+  // ...
+}
+```
+
+```java
+public class Nuovo implements Esame {
+  // ...
+  public Esame prenota() {
+    if (appello.getDate().before(LocalDate.now())) {
+      System.out.println("Presentazione Ok");
+      return new Prenotato(appello);
+    }
+    System.out.println("Non è possibile prenotare l’esame");
+    return this;
+  }
+  // ...
+}
+```
+
+<!-- New subsection -->
+
+#### Domanda 3
+
+Dare il nome dei ruoli per tutte le classi e interfacce del design Pattern.
+
+- Appello: Context <!-- .element: class="fragment" -->
+- Esame: State <!-- .element: class="fragment" -->
+- Nuovo: Concrete State 1 <!-- .element: class="fragment" -->
+- Prenotato: Concrete State 2 <!-- .element: class="fragment" -->
+- Registrato: Concrete State 3 <!-- .element: class="fragment" -->
+
+<!-- New subsection -->
+
+#### Domanda 4
+
+Disegnare il diagramma UML delle classi.
+
+```mermaid
+classDiagram
+
+class Appello {
+  -Esame state
+  -String materia
+  -LocalDate date
+  +Appello(String, LocalDate)
+  +getMateria(): String
+  +getDate(): LocalDate
+  +prenota()
+  +registra()
+}
+
+class Esame {
+  <<interface>>
+  +prenota()
+  +registra()
+}
+
+class Nuovo {
+  -Appello appello
+  +Nuovo(Appello)
+  +prenota()
+  +registra()
+}
+
+class Prenotato {
+  -Appello appello
+  +Prenotato(Appello)
+  +prenota()
+  +registra()
+}
+
+class Registrato {
+  -Appello appello
+  +Registrato(Appello)
+  +prenota()
+  +registra()
+}
+
+Esame <|.. Nuovo
+Esame <|.. Prenotato
+Esame <|.. Registrato
+
+Appello *-- Esame
+```
+
+<!-- .element: class="fragment" -->
+
+<!-- New subsection -->
+
+#### Domanda 5
+
+Disegnare il diagramma UML di sequenza illustrando l'esecuzione a partire da una classe appropriata.
+
+```mermaid
+sequenceDiagram
+
+actor Client
+participant Appello
+participant Nuovo
+participant Prenotato
+
+Client ->>+ Appello: prenota()
+Appello ->>+ Nuovo: prenota()
+Nuovo -->>- Appello: new Prenotato(appello)
+Appello -->>- Client: #10003;
+
+Client ->>+ Appello: registra()
+Appello ->>+ Prenotato: registra()
+Prenotato -->>- Appello: new Registrato(appello)
+Appello -->>- Client: #10003;
 ```
 
 <!-- .element: class="fragment" -->
