@@ -287,10 +287,26 @@ public class StreamExercises {
                 new Figura(1, 2, 1, 2, 90, 90, 90, 90));
 
         l.stream()
-                .map(f -> IntStream.of(f.lato1(), f.lato2(), f.lato3(), f.lato4())
-                        .min()
-                        .orElseThrow())
+                .map(f -> IntStream.of(f.lato1(), f.lato2(), f.lato3(), f.lato4()))
+                .map(s -> s.min().orElseThrow(null))
                 .forEach(System.out::println);
+
+        // Function<Figura, Integer> fig2Min = (f) -> {
+        //     int min = Integer.MAX_VALUE;
+        //     if (f.lato1 < min)
+        //         min = f.lato1;
+        //     if (f.lato2 < min)
+        //         min = f.lato2;
+        //     if (f.lato3 < min)
+        //         min = f.lato3;
+        //     if (f.lato4 < min)
+        //         min = f.lato4;
+        //     return min;
+        // };
+
+        // l.stream()
+        //         .map(fig2Min)
+        //         .forEach(System.out::println);
     }
 
     @Consegna("Restituire il perimetro minore tra tutte le figure")
@@ -431,28 +447,28 @@ public class StreamExercises {
 
         // Versione con reduce e tre parametri
         // Map<String, String> roles = l.stream()
-        //         .reduce(new HashMap<String, String>(),
-        //                 (map, el) -> {
-        //                     map.put(el.name(), el.role());
-        //                     return map;
-        //                 },
-        //                 (map1, map2) -> {
-        //                     map1.putAll(map2);
-        //                     return map1;
-        //                 });
+        // .reduce(new HashMap<String, String>(),
+        // (map, el) -> {
+        // map.put(el.name(), el.role());
+        // return map;
+        // },
+        // (map1, map2) -> {
+        // map1.putAll(map2);
+        // return map1;
+        // });
 
         // Versione con map e reduce
         // Map<String, String> roles = l.stream()
-        //         .map(p -> {
-        //             Map<String, String> map = new HashMap<>();
-        //             map.put(p.name(), p.role());
-        //             return map;
-        //         })
-        //         .reduce(new HashMap<String, String>(),
-        //                 (acc, el) -> {
-        //                     acc.putAll(el);
-        //                     return acc;
-        //                 });
+        // .map(p -> {
+        // Map<String, String> map = new HashMap<>();
+        // map.put(p.name(), p.role());
+        // return map;
+        // })
+        // .reduce(new HashMap<String, String>(),
+        // (acc, el) -> {
+        // acc.putAll(el);
+        // return acc;
+        // });
 
         System.out.println(roles);
     }
