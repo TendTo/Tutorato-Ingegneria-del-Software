@@ -1580,13 +1580,18 @@ public class Nuovo implements Esame {
 
 #### Domanda 3
 
-Dare il nome dei ruoli per tutte le classi e interfacce del design Pattern.
+<details>
+<summary>
+<b>Dare il nome dei ruoli per tutte le classi e interfacce del design Pattern.</b>
+</summary>
 
-- Appello: Context <!-- .element: class="fragment" -->
-- Esame: State <!-- .element: class="fragment" -->
-- Nuovo: Concrete State 1 <!-- .element: class="fragment" -->
-- Prenotato: Concrete State 2 <!-- .element: class="fragment" -->
-- Registrato: Concrete State 3 <!-- .element: class="fragment" -->
+- Appello: Context
+- Esame: State
+- Nuovo: Concrete State 1
+- Prenotato: Concrete State 2
+- Registrato: Concrete State 3
+
+</details>
 
 <!-- New subsection -->
 
@@ -1670,6 +1675,183 @@ Appello -->>- Client: #10003;
 ```
 
 <!-- .element: class="fragment" -->
+
+<!-- New subsection -->
+
+### Esercizio 4
+
+```java
+public class Student {
+  private String nome = "Al";
+  private int aperti = 0;
+  private Modulo[] e = new Modulo[10];
+  private int crediti = 0;
+  public void inizia() {
+    if (aperti < e.length) { e[aperti++] = new Modulo(); }
+  }
+  public void completa() {
+    if (aperti > 0) { crediti += e[--aperti].getCrediti(); }
+  }
+}
+```
+
+```java
+public class Modulo {
+  private boolean superato = false;
+  public int getCrediti() { return 3; }
+  public boolean superato() { return superato; }
+  public void setSuperato() { superato = true; }
+}
+```
+
+<!-- New subsection -->
+
+#### Domanda 1
+
+Cambiare la classe Modulo in modo da far svolgere il ruolo di Concrete product del design pattern Factory Method.
+
+<!-- New subsection -->
+
+```java
+public interface Modulo {
+  int getCrediti();
+  boolean superato();
+}
+```
+
+```java
+public class ModuloSuperato extends Modulo {
+  public int getCrediti() { return 3; }
+  public boolean superato() { return true; }
+}
+```
+
+```java
+public class ModuloIniziato extends Modulo {
+  public int getCrediti() { return 0; }
+  public boolean superato() { return false; }
+}
+```
+
+<!-- New subsection -->
+
+#### Domanda 2
+
+Implementare una classe che instanzia il Concrete product in modo appropriato al design pattern.
+
+<!-- New subsection -->
+
+```java
+public class ModuloFactory {
+  public static Modulo create(boolean isSuperato) {
+    return isSuperato ? new ModuloSuperato() : new ModuloIniziato();
+  }
+}
+```
+
+<!-- New subsection -->
+
+#### Domanda 3
+
+Cambiare la classe studente in modo da usare le classi ricavate precedentemente.
+
+<!-- New subsection -->
+
+```java
+public class Student {
+  // ...
+  public void inizia() {
+    if (aperti < e.length) { e[aperti++] = ModuloFactory.create(false); }
+  }
+  public void completa() {
+    if (aperti > 0) {
+      e[aperti] = ModuloFactory.create(true);
+      crediti += e[aperti].getCrediti();
+      aperti--;
+    }
+  }
+}
+```
+
+<!-- New subsection -->
+
+#### Domanda 4
+
+Disegnare il diagramma UML delle classi.
+
+```mermaid
+classDiagram
+direction TB
+
+class Student {
+  -String nome
+  -int aperti
+  -Modulo[] e
+  -int crediti
+  +inizia()
+  +completa()
+}
+
+class ModuloFactory {
+  +create(boolean): Modulo$
+}
+
+class Modulo {
+  <<interface>>
+  +getCrediti(): int
+  +superato(): boolean
+}
+
+class ModuloSuperato {
+  +getCrediti(): int
+  +superato(): boolean
+}
+
+class ModuloIniziato {
+  +getCrediti(): int
+  +superato(): boolean
+}
+
+Modulo <|.. ModuloSuperato
+Modulo <|.. ModuloIniziato
+ModuloFactory --> ModuloSuperato
+ModuloFactory --> ModuloIniziato
+Student --> ModuloFactory
+Student --> Modulo
+```
+
+<!-- .element: class="fragment" -->
+
+<!-- New subsection -->
+
+#### Domanda 5
+
+Disegnare il diagramma UML di sequenza illustrando l'esecuzione a partire da una classe appropriata.
+
+<!-- New subsection -->
+
+```mermaid
+sequenceDiagram
+
+actor Client
+participant Student
+participant ModuloFactory
+participant ModuloIniziato
+participant ModuloSuperato
+
+Client ->>+ Student: inizia()
+Student ->>+ ModuloFactory: create(false)
+ModuloFactory -->>+ ModuloIniziato: new ModuloIniziato()
+ModuloIniziato -->>- ModuloFactory: moduloIniziato
+ModuloFactory -->>- Student: ModuloIniziato
+Student -->>- Client: #10003;
+Client ->>+ Student: completa()
+Student ->>+ ModuloFactory: create(true)
+ModuloFactory -->>+ ModuloSuperato: new ModuloSuperato()
+ModuloSuperato -->>- ModuloFactory: moduloSuperato
+ModuloFactory -->>- Student: ModuloSuperato
+Student -->>- Client: #10003;
+```
 
 <!-- New section -->
 
@@ -1927,4 +2109,72 @@ List<Triangolo> l = List.of(new Triangolo(3, 4, 5, 30, 60, 90),
                             new Triangolo(17, 15, 8, 30, 60, 90));
 // ...
 // result = [Triangolo2]
+```
+
+<!-- New subsection -->
+
+Creare un metodo che prende in ingresso due parametri, min e max, e restituisce una lista di istanze di persona costituita da elementi di gente che hanno età compresa fra min e max.
+
+```java
+public record Persona(String nome, int eta, String nazione) {}
+
+int min = 20, max = 40;
+List<Persona> l = List.of(new Persona("p1", 10, "n1"),
+                          new Persona("p2", 20, "n1"),
+                          new Persona("p3", 30, "n2"),
+                          new Persona("p4", 40, "n3"),
+                          new Persona("p5", 50, "n3"));
+// ...
+// result = [p2, p3, p4]
+```
+
+<!-- New subsection -->
+
+Calcolare la somma delle età di tutte le persone nella lista.
+
+```java
+public record Persona(String nome, int eta, String nazione) {}
+
+int min = 20, max = 40;
+List<Persona> l = List.of(new Persona("p1", 10, "n1"),
+                          new Persona("p2", 20, "n1"),
+                          new Persona("p3", 30, "n2"),
+                          new Persona("p4", 40, "n3"),
+                          new Persona("p5", 50, "n3"));
+// ...
+// result = 140
+```
+
+<!-- New subsection -->
+
+Restituire la lista di nazioni senza ripetizioni presenti in una lista di gente.
+
+```java
+public record Persona(String nome, int eta, String nazione) {}
+
+int min = 20, max = 40;
+List<Persona> l = List.of(new Persona("p1", 10, "n1"),
+                          new Persona("p2", 20, "n1"),
+                          new Persona("p3", 30, "n2"),
+                          new Persona("p4", 40, "n3"),
+                          new Persona("p5", 50, "n3"));
+// ...
+// result = [n1, n2, n3]
+```
+
+<!-- New subsection -->
+
+Restituire una mappa contenente le coppie (nome persone - nazione).
+
+```java
+public record Persona(String nome, int eta, String nazione) {}
+
+int min = 20, max = 40;
+List<Persona> l = List.of(new Persona("p1", 10, "n1"),
+                          new Persona("p2", 20, "n1"),
+                          new Persona("p3", 30, "n2"),
+                          new Persona("p4", 40, "n3"),
+                          new Persona("p5", 50, "n3"));
+// ...
+// result = [n1, n2, n3]
 ```

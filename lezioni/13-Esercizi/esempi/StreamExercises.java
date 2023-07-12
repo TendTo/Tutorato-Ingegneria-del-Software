@@ -2,6 +2,8 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.Map;
+import java.util.HashMap;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -361,6 +363,98 @@ public class StreamExercises {
                 .filter(t -> t.lato1() == t.lato2() || t.lato2() == t.lato3() || t.lato3() == t.lato1())
                 .toList();
         System.out.println(triangles);
+    }
+
+    @Consegna("Creare un metodo che prende in ingresso due parametri, min e max, e restituisce una lista di istanze di persona costituita da elementi di gente che hanno età compresa fra min e max")
+    private static void es20() {
+        int min = 20, max = 40;
+        List<Persona> l = List.of(new Persona("p1", 10, "n1"),
+                new Persona("p2", 20, "n1"),
+                new Persona("p3", 30, "n2"),
+                new Persona("p4", 40, "n3"),
+                new Persona("p5", 50, "n3"));
+
+        List<Persona> people = l.stream()
+                .filter(p -> p.age() >= min)
+                .filter(p -> p.age() <= max)
+                .toList();
+
+        System.out.println(people);
+    }
+
+    @Consegna("Calcolare la somma delle età di tutte le persone nella lista")
+    private static void es21() {
+        List<Persona> l = List.of(new Persona("p1", 10, "n1"),
+                new Persona("p2", 20, "n1"),
+                new Persona("p3", 30, "n2"),
+                new Persona("p4", 40, "n3"),
+                new Persona("p5", 50, "n3"));
+
+        int sum = l.stream()
+                .mapToInt(Persona::age)
+                .sum();
+
+        System.out.println(sum);
+    }
+
+    @Consegna("Restituire la lista di nazioni senza ripetizioni presenti in una lista di gente")
+    private static void es22() {
+        List<Persona> l = List.of(new Persona("p1", 10, "n1"),
+                new Persona("p2", 20, "n1"),
+                new Persona("p3", 30, "n2"),
+                new Persona("p4", 40, "n3"),
+                new Persona("p5", 50, "n3"));
+
+        // per evitare di creare multipli record, si considera che il ruolo è uguale
+        // alla nazione
+        List<String> roles = l.stream()
+                .map(Persona::role)
+                .distinct()
+                .toList();
+
+        System.out.println(roles);
+    }
+
+    @Consegna("Restituire una mappa contenente le coppie (nome persone - nazione)")
+    private static void es23() {
+        List<Persona> l = List.of(new Persona("p1", 10, "n1"),
+                new Persona("p2", 20, "n1"),
+                new Persona("p3", 30, "n2"),
+                new Persona("p4", 40, "n3"),
+                new Persona("p5", 50, "n3"));
+
+        // per evitare di creare multipli record, si considera che il ruolo è uguale
+        // alla nazione
+
+        Map<String, String> roles = l.stream()
+                .collect(Collectors.toMap(Persona::name, Persona::role));
+
+        // Versione con reduce e tre parametri
+        // Map<String, String> roles = l.stream()
+        //         .reduce(new HashMap<String, String>(),
+        //                 (map, el) -> {
+        //                     map.put(el.name(), el.role());
+        //                     return map;
+        //                 },
+        //                 (map1, map2) -> {
+        //                     map1.putAll(map2);
+        //                     return map1;
+        //                 });
+
+        // Versione con map e reduce
+        // Map<String, String> roles = l.stream()
+        //         .map(p -> {
+        //             Map<String, String> map = new HashMap<>();
+        //             map.put(p.name(), p.role());
+        //             return map;
+        //         })
+        //         .reduce(new HashMap<String, String>(),
+        //                 (acc, el) -> {
+        //                     acc.putAll(el);
+        //                     return acc;
+        //                 });
+
+        System.out.println(roles);
     }
 
     /**
