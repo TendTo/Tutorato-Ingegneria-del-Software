@@ -10,3 +10,12 @@
   overflow-x: hidden !important;
   height: 60vh;
 }
+
+.question > summary > *:has(+ ol)::after {
+  content: " ";
+  display: block;
+}
+
+summary {
+  cursor: pointer;
+}

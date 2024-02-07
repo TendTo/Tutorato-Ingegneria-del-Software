@@ -356,7 +356,6 @@ Se T3 dura 5 giorni durasse 5 giorni in può, entrambi i flussi durerebbero 15 g
 <details class="question">
 <summary>
 <b>Quando si dovrà lavorare a stretto contatto con il cliente, è consigliabile  i/il processo/i</b>
-<br/>
   <ol>
     <li> Cascata
     <li> Cascata, RUP
@@ -606,7 +605,6 @@ Al suo interno, questo mantiene uno State che determina il suo comportamento e p
 <details class="question">
 <summary>
 <b>Date le attività T1: 15g, T2: 5g e T3: 5g. T3 dipende da T2 e T1. T1 e T2 eseguono in parallelo. Il percorso critico è di</b>
-<br/>
   <ol>
     <li> 15 giorni
     <li> 30 giorni
@@ -727,7 +725,6 @@ I design pattern sono una raccolta di soluzioni ben studiate a problemi noti, ch
 <details class="question">
 <summary>
 <b>Un design pattern è</b>
-<br/>
   <ol>
     <li> Un problema ricorrente
     <li> Una soluzione collaudata ma generica
