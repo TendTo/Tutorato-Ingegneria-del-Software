@@ -15,7 +15,7 @@ Se ne trovate, segnalateli.
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>In generale, per convalidare dei requisiti non è possibile</b>
   <ol>
@@ -32,7 +32,7 @@ Possiamo controllare che il software soddisfi i requisiti tramite test, facendo 
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>La frase "Il sistema dovrà fornire prestazioni adeguate" è</b>
   <ol>
@@ -50,7 +50,7 @@ manutenibilità, etc.)
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Nell'ingegneria dei requisiti è necessario</b>
   <ol>
@@ -67,7 +67,7 @@ Tutti i passi elencati vengono applicati nell'ingegneria dei requisiti.
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>La navigabilità nelle relazioni dei diagrammi UML indica</b>
   <ol>
@@ -84,7 +84,7 @@ La freccia singola indica che una classe conosce un'altra classe e la utilizza i
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Le fasi generali del processo RUP sono</b>
   <ol>
@@ -101,7 +101,7 @@ La freccia singola indica che una classe conosce un'altra classe e la utilizza i
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Il processo a cascata non è adatto a</b>
   <ol>
@@ -118,7 +118,7 @@ Nel processo a cascata, una volta stabiliti i requisiti, questi saranno consider
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Quali delle seguenti attività n on è prevista in nessun processo di sviluppo</b>
   <ol>
@@ -135,7 +135,7 @@ Questa è una valutazione che spetta al cliente, non agli sviluppatori.
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Per il design pattern Observer, le sottoclassi di Observer</b>
   <ol>
@@ -152,7 +152,7 @@ Il pattern Observer permette ad un numero arbitrario e dinamico di Observer di e
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Nel design pattern Mediator</b>
   <ol>
@@ -170,7 +170,7 @@ Il concrete mediator, invece, deve conoscere le implementazioni dei colleague.
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>I design pattern</b>
   <ol>
@@ -187,7 +187,7 @@ I design pattern sono soluzioni ben studiate che permettono di risolvere un prob
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Una variabile di un certo tipo T</b>
   <ol>
@@ -206,7 +206,7 @@ Dog d = new Animal(); // Non valido
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Nello sviluppo di sistemi OO è incoraggiato l'uso di dipendenze</b>
   <ol>
@@ -223,7 +223,7 @@ Dog d = new Animal(); // Non valido
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Tramite l'uso del Factory Method, il client ha il vantaggio di</b>
   <ol>
@@ -240,7 +240,7 @@ Il Factory Method permette di creare un'istanza di una classe senza doverne cono
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Quali caratteristiche ha un sistema riflessivo</b>
   <ol>
@@ -258,7 +258,7 @@ Questo permette, ad esempio, di intercettare le chiamate ai metodi e di modifica
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Nella soluzione proposta dal Mediator</b>
   <ol>
@@ -275,7 +275,7 @@ L'implementazione dell'interfaccia Mediator chiama i metodi dei ConcreteColleagu
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Nel design pattern State, i client conoscono</b>
   <ol>
@@ -293,7 +293,7 @@ L'utilizzo dello state è interno al Context.
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Le relazioni di aggregazione in UML sono rappresentate da</b>
   <ol>
@@ -311,7 +311,7 @@ Se si trattasse di composizione, il rombo sarebbe pieno.
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>In UML, un diagramma delle attività mostra rettangoli</b>
   <ol>
@@ -335,7 +335,7 @@ Explanation
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Date le attività T1 da 15 giorni, T2 da 3 e T3 da 7, e sia T3 dipendente da T2; T1 e T2 possono essere eseguite in parallelo</b>
   <ol>
@@ -353,7 +353,7 @@ Se T3 dura 5 giorni durasse 5 giorni in può, entrambi i flussi durerebbero 15 g
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Quando si dovrà lavorare a stretto contatto con il cliente, è consigliabile  i/il processo/i</b>
 <br/>
@@ -371,7 +371,7 @@ Sia il processo a spirale che XP prevedono un contatto continuo con il cliente p
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Il processo XP produce</b>
   <ol>
@@ -388,7 +388,7 @@ Nel processo XP la documentazione è ridotta al minimo, a favore di Story Cards.
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Un metodo di tipo synchronized</b>
   <ol>
@@ -406,7 +406,7 @@ Implementa i monitor di Hoare.
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Un'interfaccia X, ovvero public interface X</b>
   <ol>
@@ -423,7 +423,7 @@ Un'interfaccia definisce un tipo che sarà poi implementato da altre classi.
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Un'interfaccia X, ovvero public interface X</b>
   <ol>
@@ -440,7 +440,7 @@ Utilizzando un'interfaccia, avviene un accoppiamento più lasco fra le classi ch
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>I design pattern strutturali permettono</b>
   <ol>
@@ -458,7 +458,7 @@ Esempi sono l'Adapter, il Composite, il Bridge, il Decorator.
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>La legge di Lehman sul cambiamento continuo dice</b>
   <ol>
@@ -480,7 +480,7 @@ Al fine di impedire l'obsolescenza, il software deve essere continuamente aggior
 public Libro getLibro() { return b.getLib(); }
 ```
 
-<details>
+<details class="question">
 <summary>
 <b>Il frammento di codice...</b>
   <ol>
@@ -498,7 +498,7 @@ Il codice è compilabile nel caso in cui b sia definito ma non inizializzato, ma
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>I requisiti utente sono più spesso descritti tramite</b>
   <ol>
@@ -516,7 +516,7 @@ Un cliente potrebbe usarne più di uno, partendo da un linguaggio naturale, per 
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Cosa significa che i requisiti devono essere completi e consistenti?</b>
   <ol>
@@ -533,7 +533,7 @@ Nella fase di analisi dei requisiti, è importante che questi descrivano il comp
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Uno dei vantaggi della riflessione computazionale consiste nella possibilità di</b>
   <ol>
@@ -550,7 +550,7 @@ Tramite la riflessione si ha la possibilità di scorrere ed invocare a runtime i
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Il metodo <i>newInstance()</i> è fornito dalla classe</b>
   <ol>
@@ -568,7 +568,7 @@ Si tratta di un metodo della class Class che permette di creare una nuova istanz
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Nel design pattern Observer si desidera ottenere</b>
   <ol>
@@ -585,7 +585,7 @@ Nel pattern observer, il Subject mantiene una lista di Observer, che si possono 
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Nel design pattern State, i client conoscono</b>
   <ol>
@@ -603,7 +603,7 @@ Al suo interno, questo mantiene uno State che determina il suo comportamento e p
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Date le attività T1: 15g, T2: 5g e T3: 5g. T3 dipende da T2 e T1. T1 e T2 eseguono in parallelo. Il percorso critico è di</b>
 <br/>
@@ -621,7 +621,7 @@ T1 (15) -> T3 (5)
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Con correttezza del software si intende</b>
   <ol>
@@ -638,7 +638,7 @@ Un software è corretto se soddisfa le specifiche e se non ha difetti individuab
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>In UML, l'implementazione di un'interfaccia è rappresentata da</b>
   <ol>
@@ -655,7 +655,7 @@ Nello schema UML, l'implementazione di un'interfaccia è rappresentata da una li
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Un diagramma di interazione (o collaborazione) UML è</b>
   <ol>
@@ -672,7 +672,7 @@ Il diagramma di interazione mostra le chiamate tra i metodi delle istanze che av
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Nella soluzione proposta dal pattern Class Adapter</b>
   <ol>
@@ -690,7 +690,7 @@ Nella versione Object Adapter, l'Adapter contiene un riferimento all'Adaptee.
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>La soluzione suggerita dal design patter Class Adapter</b>
   <ol>
@@ -707,7 +707,7 @@ Estendendo direttamente l'Adaptee, l'Adapter non ha bisogno di contenere un rife
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>I design pattern</b>
   <ol>
@@ -724,7 +724,7 @@ I design pattern sono una raccolta di soluzioni ben studiate a problemi noti, ch
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Un design pattern è</b>
 <br/>
@@ -742,7 +742,7 @@ Ogni design pattern rappresenta una soluzione collaudata ad un problema ricorren
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>In un piano per le attività di un progetto troviamo</b>
   <ol>
@@ -759,7 +759,7 @@ Ogni design pattern rappresenta una soluzione collaudata ad un problema ricorren
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Il design pattern Adapter permette a certe classi di interagire perché</b>
   <ol>
@@ -776,7 +776,7 @@ La classe Adapter permette al client di chiamare i metodi dell'interfaccia Targe
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>È consigliabile usare il Facade quando</b>
   <ol>
@@ -793,7 +793,7 @@ Il facade offre un'interfaccia di livello più alto al client, nascondendo una s
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Un documento dei requisiti ben scritto mirerà a fornire</b>
   <ol>
@@ -810,7 +810,7 @@ Il documento dei requisiti si produce nella fase di analisi, e contiene informaz
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Nella soluzione del design pattern State, ogni Concrete State</b>
   <ol>
@@ -827,7 +827,7 @@ Ogni Concrete State definisce un comportamento associato ad uno stato del Contex
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Per il pattern Observer, cosa è interessante osservare?</b>
   <ol>
@@ -844,7 +844,7 @@ Il Concrete Observer è interessato allo stato del Concrete Subject, e può esse
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>La coesione di una classe è</b>
   <ol>
@@ -861,7 +861,7 @@ La coesione di una classe è alta se tutti i metodi contribuiscono ad implementa
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>La legge di Lehman è pensata per</b>
   <ol>
@@ -878,7 +878,7 @@ La legge di Lehman è pensata per software di grandi dimensioni, e afferma che u
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Sia la classe Agent un Singleton.
 Si abbia la linea di codice:
@@ -898,7 +898,7 @@ Il costruttore della classe è privato.
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Per il Factory Method</b>
   <ol>
@@ -917,7 +917,7 @@ Sarà compito del ConcreteCreator scegliere ed instanziare il ConcreteProduct co
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Fissata un'interfaccia, il design pattern Decorator</b>
   <ol>
@@ -935,7 +935,7 @@ Le classi ConcreteDecorator implementano l'interfaccia e contengono un riferimen
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>In genere, quale dei seguenti prende decisioni su instanziazione di classi?</b>
 <br>
@@ -953,7 +953,7 @@ Il singleton è un pattern creazionale, che assicura che venga creata una sola i
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>In un codice che utilizza il pattern Bridge vengono creati 3 ConcreteImplementor e 4 Refined Abstraction.
 Se non utilizzassi il pattern, e volessi mantenere tutte le possibili combinazioni, quante classi dovrei creare?</b>
@@ -972,7 +972,7 @@ Per poter combinare tutti i ConcreteImplementor con tutti i Refined Abstraction,
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Quale fra questi è un vantaggio che ottengo utilizzando il pattern Adapter</b>
   <ol>
@@ -990,7 +990,7 @@ Volendola cambiare, sarà sufficiente aggiornare l'Adapter, senza dover modifica
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Quale pattern è particolarmente indicato per rappresentare delle strutture ricorsive ed operare su esse?</b>
 <br>
@@ -1009,7 +1009,7 @@ Nell'interfaccia sarà definito un metodo implementato in modo diverso a seconda
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Un negozio vende una collezione di blocchi. Questi possono essere di metallo o di legno, dipinti, graffiati o patinati. Talvolta possono addirittura essere radioattivi o magnetizzati.
 <br/>
@@ -1031,7 +1031,7 @@ Diviene semplice aggiungere un ulteriore concrete implementor (ad esempio, blocc
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>In un gioco il personaggio protagonista acquisisce sempre più potenziamenti man mano che prosegue. Questi sbloccano nuove abilità, permettendogli di compiere azioni che gli erano precluse.<br>
 Che pattern si può utilizzare per gestire il comportamento del personaggio?</b>
@@ -1051,7 +1051,7 @@ Durante la sua avventura, lo stato del personaggio cambia, e con esso le sue abi
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Limita l'istanziazione di una classe ad un solo oggetto</b>
   <ol>
@@ -1068,7 +1068,7 @@ Il singleton è un pattern creazionale, che assicura che venga creata una sola i
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Aggiunge delle funzionalità ad un oggetto in maniera dinamica</b>
   <ol>
@@ -1085,7 +1085,7 @@ Il decorator è un pattern strutturale, che permette di aggiungere funzionalità
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Viene utilizzato un oggetto per incapsulare tutte le informazioni necessarie a richiamare un metodo successivamente</b>
   <ol>
@@ -1102,7 +1102,7 @@ Il command è un pattern comportamentale. Si introduce una classe Command che, q
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Il comportamento dell'algoritmo può essere selezionato a runtime</b>
   <ol>
@@ -1123,7 +1123,7 @@ Il pattern Strategy permette di selezionare a runtime il comportamento di un alg
 
 <!-- New subsection -->
 
-<details>
+<details class="question">
 <summary>
 <b>Disegnare e spiegare i passi (o attività) della gestione dei requisiti in un processo tipo quello a cascata</b>
 </summary>
@@ -1152,7 +1152,7 @@ public class Buffer {
 }
 ```
 
-<details>
+<details class="question">
 <summary>
 <b>Quali sono dei nomi appropriati per metodo1, metodo2 e metodo3?<br/>Che modificatori sono mod1 e mod2</b>
 </summary>
@@ -1237,7 +1237,7 @@ public class Info {
 
 #### Domanda 1
 
-<details>
+<details class="question">
 <summary>
 <b>Il client vuole ottenere dei dati di un utente utilizzando l'interfaccia IDataSource.
 Quale pattern potrebbe utilizzare?
@@ -1323,7 +1323,7 @@ public class Fire implements Motore {
 
 #### Domanda 1
 
-<details>
+<details class="question">
 <summary>
 <b>Qual è il design pattern implementato e il ruolo svolto dalle classi/interfacce Auto, Motore, Berlina e Fire?</b>
 </summary>
@@ -1580,7 +1580,7 @@ public class Nuovo implements Esame {
 
 #### Domanda 3
 
-<details>
+<details class="question">
 <summary>
 <b>Dare il nome dei ruoli per tutte le classi e interfacce del design Pattern.</b>
 </summary>
@@ -1856,6 +1856,8 @@ Student -->>- Client: #10003;
 <!-- New section -->
 
 ## Stream
+
+[Soluzioni](./esempi/StreamExercises.java)
 
 <!-- New subsection -->
 
@@ -2176,5 +2178,5 @@ List<Persona> l = List.of(new Persona("p1", 10, "n1"),
                           new Persona("p4", 40, "n3"),
                           new Persona("p5", 50, "n3"));
 // ...
-// result = [n1, n2, n3]
+// result = {"p1" -> "n1", "p2" -> "n1", "p3" -> "n2", "p4" -> "n3", "p5" -> "n3"} 
 ```
