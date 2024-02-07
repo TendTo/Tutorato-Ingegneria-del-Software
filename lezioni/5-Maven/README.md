@@ -6,7 +6,7 @@ Il build automation tool più famoso.
 
 ## Cosa è Maven?
 
-![Maven](img/maven_logo.png)
+![Maven](./img/maven_logo.png)
 
 [Maven](https://maven.apache.org/) è un software che permette di automatizzare il processo di build di un progetto basato su Java.
 
@@ -118,7 +118,7 @@ Il file `pom.xml` è un file xml che serve a configurare il comportamento di Mav
 
 </div>
 
-![Pom content](img/pom_content.svg)
+![Pom content](./img/pom_content.svg)
 
 <!-- New subsection -->
 
