@@ -6,9 +6,9 @@
 }
 
 .scrollable {
-  overflow-y: scroll !important;
+  overflow-y: auto !important;
   overflow-x: hidden !important;
-  height: 60vh;
+  height: 100vh;
 }
 
 .question > summary > *:has(+ ol)::after {

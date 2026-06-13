@@ -13,17 +13,7 @@ Tutorato del corso di [Ingegneria del Software](https://web.dmi.unict.it/corsi/l
 
 ### Orario
 
-Il tutorato verrà erogato
-
-- **Lunedì, 10:00 - 13:00**
-- **Mercoledì, 10:00 - 13:00**
-
-Ci sarà inoltre ricevimento
-
-- **Lunedì, 08:00 - 10:00 e 14:00 - 15:00**
-- **Mercoledì, 08:00 - 10:00 e 14:00 - 15:00**
-
-Per eventuali cambi, verificare il [gruppo telegram](https://t.me/+VgP5Dogke9phOTY0).
+Il tutorato si è concluso, ma il materiale rimarrà disponibile per chiunque voglia consultarlo.
 
 <!-- New section -->
 
